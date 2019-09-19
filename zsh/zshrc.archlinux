@@ -1,0 +1,11 @@
+alias pacs="pacman -Ss"
+alias paci="sudo pacman -S"
+alias pacr="sudo pacman -Rnusv"
+
+alias yas="yaourt -Ss"
+alias yai="yaourt -S --noconfirm"
+
+alias status="sys status"
+alias start="sys start"
+alias stop="sys stop"
+alias restart="sys resart"

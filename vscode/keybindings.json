@@ -1,0 +1,179 @@
+[
+    // cursor movement
+    // ---------------
+
+    // subword
+    { "key": "alt+left", "command": "cursorWordPartLeft" },
+    { "key": "alt+right", "command": "cursorWordPartRight" },
+
+    // subword with selection
+    { "key": "shift+alt+left", "command": "cursorWordPartLeftSelect" },
+    { "key": "shift+alt+right", "command": "cursorWordPartRightSelect" },
+
+    // line start / end
+    { "key": "ctrl+alt+left", "command": "cursorHome", "when": "textInputFocus" },
+    { "key": "ctrl+alt+right", "command": "cursorEnd", "when": "textInputFocus" },
+
+    // line start / end with selection
+    { "key": "ctrl+shift+alt+left", "command": "cursorHomeSelect", "when": "textInputFocus" },
+    { "key": "ctrl+shift+alt+right", "command": "cursorEndSelect", "when": "textInputFocus" },
+
+    // file start / end
+    { "key": "home", "command": "cursorTop", "when": "textInputFocus" },
+    { "key": "end", "command": "cursorBottom", "when": "textInputFocus" },
+
+    // file start / end with selection
+    { "key": "shift+home", "command": "cursorTopSelect", "when": "textInputFocus" },
+    { "key": "shift+end", "command": "cursorBottomSelect", "when": "textInputFocus" },
+
+    // text manipulation
+    // -----------------
+
+    // move line up / down
+    { "key": "ctrl+shift+up", "command": "editor.action.moveLinesUpAction", "when": "editorTextFocus && !editorReadonly" },
+    { "key": "ctrl+shift+down", "command": "editor.action.moveLinesDownAction", "when": "editorTextFocus && !editorReadonly" },
+
+    // duplicate / delete line
+    { "key": "ctrl+e", "command": "editor.action.copyLinesDownAction", "when": "editorTextFocus" },
+    { "key": "ctrl+alt+e", "command": "editor.action.deleteLines", "when": "editorTextFocus" },
+
+    // copy
+    { "key": "ctrl+c", "command": "clipboard.copy", "when": "editorTextFocus" },
+
+    // cut
+    { "key": "ctrl+x", "command": "clipboard.cut", "when": "editorTextFocus && !editorReadonly" },
+
+    // paste
+    { "key": "ctrl+v", "command": "clipboard.paste", "when": "editorTextFocus && !editorReadonly" },
+    { "key": "ctrl+shift+v", "command": "clipboard.pasteFromClipboard", "when": "editorTextFocus && !editorReadonly" },
+
+    // multi cursor
+    // ------------
+
+    // duplicate cursor up / down
+    { "key": "ctrl+alt+up", "command": "editor.action.insertCursorAbove", "when": "editorTextFocus" },
+    { "key": "ctrl+alt+down", "command": "editor.action.insertCursorBelow", "when": "editorTextFocus" },
+
+    // selection
+    // ---------
+
+    // select next / all occurence
+    { "key": "ctrl+l", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" },
+    { "key": "ctrl+shift+l", "command": "editor.action.selectHighlights", "when": "editorFocus" },
+
+    // expand / shrink selection
+    { "key": "ctrl+=", "command": "editor.action.smartSelect.expand", "when": "editorTextFocus" },
+    { "key": "ctrl+/", "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus" },
+
+    // actions
+    // -------
+
+    // save
+    { "key": "alt+enter", "command": "workbench.action.files.save" },
+    { "key": "alt+shift+enter", "command": "workbench.action.files.saveAs" },
+
+    // undo / redo
+    { "key": "ctrl+;", "command": "undo" },
+    { "key": "ctrl+alt+;", "command": "cursorUndo" },
+    { "key": "ctrl+shift+;", "command": "redo" },
+
+    // tabs
+    // ----
+
+    // focus tabs
+    { "key": "alt+w", "command": "workbench.action.previousEditor" },
+    { "key": "alt+v", "command": "workbench.action.nextEditor" },
+
+    // move tabs
+    { "key": "alt+shift+w", "command": "workbench.action.moveEditorLeftInGroup" },
+    { "key": "alt+shift+v", "command": "workbench.action.moveEditorRightInGroup" },
+
+    // close / reopen tab
+    { "key": "ctrl+w", "command": "workbench.action.closeActiveEditor" },
+    { "key": "ctrl+shift+w", "command": "workbench.action.reopenClosedEditor" },
+
+    // files
+    // -----
+
+    // open files
+    { "key": "ctrl+o", "command": "workbench.action.quickOpen" },
+    { "key": "ctrl+shift+o", "command": "workbench.action.files.openFolderInNewWindow" },
+    { "key": "ctrl+alt+o", "command": "workbench.action.files.openFile" },
+    { "key": "alt+o", "command": "workbench.action.openRecent" },
+
+    // create new file
+    { "key": "ctrl+n", "command": "workbench.action.files.newUntitledFile" },
+
+    // files manipulation
+    { "key": "ctrl+r", "command": "fileutils.renameFile" },
+    { "key": "ctrl+m", "command": "fileutils.moveFile" },
+    { "key": "ctrl+d", "command": "fileutils.duplicateFile" },
+    { "key": "ctrl+shift+d", "command": "fileutils.removeFile" },
+
+    // copy file name / path
+    { "key": "ctrl+alt+c", "command": "fileutils.copyFileName" },
+    { "key": "ctrl+alt+shift+c", "command": "copyFilePath" },
+
+    // misc
+    // ----
+
+    // command palette
+    { "key": "alt+,", "command": "workbench.action.showCommands" },
+
+    // settings
+    { "key": "ctrl+p", "command": "workbench.action.openSettings" },
+
+    // comment / uncomment
+    { "key": "alt+\\", "command": "editor.action.commentLine" },
+    { "key": "alt+shift+\\", "command": "editor.action.blockComment" },
+
+    // fix
+
+
+    // format
+    { "key": "ctrl+s", "command": "editor.action.codeAction", "args": { "kind": "source.fixAll.tslint", "apply": "first" } },
+    { "key": "ctrl+shift+s", "command": "editor.action.codeAction", "args": { "kind": "source.fixAll.tslint", "apply": "all" } },
+
+    // find
+    { "key": "ctrl+f", "command": "actions.find" },
+    { "key": "ctrl+shift+f", "command": "workbench.view.search" },
+
+    // zoom in / out
+    { "key": "ctrl+numpad_add", "command": "workbench.action.zoomIn" },
+    { "key": "ctrl+shift+numpad_add", "command": "workbench.action.zoomOut" },
+    { "key": "ctrl+shift+alt+numpad_add", "command": "workbench.action.zoomReset" },
+
+    // scroll by 10 lines
+    { "key": "ctrl+up", "command": "editorScroll", "when": "textInputFocus", "args": { "to": "up", "by": "line", "value": 10 } },
+    { "key": "ctrl+down", "command": "editorScroll", "when": "textInputFocus", "args": { "to": "down", "by": "line", "value": 10 } },
+
+    // side views
+    { "key": "alt+1", "command": "workbench.view.explorer" },
+    { "key": "alt+shift+1", "command": "workbench.files.action.showActiveFileInExplorer" },
+    { "key": "alt+2", "command": "workbench.view.search" },
+    { "key": "alt+3", "command": "workbench.view.debug" },
+    { "key": "alt+4", "command": "workbench.view.extensions" },
+
+    // fold blocks
+    { "key": "ctrl+1", "command": "editor.foldLevel1", "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+2", "command": "editor.foldLevel2", "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+3", "command": "editor.foldLevel3", "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+4", "command": "editor.foldLevel4", "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+5", "command": "editor.foldLevel5", "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+6", "command": "editor.foldLevel6", "when": "editorTextFocus && foldingEnabled" },
+
+    // unfold
+    { "key": "ctrl+`", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
+
+    {
+        "key": "ctrl+space",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "problems.action.showQuickFixes",
+        "when": "problemFocus"
+    },
+
+]

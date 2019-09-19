@@ -1,0 +1,54 @@
+# base system
+
+base
+base-devel
+syslinux
+dosfstools
+efibootmgr
+
+# main tools
+
+sudo
+ntp
+git
+zsh
+vim
+unzip
+
+# network tools
+
+dialog
+openssh
+wireless_tools
+wpa_supplicant
+
+# secondary tools
+
+most
+htop
+tree
+sshfs
+cronie
+docker
+docker-compose
+postgresql
+upower
+httpie
+jq
+fzf
+
+# wm
+
+ttf-bitstream-vera ttf-dejavu
+adobe-source-code-pro-fonts
+noto-fonts-emoji
+
+# gui
+
+rofi
+terminator
+firefox
+chromium
+feh
+gimp
+vlc

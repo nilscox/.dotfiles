@@ -1,0 +1,9 @@
+alias apts='apt-cache search'
+alias apti='sudo apt-get install'
+alias aptu='sudo apt-get update'
+alias aptr='sudo apt-get remove'
+
+alias status="systemctl status"
+alias start="systemctl start"
+alias stop="systemctl stop"
+alias restart="systemctl resart"

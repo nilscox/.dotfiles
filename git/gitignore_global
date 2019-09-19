@@ -1,0 +1,11 @@
+*.exe
+*.out
+*.log
+*.swp
+*.iml
+.idea/
+*.local.*
+*.sublime-project
+*.sublime-workspace
+.vscode/
+*.code-workspace

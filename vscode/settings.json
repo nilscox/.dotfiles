@@ -1,0 +1,51 @@
+{
+    "editor.tabSize": 2,
+    "keyboard.dispatch": "keyCode",
+    "workbench.startupEditor": "none",
+    "editor.fontFamily": "'Monaco', 'Droid Sans Mono', 'Source Code Pro'",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Darcula",
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "customizeUI.activityBar": "regular",
+    "files.insertFinalNewline": true,
+    "files.simpleDialog.enable": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.smoothScrolling": true,
+    "editor.scrollBeyondLastLine": false,
+    "emmet.showExpandedAbbreviation": "never",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "search.showLineNumbers": true,
+    "workbench.activityBar.visible": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "explorer.openEditors.visible": 0,
+    "material-icon-theme.hidesExplorerArrows": true,
+    "explorer.autoReveal": false,
+    "editor.cursorBlinking": "solid",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
+    "editor.fontSize": 12,
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "eslint.alwaysShowStatus": true,
+    "cSpell.userWords": [
+        "Tlkio",
+        "Youtube",
+        "components",
+        "impactantes"
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.language": "fr,en"
+}

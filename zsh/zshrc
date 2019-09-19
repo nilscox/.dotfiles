@@ -1,0 +1,105 @@
+# 3rd party
+# =========
+
+[ -f ~/.oh-my-zshrc ] && source ~/.oh-my-zshrc
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# History
+# =======
+
+HISTFILE=~/.zsh_history
+HISTSIZE=42000
+SAVEHIST=42000
+
+# Shell options
+# =============
+
+setopt auto_cd                  # if command is a path, cd into it
+unsetopt rm_star_silent         # ask for confirmation for `rm *'
+
+# Bind keys
+# =========
+
+bindkey ';5C' emacs-forward-word
+bindkey ';5D' emacs-backward-word
+
+# Exported varialbes
+# ==================
+
+export TERM='xterm-256color'
+export PAGER='most'
+export PATH="$HOME/.local/bin:$PATH"
+export EDITOR='vim'
+
+# Colors
+# ======
+
+# Completion
+# ==========
+
+# Aliases
+# =======
+
+alias -g G="| grep"
+alias -g M=' | most'
+alias -g H=' | head'
+alias -g T=' | tail'
+alias -g TF=' | tail -f'
+alias -g NUL=' > /dev/null 2>&1'
+alias -g C=' | xclip -selection clipboard'
+
+# Functions
+# =========
+
+killport() {
+  if [ -z "$1" ]; then
+    echo "usage: $0 <port>" 2>&1
+    return 1
+  fi
+
+  pid=$(sudo lsof -i ":$1" | grep '(LISTEN)' | tail -1 | awk '{ print $2 }')
+
+  if [ -z "$pid" ]; then
+    return 1;
+  fi
+
+  kill "$pid"
+}
+
+# Prompt
+# =====
+
+prompt_user="%{$fg_no_bold[cyan]%}%n%{$reset_color%}"
+prompt_host="%{$fg_bold[black]%}%m%{$reset_color%}"
+prompt_dir="%{$fg_no_bold[yellow]%}%2~%{$reset_color%}"
+prompt_sudo="%#"
+
+prompt_date() {
+  echo "%{$fg_bold[black]%}[%{$fg_bold[yellow]%}$(date '+%H:%M:%S')%{$fg_bold[black]%}]%{$reset_color%}"
+}
+
+prompt_status() {
+  last_status="$?"
+
+  if [[ "$last_status" -ne 0 ]]; then
+    echo "%{$fg_bold[black]%}[%{$fg_no_bold[red]%}$last_status%{$fg_bold[black]%}]%{$reset_color%} "
+  fi
+}
+
+if [[ -n "$SSH_CLIENT" ]]; then
+  prompt_host="%{$fg_bold[green]%}%m%{$reset_color%}"
+fi
+
+if [[ $UID == 0 ]]; then
+  prompt_user="%{${fg_bold[red]%}%n%{$reset_color%}"
+fi
+
+PROMPT='$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
+RPROMPT='$(prompt_date)'
+
+# Custom config
+# =============
+
+for file in ~/.zshrc.*; do
+  source "$file"
+done

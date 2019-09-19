@@ -1,0 +1,39 @@
+[user]
+  name = Nils
+  email = nils@localhost
+
+[color]
+  ui = true
+
+[core]
+  excludesfile = ~/.gitignore_global
+  editon = vim
+
+[alias]
+  s = status
+  ss = status --short
+  c = clone
+  ci = commit -m
+  recommit = commit --amend --no-edit
+  rephrase = commit --amend -m
+  co = checkout
+  d = diff
+  dc = diff --cached
+  l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --graph --decorate
+  la = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --graph --decorate
+  ph = push
+  pl = pull
+  lsf = ls-files
+  cp = cherry-pick
+
+[pager]
+  status = false
+
+[help]
+  autocorrect = 1
+
+[push]
+  default = current
+
+[pull]
+  rebase = true
