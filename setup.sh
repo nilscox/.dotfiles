@@ -8,6 +8,7 @@ units=(
   vim
   xorg
   i3
+  wallpaper
   rofi
   fonts
   node
