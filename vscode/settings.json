@@ -2,7 +2,7 @@
     "editor.tabSize": 2,
     "keyboard.dispatch": "keyCode",
     "workbench.startupEditor": "none",
-    "editor.fontFamily": "'Monaco', 'Droid Sans Mono', 'Source Code Pro'",
+    "editor.fontFamily": "'Monaco', 'Source Code Pro'",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Darcula",
     "editor.rulers": [
@@ -40,12 +40,6 @@
         "typescriptreact"
     ],
     "eslint.alwaysShowStatus": true,
-    "cSpell.userWords": [
-        "Tlkio",
-        "Youtube",
-        "components",
-        "impactantes"
-    ],
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "cSpell.language": "fr,en"
+    "cSpell.language": "en",
+    "typescript.updateImportsOnFileMove.enabled": "always"
 }
