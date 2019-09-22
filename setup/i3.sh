@@ -2,14 +2,16 @@
 
 source "$DOT/setup/functions.sh"
 
-i3="$DOT/i3"
-i3blocks="$DOT/i3blocks"
+i3_config="$DOT/i3/i3.config"
+i3blocks_config="$DOT/i3/i3blocks.config"
 blocklets="$CONFIG/i3blocks-blocklets"
 i3blocks_contrib="$CONFIG/i3blocks-contrib"
 
 run_install() {
-  ln -sf "$i3" "$CONFIG"
-  ln -sf "$i3blocks" "$CONFIG"
+  mkdir -p "$CONFIG/i3" "$CONFIG/i3blocks"
+
+  ln -sf "$i3_config" "$CONFIG/i3/config"
+  ln -sf "$i3blocks_config" "$CONFIG/i3blocks/config"
 
   clone_or_pull "git://github.com/vivien/i3blocks-contrib.git" "$i3blocks_contrib"
 
