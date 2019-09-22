@@ -1,5 +1,26 @@
 #!/usr/bin/env bash
 
+units=(
+  packages
+  zsh
+  git
+  vim
+  xorg
+  i3
+  rofi
+  fonts
+  node
+  terminator
+  vscode
+  gdrive
+  pcloud
+  firefox
+)
+
+action="$1"
+shift
+args="$@"
+
 os_release='/etc/os-release'
 
 if [ ! -f "$os_release" ]; then
@@ -19,6 +40,7 @@ fi
 
 [ -z "$DOT" ] && DOT=$(dirname $(readlink -f "$0"))
 [ -z "$DEST" ] && DEST="$HOME"
+[ -z "$ROOT" ] && ROOT="/"
 [ -z "$CONFIG" ] && CONFIG="$DEST/.config"
 [ -z "$DISTRIB" ] && DISTRIB="$DETECTED_DISTRIB"
 
@@ -26,12 +48,8 @@ mkdir -p "$CONFIG"
 source "$DOT/setup/functions.sh"
 
 should_setup() {
-  for arg in "$@"; do
-    if [ "$arg" == '--all' ]; then
-      return 0;
-    fi
-
-    if [ "$arg" == "--$1" ]; then
+  for arg in "$args"; do
+    if [ "$arg" == '--all' -o "$arg" == "$1" ]; then
       return 0
     fi
   done
@@ -39,15 +57,15 @@ should_setup() {
   return 1
 }
 
-if [ "$1" != '--install' -a "$1" != '--uninstall' ]; then
-  echo "usage: setup.sh [--install|--uninstall]" >&2
+if [ "$action" != 'install' -a "$action" != 'uninstall' ]; then
+  echo "usage: setup.sh <action> [unit...|--all]" >&2
+  echo "action: install | uninstall | reinstall" >&2
+  echo "units: ${units[@]}" >&2
   exit 1
 fi
 
-units=(packages zsh git vim xorg i3 rofi fonts node terminator vscode gdrive pcloud firefox)
-
 for u in "${units[@]}"; do
-  if should_setup "$u" "$@"; then
-    setup "$u" "$1" || read
+  if should_setup "$u"; then
+    setup "$u" "$action" || read
   fi
 done

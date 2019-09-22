@@ -8,47 +8,6 @@ clone_or_pull() {
   fi
 }
 
-install_font() {
-  url="$1"
-  filename="${url##*/}"
-  font_dir="/usr/share/fonts/truetype/custom"
-
-  sudo mkdir -p "$font_dir"
-
-  echo "* downloading font from $url"
-  wget -c "$url"
-
-  echo " * installing font $font_dir/$filename"
-  sudo mv "$filename" "$font_dir"
-
-  echo "* updating font cache"
-  sudo fc-cache -f -v
-}
-
-uninstall_font() {
-  url="$1"
-  filename="${url##*/}"
-  font_dir="/usr/share/fonts/truetype/custom"
-
-  echo "* uninstalling font $font_dir/$filename"
-
-  sudo rm -f "$font_dir/$filename"
-
-  echo "* updating font cache"
-  sudo fc-cache -f -v
-}
-
-install_package() {
-  if [ "$DISTRIB" = "debian" ]; then
-    sudo apt install "$@"
-  elif [ "$DISTRIB" = "arch" ]; then
-    sudo pacman -S "$@"
-  else
-    echo "unknown distribution $DISTRIB; cannot install packages"
-    return 1
-  fi
-}
-
 setup() {
   if [ "$#" -ne 2 ]; then
     echo "usage: setup unit [--install|--uninstall]" >&2
@@ -65,13 +24,18 @@ setup() {
   source "$path"
 
   case "$2" in
-    "--install")
+    "install")
       echo "* installing $1"
       run_install
       ;;
-    "--uninstall")
+    "uninstall")
       echo "* uninstalling $1"
       run_uninstall
+      ;;
+    "reinstall")
+      echo "* reinstalling $1"
+      run_uninstall
+      run_install
       ;;
     *)
       echo "unkown argument: $2" >&2
