@@ -3,7 +3,8 @@
 source "$DOT/setup/functions.sh"
 
 run_install() {
-  ln -sf "$DOT/rofi" "$CONFIG"
+  mkdir -p "$CONFIG/rofi"
+  ln -sf "$DOT/rofi/config.rasi" "$CONFIG/rofi"
 }
 
 run_uninstall() {
