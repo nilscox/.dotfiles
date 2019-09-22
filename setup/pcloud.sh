@@ -7,7 +7,7 @@ run_install() {
   ln -sf "$DEST/.pcloud/mountpoint" "$DEST/pcloud"
 
   mkdir -p "$CONFIG/systemd/user"
-  ln -sf "$DOT/systemd/pcloud.service" "$CONFIG/systemd/user"
+  cp "$DOT/systemd/pcloud.service" "$CONFIG/systemd/user"
 }
 
 run_uninstall() {

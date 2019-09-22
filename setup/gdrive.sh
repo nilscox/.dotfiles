@@ -6,7 +6,7 @@ run_install() {
   mkdir -p "$DEST/gdrive"
 
   mkdir -p "$CONFIG/systemd/user"
-  ln -sf "$DOT/systemd/gdrive.service" "$CONFIG/systemd/user"
+  cp "$DOT/systemd/gdrive.service" "$CONFIG/systemd/user"
 }
 
 run_uninstall() {
