@@ -59,7 +59,7 @@ should_setup() {
   return 1
 }
 
-if [ "$action" != 'install' -a "$action" != 'uninstall' ]; then
+if [ "$action" != 'install' -a "$action" != 'uninstall' -a "$action" != 'reinstall' ]; then
   echo "usage: setup.sh <action> [unit...|--all]" >&2
   echo "action: install | uninstall | reinstall" >&2
   echo "units: ${units[@]}" >&2
