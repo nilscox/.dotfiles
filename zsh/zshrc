@@ -43,7 +43,9 @@ export EDITOR='vim'
 
 alias v='vim'
 alias g='git'
+alias p='python'
 alias d='docker'
+alias dcp='docker-compose'
 
 alias sudo='sudo '
 
@@ -57,22 +59,31 @@ alias -g TF=' | tail -f'
 alias -g NUL=' > /dev/null 2>&1'
 alias -g C=' | xclip -selection clipboard'
 
+alias -s pdf='evince '
+alias -s jpg='feh '
+alias -s png='feh '
+alias -s avi='vlc '
+alias -s mpg='vlc '
+alias -s mp3='vlc '
+alias -s mp4='vlc '
+alias -s jar='java -jar '
+
 # Functions
 # =========
 
-killport() {
+port2pid() {
   if [ -z "$1" ]; then
-    echo "usage: $0 <port>" 2>&1
+    echo "usage: $0 <port>" >&2
     return 1
   fi
 
   pid=$(sudo lsof -i ":$1" | grep '(LISTEN)' | tail -1 | awk '{ print $2 }')
 
-  if [ -z "$pid" ]; then
-    return 1;
+  if [ -n "$pid" ]; then
+    echo "$pid"
+  else
+    return 1
   fi
-
-  kill "$pid"
 }
 
 # Prompt
