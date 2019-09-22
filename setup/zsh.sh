@@ -14,9 +14,19 @@ run_install() {
     ln -sf "$DOT/zsh/zshrc.archlinux" "$DEST/.zshrc.archlinux"
   fi
 
+  git clone --depth 1 https://github.com/junegunn/fzf.git "$DEST/.fzf"
+  "$DEST/.fzf/install" --all
+
   chsh -s $(which zsh)
 }
 
 run_uninstall() {
-  echo "uninstalling some stuff..."
+  chsh -s $(which bash)
+
+  rm -rf "$DEST/.zshrc"
+  rm -rf "$DEST/.oh-my-zshrc"
+  rm -rf "$DEST/.zshrc.*"
+  rm -rf "$DEST/.oh-my-zsh"
+  rm -rf "$DEST/.fzf"
+  rm -rf "$DEST/.fzf.zsh"
 }

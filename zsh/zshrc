@@ -26,6 +26,7 @@ bindkey ';5D' emacs-backward-word
 # Exported varialbes
 # ==================
 
+export LANG='en_US.UTF-8'
 export TERM='xterm-256color'
 export PAGER='most'
 export PATH="$HOME/.local/bin:$PATH"
@@ -39,6 +40,14 @@ export EDITOR='vim'
 
 # Aliases
 # =======
+
+alias v='vim'
+alias g='git'
+alias d='docker'
+
+alias sudo='sudo '
+
+alias dot="~/.dotfiles/setup.sh"
 
 alias -g G="| grep"
 alias -g M=' | most'
