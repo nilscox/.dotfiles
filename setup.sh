@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 units=(
+  autologin
   packages
   zsh
   git
