@@ -21,7 +21,7 @@ run_install() {
     sudo pacman -S $(cat "$DOT/packages/packages.pacman" | grep -v '^#')
 
     install_yaourt
-    sudo yaourt -S $(cat "$DOT/packages/packages.aur" | grep -v '^#')
+    sudo yaourt --noconfirm -S $(cat "$DOT/packages/packages.aur" | grep -v '^#')
   else
     echo "unknown distribution $DISTRIB; cannot install packages"
     return 1

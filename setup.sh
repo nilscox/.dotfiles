@@ -21,7 +21,7 @@ units=(
 
 action="$1"
 shift
-args="$@"
+args="$*"
 
 os_release='/etc/os-release'
 
@@ -50,13 +50,19 @@ mkdir -p "$CONFIG"
 source "$DOT/setup/functions.sh"
 
 should_setup() {
-  for arg in "$args"; do
+  result=1
+
+  for arg in $(echo "$args" | cat); do
     if [ "$arg" == '--all' -o "$arg" == "$1" ]; then
-      return 0
+      result=0
+    fi
+
+    if [ "$arg" == "-$1" ]; then
+      return 1
     fi
   done
 
-  return 1
+  return "$result"
 }
 
 if [ "$action" != 'install' -a "$action" != 'uninstall' -a "$action" != 'reinstall' ]; then
