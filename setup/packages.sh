@@ -2,12 +2,26 @@
 
 source "$DOT/setup/functions.sh"
 
+install_yaourt() {
+  tmp=$(mktemp -d)
+
+  (
+    cd "$tmp"
+    for r in package-query yaourt; do
+      git clone "https://aur.archlinux.org/$r.git"
+      (cd "$r" && makepkg -is)
+    done
+  )
+}
+
 run_install() {
   if [ "$DISTRIB" == 'debian' ]; then
-    sudo apt install $(cat "$PKG_DIR/packages.debian" | grep -v '^#')
+    sudo apt install $(cat "$DOT/packages/packages.debian" | grep -v '^#')
   elif [ "$DISTRIB" == 'arch' ]; then
-    sudo pacman -S $(cat "$PKG_DIR/packages.pacman" | grep -v '^#')
-    # sudo yaourt -S $(cat "$PKG_DIR/packages.aur" | grep -v '^#')
+    sudo pacman -S $(cat "$DOT/packages/packages.pacman" | grep -v '^#')
+
+    install_yaourt
+    sudo yaourt -S $(cat "$DOT/packages/packages.aur" | grep -v '^#')
   else
     echo "unknown distribution $DISTRIB; cannot install packages"
     return 1
