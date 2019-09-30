@@ -40,6 +40,5 @@
         "typescriptreact"
     ],
     "eslint.alwaysShowStatus": true,
-    "cSpell.language": "en",
     "typescript.updateImportsOnFileMove.enabled": "always"
 }

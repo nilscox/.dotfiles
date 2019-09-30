@@ -153,6 +153,7 @@
     { "key": "alt+2", "command": "workbench.view.search" },
     { "key": "alt+3", "command": "workbench.view.debug" },
     { "key": "alt+4", "command": "workbench.view.extensions" },
+    { "key": "alt+5", "command": "gitlens.showRepositoriesView" },
 
     // fold blocks
     { "key": "ctrl+1", "command": "editor.foldLevel1", "when": "editorTextFocus && foldingEnabled" },
@@ -165,15 +166,6 @@
     // unfold
     { "key": "ctrl+`", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
 
-    {
-        "key": "ctrl+space",
-        "command": "editor.action.quickFix",
-        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+-",
-        "command": "problems.action.showQuickFixes",
-        "when": "problemFocus"
-    }
+    { "key": "ctrl+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
 
 ]
