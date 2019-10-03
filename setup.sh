@@ -4,6 +4,7 @@ units=(
   autologin
   packages
   zsh
+  ssh
   git
   vim
   xorg
