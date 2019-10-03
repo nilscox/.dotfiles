@@ -23,6 +23,8 @@ run_install() {
   ln -sf "$i3blocks_contrib/mediaplayer/mediaplayer" "$blocklets"
   ln -sf "$i3blocks_contrib/memory/memory" "$blocklets"
   ln -sf "$i3blocks_contrib/volume/volume" "$blocklets"
+
+  ln -sf "$DOT/i3/move-scratchpad.sh" "$DEST/.local/bin"
 }
 
 run_uninstall() {
