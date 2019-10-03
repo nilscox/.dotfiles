@@ -5,7 +5,6 @@ source "$DOT/setup/functions.sh"
 run_install() {
   mkdir -p "$DEST/gdrive"
 
-  mkdir -p "$CONFIG/systemd/user"
   cp "$DOT/systemd/gdrive.service" "$CONFIG/systemd/user"
 }
 

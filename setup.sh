@@ -72,6 +72,9 @@ if [ "$action" != 'install' -a "$action" != 'uninstall' -a "$action" != 'reinsta
   exit 1
 fi
 
+mkdir -p "$DEST/.local/bin"
+mkdir -p "$CONFIG/systemd/user"
+
 for u in "${units[@]}"; do
   if should_setup "$u"; then
     setup "$u" "$action" || read
