@@ -57,9 +57,16 @@
     // selection
     // ---------
 
-    // select next / all occurence
+    // select next occurence
     { "key": "ctrl+l", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" },
-    { "key": "ctrl+shift+l", "command": "editor.action.selectHighlights", "when": "editorFocus" },
+    { "key": "ctrl+shift+l", "command": "editor.action.moveSelectionToNextFindMatch", "when": "editorFocus" },
+
+    // select prev occurence
+    { "key": "alt+l", "command": "editor.action.addSelectionToPreviousFindMatch", "when": "editorFocus" },
+    { "key": "alt+shift+l", "command": "editor.action.moveSelectionToPreviousFindMatch", "when": "editorFocus" },
+
+    // select all occurences
+    { "key": "ctrl+alt+shift+l", "command": "editor.action.selectHighlights", "when": "editorFocus" },
 
     // expand / shrink selection
     { "key": "ctrl+=", "command": "editor.action.smartSelect.expand", "when": "editorTextFocus" },
@@ -73,9 +80,9 @@
     { "key": "alt+shift+enter", "command": "workbench.action.files.saveAs" },
 
     // undo / redo
-    { "key": "ctrl+;", "command": "undo" },
-    { "key": "ctrl+alt+;", "command": "cursorUndo" },
-    { "key": "ctrl+shift+;", "command": "redo" },
+    { "key": "ctrl+z", "command": "undo" },
+    { "key": "ctrl+alt+z", "command": "cursorUndo" },
+    { "key": "ctrl+shift+z", "command": "redo" },
 
     // tabs
     // ----
@@ -128,7 +135,7 @@
     { "key": "alt+shift+\\", "command": "editor.action.blockComment" },
 
     // fix
-
+    { "key": "ctrl+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
 
     // format
     { "key": "ctrl+s", "command": "editor.action.codeAction", "args": { "kind": "source.fixAll.tslint", "apply": "first" } },
@@ -165,7 +172,5 @@
 
     // unfold
     { "key": "ctrl+`", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
-
-    { "key": "ctrl+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
 
 ]
