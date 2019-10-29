@@ -135,7 +135,7 @@
     { "key": "alt+shift+\\", "command": "editor.action.blockComment" },
 
     // fix
-    { "key": "ctrl+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
+    { "key": "alt+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
 
     // format
     { "key": "ctrl+s", "command": "editor.action.codeAction", "args": { "kind": "source.fixAll.tslint", "apply": "first" } },
@@ -171,6 +171,8 @@
     { "key": "ctrl+6", "command": "editor.foldLevel6", "when": "editorTextFocus && foldingEnabled" },
 
     // unfold
-    { "key": "ctrl+`", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
+    { "key": "ctrl+0", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
+
+    { "key": "ctrl+shift+space", "command": "editor.action.showHover", "when": "editorTextFocus" },
 
 ]
