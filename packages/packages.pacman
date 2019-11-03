@@ -24,6 +24,7 @@ wpa_supplicant
 
 # secondary tools
 
+acpi
 most
 htop
 tree
@@ -36,9 +37,17 @@ upower
 httpie
 jq
 fzf
+lastpass-cli
 
 # wm
 
+xorg-server
+xorg-xinit
+xorg-xprop
+xclip
+i3-wm
+i3lock
+i3blocks
 ttf-bitstream-vera ttf-dejavu
 adobe-source-code-pro-fonts
 noto-fonts-emoji
@@ -47,8 +56,10 @@ noto-fonts-emoji
 
 rofi
 terminator
+code
 firefox
 chromium
+thunderbird
 feh
 gimp
 vlc
