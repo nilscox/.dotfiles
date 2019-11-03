@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 units=(
-  autologin
   packages
+  autologin
   zsh
   ssh
   git
