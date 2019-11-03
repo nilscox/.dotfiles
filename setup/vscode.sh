@@ -22,6 +22,8 @@ extensions=(
   sashaweiss.block-travel
   sleistner.vscode-fileutils
   visualstudioexptteam.vscodeintellicode
+  formulahendry.auto-rename-tag
+  bierner.color-info
 )
 
 run_install() {
