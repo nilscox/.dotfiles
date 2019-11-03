@@ -18,10 +18,13 @@ run_install() {
   if [ "$DISTRIB" == 'debian' ]; then
     sudo apt install $(cat "$DOT/packages/packages.debian" | grep -v '^#')
   elif [ "$DISTRIB" == 'arch' ]; then
+    sudo pacman-key --init
+    sudo pacman-key --popuplate archlinux
+
     sudo pacman -S $(cat "$DOT/packages/packages.pacman" | grep -v '^#')
 
     install_yaourt
-    sudo yaourt --noconfirm -S $(cat "$DOT/packages/packages.aur" | grep -v '^#')
+    yaourt --noconfirm -S $(cat "$DOT/packages/packages.aur" | grep -v '^#')
   else
     echo "unknown distribution $DISTRIB; cannot install packages"
     return 1
