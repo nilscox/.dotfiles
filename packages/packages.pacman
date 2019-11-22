@@ -38,6 +38,9 @@ httpie
 jq
 fzf
 lastpass-cli
+playerctl
+bluez
+bluez-utils
 
 # wm
 
