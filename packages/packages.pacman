@@ -14,6 +14,8 @@ git
 zsh
 vim
 unzip
+man-db
+man-pages
 
 # network tools
 
