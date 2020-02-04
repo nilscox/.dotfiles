@@ -20,8 +20,8 @@ unsetopt rm_star_silent         # ask for confirmation for `rm *'
 # Bind keys
 # =========
 
-bindkey ';5C' emacs-forward-word
-bindkey ';5D' emacs-backward-word
+autoload -U select-word-style
+select-word-style bash
 
 # Exported varialbes
 # ==================
