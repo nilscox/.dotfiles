@@ -2,15 +2,15 @@
     "editor.tabSize": 2,
     "keyboard.dispatch": "keyCode",
     "workbench.startupEditor": "none",
-    "editor.fontFamily": "'Monaco', 'Source Code Pro'",
+    "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro'",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Darcula",
+    "workbench.colorTheme": "Default Dark+",
     "editor.rulers": [
         80,
         120
     ],
+    "editor.fontLigatures": true,
     "customizeUI.activityBar": "regular",
-    "files.insertFinalNewline": true,
     "files.simpleDialog.enable": true,
     "files.trimTrailingWhitespace": true,
     "editor.smoothScrolling": true,
@@ -27,7 +27,7 @@
     "explorer.autoReveal": false,
     "editor.cursorBlinking": "solid",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
-    "editor.fontSize": 12,
+    "editor.fontSize": 11,
     "window.zoomLevel": 0,
     "editor.minimap.enabled": true,
     "[javascript]": {
@@ -63,5 +63,12 @@
         { "selector": "javascriptreact", "colors": "css" },
         { "selector": "typescript", "colors": "css" },
         { "selector": "typescriptreact", "colors": "css" },
-    ]
+    ],
+    "prettier.singleQuote": true,
+    "window.menuBarVisibility": "hidden",
+    "window.titleBarStyle": "custom",
+    "files.insertFinalNewline": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

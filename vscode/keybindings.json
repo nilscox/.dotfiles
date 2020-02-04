@@ -138,11 +138,8 @@
     { "key": "alt+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
 
     // format
-    { "key": "ctrl+s", "command": "editor.action.codeAction", "args": { "kind": "source.fixAll.tslint", "apply": "first" } },
-    { "key": "ctrl+shift+s", "command": "editor.action.codeAction", "args": { "kind": "source.fixAll.tslint", "apply": "all" } },
+    { "key": "alt+shift+space", "command": "editor.action.formatDocument" },
 
-    // find
-    { "key": "ctrl+f", "command": "actions.find" },
     { "key": "ctrl+shift+f", "command": "workbench.view.search" },
 
     // zoom in / out
@@ -174,5 +171,8 @@
     { "key": "ctrl+0", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
 
     { "key": "ctrl+shift+space", "command": "editor.action.showHover", "when": "editorTextFocus" },
+
+    { "key": "ctrl+alt+w", "command": "workbench.action.navigateLeft" },
+    { "key": "ctrl+alt+v", "command": "workbench.action.navigateRight" },
 
 ]
