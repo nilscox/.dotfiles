@@ -4,7 +4,7 @@
     "workbench.startupEditor": "none",
     "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro'",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "One Dark Pro",
     "editor.rulers": [
         80,
         120
@@ -15,6 +15,7 @@
     "files.trimTrailingWhitespace": true,
     "editor.smoothScrolling": true,
     "editor.scrollBeyondLastLine": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
     "emmet.showExpandedAbbreviation": "never",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
@@ -70,5 +71,8 @@
     "files.insertFinalNewline": true,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
     }
 }

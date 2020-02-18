@@ -3,22 +3,18 @@
 source "$DOT/setup/functions.sh"
 
 vscode_dir="$CONFIG/Code\ -\ OSS"
-if [ ! -f "$vscode_dir" ]; then
-  vscode_dir="$CONFIG/Code";
-fi
 
 extensions=(
+  zhuangtongfa.material-theme
+  pkief.material-icon-theme
   anjali.clipboard-history
-  azemoh.one-monokai
   davidanson.vscode-markdownlint
   dbaeumer.vscode-eslint
-  donjayamanne.githistory
   esbenp.prettier-vscode
   jpoissonnier.vscode-styled-components
   ms-azuretools.vscode-docker
   msjsdiag.debugger-for-chrome
   ms-vscode.vscode-typescript-tslint-plugin
-  pkief.material-icon-theme
   sashaweiss.block-travel
   sleistner.vscode-fileutils
   visualstudioexptteam.vscodeintellicode
