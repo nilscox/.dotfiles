@@ -13,3 +13,7 @@ Manual steps:
 - set /tmp/downloads as download destination
 - create bookmarks in gtk file dialog
 - setup netctl-auto
+- configure tree style tab
+- set toolkit.legacyUserProfileCustomizations.stylesheets to true in firefox about:config
+- configure tab suspender
+- enable chrome://flags/#allow-insecure-localhost in chrome
