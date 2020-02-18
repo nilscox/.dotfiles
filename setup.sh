@@ -4,6 +4,7 @@ units=(
   packages
   autologin
   zsh
+  systemd
   ssh
   git
   vim
