@@ -136,9 +136,10 @@
 
     // fix
     { "key": "alt+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
+    { "key": "alt+shift+space", "command": "eslint.executeAutofix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
 
     // format
-    { "key": "alt+shift+space", "command": "editor.action.formatDocument" },
+    { "key": "ctrl+shift+space", "command": "editor.action.formatDocument" },
 
     { "key": "ctrl+shift+f", "command": "workbench.view.search" },
 
@@ -157,7 +158,8 @@
     { "key": "alt+2", "command": "workbench.view.search" },
     { "key": "alt+3", "command": "workbench.view.debug" },
     { "key": "alt+4", "command": "workbench.view.extensions" },
-    { "key": "alt+5", "command": "gitlens.showRepositoriesView" },
+    { "key": "alt+5", "command": "workbench.view.scm" },
+    { "key": "alt+6", "command": "gitlens.showRepositoriesView" },
 
     // fold blocks
     { "key": "ctrl+1", "command": "editor.foldLevel1", "when": "editorTextFocus && foldingEnabled" },
