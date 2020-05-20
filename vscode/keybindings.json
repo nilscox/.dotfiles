@@ -134,12 +134,19 @@
     { "key": "alt+\\", "command": "editor.action.commentLine" },
     { "key": "alt+shift+\\", "command": "editor.action.blockComment" },
 
-    // fix
-    { "key": "alt+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
-    { "key": "alt+shift+space", "command": "eslint.executeAutofix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
+    // show autocomplete
+    { "key": "ctrl+space", "command": "editor.action.triggerSuggest", "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly" },
+
+    // show documentation
+    { "key": "ctrl+shift+space", "command": "editor.action.showHover", "when": "editorTextFocus" },
+    { "key": "ctrl+alt+shift+space", "command": "editor.action.triggerParameterHints", "when": "editorHasSignatureHelpProvider && editorTextFocus" },
 
     // format
-    { "key": "ctrl+shift+space", "command": "editor.action.formatDocument" },
+    { "key": "alt+space", "command": "editor.action.formatDocument" },
+
+    // fix
+    { "key": "ctrl+alt+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
+    { "key": "alt+shift+space", "command": "eslint.executeAutofix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
 
     { "key": "ctrl+shift+f", "command": "workbench.view.search" },
 
@@ -171,8 +178,6 @@
 
     // unfold
     { "key": "ctrl+0", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
-
-    { "key": "ctrl+shift+space", "command": "editor.action.showHover", "when": "editorTextFocus" },
 
     { "key": "ctrl+alt+w", "command": "workbench.action.navigateLeft" },
     { "key": "ctrl+alt+v", "command": "workbench.action.navigateRight" },

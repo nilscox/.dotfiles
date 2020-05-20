@@ -2,7 +2,7 @@
 
 source "$DOT/setup/functions.sh"
 
-vscode_dir="$CONFIG/Code\ -\ OSS"
+vscode_dir="$CONFIG/Code - OSS"
 
 extensions=(
   zhuangtongfa.material-theme
@@ -13,13 +13,16 @@ extensions=(
   esbenp.prettier-vscode
   jpoissonnier.vscode-styled-components
   ms-azuretools.vscode-docker
-  msjsdiag.debugger-for-chrome
   ms-vscode.vscode-typescript-tslint-plugin
   sashaweiss.block-travel
   sleistner.vscode-fileutils
   visualstudioexptteam.vscodeintellicode
-  formulahendry.auto-rename-tag
   bierner.color-info
+  eamodio.gitlens
+  pmneo.tsimporter
+  mikestead.dotenv
+  mgmcdermott.vscode-language-babel
+  adpyke.vscode-sql-formatter
 )
 
 run_install() {
