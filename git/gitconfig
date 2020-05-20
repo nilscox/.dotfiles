@@ -22,6 +22,7 @@
   l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --graph --decorate
   la = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all --graph --decorate
   ph = push
+  phf = push --force-with-lease
   pl = pull
   lsf = ls-files
   cp = cherry-pick
