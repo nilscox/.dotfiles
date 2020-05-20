@@ -24,6 +24,8 @@ dialog
 openssh
 wireless_tools
 wpa_supplicant
+netctl
+dhcpcd
 
 # secondary tools
 
@@ -42,8 +44,6 @@ jq
 fzf
 lastpass-cli
 playerctl
-bluez
-bluez-utils
 
 # wm
 
@@ -69,3 +69,13 @@ thunderbird
 feh
 gimp
 vlc
+
+# audio
+
+alsa-lib
+alsa-utils
+pulseaudio
+pulseaudio-alsa
+bluez
+bluez-utils
+pavucontrol

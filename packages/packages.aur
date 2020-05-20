@@ -1,6 +1,6 @@
 brightnessctl
-pcloudcc
+#pcloudcc
 slack-desktop
-mongodb-tools-bin
-mongodb-shell-bin
-ttf-monaco
+#mongodb-tools-bin
+#mongodb-shell-bin
+#ttf-monaco
