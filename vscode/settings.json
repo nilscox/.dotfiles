@@ -85,7 +85,7 @@
     "files.associations": {
         "*.ts": "typescript"
     },
-    "jest.enableCodeLens": false,
     "typescript.preferences.importModuleSpecifier": "relative",
     "typescript.suggest.autoImports": true,
+    "typescript.tsserver.log": "verbose",
 }
