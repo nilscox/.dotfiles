@@ -1,9 +1,7 @@
-alias apts='apt-cache search'
+alias apts='apt-cache search --names-only'
 alias apti='sudo apt-get install'
 alias aptu='sudo apt-get update'
 alias aptr='sudo apt-get remove'
 
-alias status="systemctl status"
-alias start="systemctl start"
-alias stop="systemctl stop"
-alias restart="systemctl resart"
+alias netdown=$'nmcli c down $(nmcli c show --active | awk \'{ if ($4 == "wlp2s0") print $1 }\')'
+alias netup='netdown; nmcli c up'
