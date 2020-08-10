@@ -162,11 +162,12 @@
     // side views
     { "key": "alt+1", "command": "workbench.view.explorer" },
     { "key": "alt+shift+1", "command": "workbench.files.action.showActiveFileInExplorer" },
+    { "key": "alt+ctrl+1", "command": "workbench.action.toggleSidebarVisibility" },
     { "key": "alt+2", "command": "workbench.view.search" },
     { "key": "alt+3", "command": "workbench.view.debug" },
-    { "key": "alt+4", "command": "workbench.view.extensions" },
-    { "key": "alt+5", "command": "workbench.view.scm" },
-    { "key": "alt+6", "command": "gitlens.showRepositoriesView" },
+    { "key": "alt+4", "command": "workbench.view.scm" },
+    { "key": "alt+5", "command": "gitlens.showRepositoriesView" },
+    { "key": "alt+6", "command": "workbench.view.extensions" },
 
     // fold blocks
     { "key": "ctrl+1", "command": "editor.foldLevel1", "when": "editorTextFocus && foldingEnabled" },
@@ -179,7 +180,12 @@
     // unfold
     { "key": "ctrl+0", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
 
-    { "key": "ctrl+alt+w", "command": "workbench.action.navigateLeft" },
-    { "key": "ctrl+alt+v", "command": "workbench.action.navigateRight" },
+    // find => jump
+    { "key": "ctrl+j", "command": "findJump.activate", "when": "editorTextFocus" },
+    { "key": "ctrl+shift+j", "command": "findJump.activateWithSelection", "when": "editorTextFocus" },
+    { "key": "enter", "command": "findJump.goToFirstMatch", "when": "findJumpActive && editorTextFocus" },
+
+    // unbindings
+    { "key": "ctrl+q", "command": "-workbench.action.quit" },
 
 ]

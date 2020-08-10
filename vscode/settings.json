@@ -1,91 +1,83 @@
 {
-    "editor.tabSize": 2,
-    "keyboard.dispatch": "keyCode",
-    "workbench.startupEditor": "none",
-    "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro'",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "One Dark Pro",
-    "editor.rulers": [
-        80,
-        120
-    ],
-    "editor.fontLigatures": true,
-    "customizeUI.activityBar": "regular",
-    "files.simpleDialog.enable": true,
-    "files.trimTrailingWhitespace": true,
-    "editor.smoothScrolling": true,
-    "editor.scrollBeyondLastLine": false,
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "emmet.showExpandedAbbreviation": "never",
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "search.showLineNumbers": true,
-    "workbench.activityBar.visible": false,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "explorer.openEditors.visible": 0,
-    "material-icon-theme.hidesExplorerArrows": true,
-    "explorer.autoReveal": false,
-    "editor.cursorBlinking": "solid",
-    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
-    "editor.fontSize": 11,
-    "window.zoomLevel": 0,
-    "editor.minimap.enabled": true,
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact"
-    ],
-    "eslint.alwaysShowStatus": true,
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "javascript.preferences.quoteStyle": "single",
-    "gitlens.currentLine.enabled": false,
-    "gitlens.codeLens.enabled": false,
-    "auto-rename-tag.activationOnLanguage": [
-        "html",
-        "xml",
-        "php",
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact"
-    ],
-    "colorInfo.languages": [
-        { "selector": "css", "colors": "css" },
-        { "selector": "html", "colors": "css" },
-        { "selector": "javascript", "colors": "css" },
-        { "selector": "javascriptreact", "colors": "css" },
-        { "selector": "typescript", "colors": "css" },
-        { "selector": "typescriptreact", "colors": "css" },
-    ],
-    "prettier.singleQuote": true,
-    "window.menuBarVisibility": "hidden",
-    "window.titleBarStyle": "custom",
-    "files.insertFinalNewline": true,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "diffEditor.ignoreTrimWhitespace": false,
-    "files.associations": {
-        "*.ts": "typescript"
-    },
-    "typescript.preferences.importModuleSpecifier": "relative",
-    "typescript.suggest.autoImports": true,
-    "typescript.tsserver.log": "verbose",
+
+  // behaviors
+  // ---------
+
+  "workbench.startupEditor": "none",
+  "editor.tabSize": 2,
+  "editor.smoothScrolling": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.cursorBlinking": "solid",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.autoReveal": false,
+  "files.simpleDialog.enable": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // interface
+  // ---------
+
+  // window
+  "window.title": "${dirty}${rootPath}${separator}${activeEditorMedium}${separator}${appName}",
+  "window.titleSeparator": " :: ",
+  "window.zoomLevel": 0,
+
+  // font
+  "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro'",
+  "editor.fontLigatures": true,
+  "editor.rulers": [80, 120],
+  "editor.fontSize": 11,
+
+  // workbench
+  "workbench.activityBar.visible": false,
+  "workbench.colorCustomizations": {
+    "editor.selectionBackground": "#13559499",
+    "editor.selectionHighlightBackground": "#13645599",
+    "editor.selectionHighlightBorder": "#00000000"
+  },
+
+  // theme
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.hidesExplorerArrows": true,
+
+  // misc
+  // ----
+
+  "keyboard.dispatch": "keyCode",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "search.showLineNumbers": true,
+  "explorer.openEditors.visible": 0,
+  "editor.minimap.enabled": true,
+
+  // languages
+  // ---------
+
+  // typescript
+  "typescript.tsserver.log": "verbose",
+  "typescript.preferences.quoteStyle": "single",
+
+  // extensions
+  // ----------
+
+  // gitlens
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false,
+
+  // findJump
+  "findJump.dimWhenActive": true,
+  "findJump.jumpChars": "aoeuidhtnspyfgcrlqjkxbmwvz",
+  "findJump.onlyVisibleRanges": false,
+
+  // colorInfo
+  "colorInfo.languages": [
+    { "selector": "css", "colors": "css" },
+    { "selector": "html", "colors": "css" },
+    { "selector": "javascript", "colors": "css" },
+    { "selector": "javascriptreact", "colors": "css" },
+    { "selector": "typescript", "colors": "css" },
+    { "selector": "typescriptreact", "colors": "css" },
+  ],
+
 }

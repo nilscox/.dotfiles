@@ -2,7 +2,8 @@
 
 source "$DOT/setup/functions.sh"
 
-vscode_dir="$CONFIG/Code - OSS"
+#vscode_dir="$CONFIG/Code - OSS"
+vscode_dir="$CONFIG/Code"
 
 extensions=(
   zhuangtongfa.material-theme
