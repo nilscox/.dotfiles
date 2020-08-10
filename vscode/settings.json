@@ -58,6 +58,10 @@
   "typescript.tsserver.log": "verbose",
   "typescript.preferences.quoteStyle": "single",
 
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   // extensions
   // ----------
 
@@ -79,5 +83,7 @@
     { "selector": "typescript", "colors": "css" },
     { "selector": "typescriptreact", "colors": "css" },
   ],
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
 }

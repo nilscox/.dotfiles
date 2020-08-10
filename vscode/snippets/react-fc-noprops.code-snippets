@@ -1,0 +1,18 @@
+{
+  "React FC": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": "fc-noprops",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const ${1:${TM_FILEPATH/.*\\/(.*)\\/index\\.[jt]sx?$|.*\\/(.*)\\.[jt]sx?$/$1$2/}}: React.FC = () => (",
+      "  <$2>",
+      "    $0",
+      "  </$2>",
+      ");",
+      "",
+      "export default ${1};"
+    ],
+    "description": "Create a react function component without props"
+  }
+}

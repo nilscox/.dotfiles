@@ -1,0 +1,24 @@
+{
+  "React FC": {
+    "scope": "javascriptreact,typescriptreact",
+    "prefix": "fc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "type ${1:${TM_FILEPATH/.*\\/(.*)\\/index\\.[jt]sx?$|.*\\/(.*)\\.[jt]sx?$/$1$2/}}Props = {",
+      "  $2",
+      "};",
+      "",
+      "const ${1}: React.FC<${1}Props> = ({ $3 }) => {",
+      "  return (",
+      "    <$4>",
+      "      $0",
+      "    </$4>",
+      "  );",
+      "};",
+      "",
+      "export default ${1};"
+    ],
+    "description": "Create a react function component"
+  }
+}

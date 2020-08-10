@@ -31,6 +31,7 @@ run_install() {
 
   ln -sf "$DOT/vscode/settings.json" "$vscode_dir/User"
   ln -sf "$DOT/vscode/keybindings.json" "$vscode_dir/User"
+  ln -sf "$DOT/vscode/snippets" "$vscode_dir/User"
 
   for ext in "${extensions[@]}"; do
     code --install-extension "$ext"
