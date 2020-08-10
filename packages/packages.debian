@@ -1,37 +1,79 @@
-# important stuff
+# base system
 
-apt-transport-https
-build-essential
+syslinux
 dosfstools
-ntp
+efibootmgr
 
-# cli tools
+# main tools
+
+sudo
+ntp
+git
+zsh
+vim
+zip
+unzip
+
+# network tools
+
+openssh
+network-manager
+
+# secondary tools
 
 most
 htop
 tree
-curl
-git
-zsh
-vim
-jq
-httpie
+sshfs
+fzf
+lastpass-cli
+gnome-bluetooth
 
-# dev work
+# dev
 
 docker
 docker-compose
 postgresql
 nginx
+httpie
+jq
 
-# gui things
+# wm
 
+xclip
 i3
+i3lock
 i3blocks
-terminator
-firefox
+
+# fonts
+
+fonts-liberation2
+fonts-noto
+fonts-roboto
+ttf-bitstream-vera
+ttf-dejavu
+adobe-source-code-pro-fonts
+noto-fonts-emoji
+
+# gui
+
 rofi
+terminator
+code
+firefox
+chromium
+thunderbird
+pavucontrol
 feh
+gimp
+vlc
+
+# audio
+
+playerctl
+pulseaudio
+bluez
+bluez-utils
 
 # misc
 
