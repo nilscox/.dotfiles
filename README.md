@@ -17,3 +17,4 @@ Manual steps:
 - set toolkit.legacyUserProfileCustomizations.stylesheets to true in firefox about:config
 - configure tab suspender
 - enable chrome://flags/#allow-insecure-localhost in chrome
+- create .local/bin/setup.sh
