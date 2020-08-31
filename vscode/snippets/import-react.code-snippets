@@ -1,6 +1,6 @@
 {
 	"Import React": {
-		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"scope": "javascriptreact,typescriptreact",
 		"prefix": "react",
 		"body": [
 			"import React from 'react';"

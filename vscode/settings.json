@@ -14,6 +14,15 @@
   "files.simpleDialog.enable": true,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "diffEditor.renderSideBySide": true,
+  "breadcrumbs.enabled": false,
+
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": true,
+  // },
+
+  "files.exclude": { "**/.git": true },
 
   // interface
   // ---------
@@ -22,6 +31,8 @@
   "window.title": "${dirty}${rootPath}${separator}${activeEditorMedium}${separator}${appName}",
   "window.titleSeparator": " :: ",
   "window.zoomLevel": 0,
+  "window.menuBarVisibility": "hidden",
+  "window.customMenuBarAltFocus": false,
 
   // font
   "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro'",
@@ -51,16 +62,30 @@
   "explorer.openEditors.visible": 0,
   "editor.minimap.enabled": true,
 
+  // formatters
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
   // languages
   // ---------
 
   // typescript
   "typescript.tsserver.log": "verbose",
   "typescript.preferences.quoteStyle": "single",
-
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "typescript.preferences.useAliasesForRenames": false,
+  "typescript.autoClosingTags": true,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.suggest.enabled": true,
+  "typescript.suggest.autoImports": true,
+  "typescript.suggest.paths": true,
+  "vsintellicode.typescript.completionsEnabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  // "typescript.tsserver.maxTsServerMemory": 1024,
 
   // extensions
   // ----------
@@ -69,21 +94,20 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
 
+  // eslint
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+
   // findJump
   "findJump.dimWhenActive": true,
   "findJump.jumpChars": "aoeuidhtnspyfgcrlqjkxbmwvz",
   "findJump.onlyVisibleRanges": false,
 
-  // colorInfo
-  "colorInfo.languages": [
-    { "selector": "css", "colors": "css" },
-    { "selector": "html", "colors": "css" },
-    { "selector": "javascript", "colors": "css" },
-    { "selector": "javascriptreact", "colors": "css" },
-    { "selector": "typescript", "colors": "css" },
-    { "selector": "typescriptreact", "colors": "css" },
-  ],
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // colorize
+  "colorize.languages": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ]
 
 }

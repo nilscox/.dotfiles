@@ -84,16 +84,17 @@
     { "key": "ctrl+alt+z", "command": "cursorUndo" },
     { "key": "ctrl+shift+z", "command": "redo" },
 
+    // toggle ui elements
+    { "key": "alt+p", "command": "workbench.action.togglePanel" },
+    { "key": "alt+s", "command": "workbench.action.toggleSidebarVisibility" },
+    { "key": "alt+m", "command": "editor.action.toggleMinimap" },
+    { "key": "alt+b", "command": "breadcrumbs.toggle" },
+
+    // imports
+    { "key": "alt+a", "command": "editor.action.organizeImports" },
+
     // tabs
     // ----
-
-    // focus tabs
-    { "key": "alt+w", "command": "workbench.action.previousEditor" },
-    { "key": "alt+v", "command": "workbench.action.nextEditor" },
-
-    // move tabs
-    { "key": "alt+shift+w", "command": "workbench.action.moveEditorLeftInGroup" },
-    { "key": "alt+shift+v", "command": "workbench.action.moveEditorRightInGroup" },
 
     // close / reopen tab
     { "key": "ctrl+w", "command": "workbench.action.closeActiveEditor" },
@@ -162,7 +163,6 @@
     // side views
     { "key": "alt+1", "command": "workbench.view.explorer" },
     { "key": "alt+shift+1", "command": "workbench.files.action.showActiveFileInExplorer" },
-    { "key": "alt+ctrl+1", "command": "workbench.action.toggleSidebarVisibility" },
     { "key": "alt+2", "command": "workbench.view.search" },
     { "key": "alt+3", "command": "workbench.view.debug" },
     { "key": "alt+4", "command": "workbench.view.scm" },
@@ -181,8 +181,8 @@
     { "key": "ctrl+0", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
 
     // find => jump
-    { "key": "ctrl+j", "command": "findJump.activate", "when": "editorTextFocus" },
-    { "key": "ctrl+shift+j", "command": "findJump.activateWithSelection", "when": "editorTextFocus" },
+    { "key": "alt+j", "command": "findJump.activate", "when": "editorTextFocus" },
+    { "key": "alt+shift+j", "command": "findJump.activateWithSelection", "when": "editorTextFocus" },
     { "key": "enter", "command": "findJump.goToFirstMatch", "when": "findJumpActive && editorTextFocus" },
 
     // unbindings

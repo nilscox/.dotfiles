@@ -1,6 +1,6 @@
 {
   "React FC": {
-    "scope": "javascriptreact,typescriptreact",
+    "scope": "typescriptreact",
     "prefix": "fc",
     "body": [
       "import React from 'react';",

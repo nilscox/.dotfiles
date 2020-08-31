@@ -1,13 +1,13 @@
 {
 	"React Unit Test": {
 		"scope": "javascript,javascriptreact,typescript,typescriptreact",
-		"prefix": "reactut",
+		"prefix": "ut-react",
 		"body": [
 			"import React from 'react';",
 			"",
 			"import { render } from '@testing-library/react';",
 			"",
-			"import $1 from '$2';",
+			"import ${1:${TM_FILEPATH/.*\\/(.*)\\/index\\.[jt]sx?$|.*\\/(.*)\\.[jt]sx?$/$1$2/}} from '../${2:index}';",
 			"",
 			"describe('$1', () => {",
 			"  it('should $3', () => {",
