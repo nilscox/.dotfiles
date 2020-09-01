@@ -44,6 +44,8 @@ jq
 fzf
 lastpass-cli
 playerctl
+gnome-keyring
+libsecret
 
 # wm
 
@@ -69,6 +71,7 @@ thunderbird
 feh
 gimp
 vlc
+seahorse
 
 # audio
 
@@ -76,6 +79,7 @@ alsa-lib
 alsa-utils
 pulseaudio
 pulseaudio-alsa
+pulseaudio-bluetooth
 bluez
 bluez-utils
 pavucontrol
