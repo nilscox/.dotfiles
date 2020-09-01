@@ -1,20 +1,40 @@
-Manual steps:
+# Manual steps
+
+# env
 
 - create ~/.zshrc.local
-- firefox userChrome.css
+- edit xorg configuration files
+- create bookmarks in gtk file dialog
+- create .local/bin/setup.sh
+- setup netctl-auto
+- replace email in .gitconfig
+- replace email in gdrive service
+- create and fill ~/.wallpapers
+
+## browser
+
+### firefox
+- login
+- create ~/.mozilla/firefox/<profile>/chrome/userChrome.css
+- set /tmp/downloads as download destination
+- set toolkit.legacyUserProfileCustomizations.stylesheets to true in firefox about:config
+- configure tree style tab
+- configure vimium
+- configure tab suspender
+
+### chrome
+- enable chrome://flags/#allow-insecure-localhost
+- create sessions
+
+# bluetooth
+
+- add user to lp group
+- enable bluetooth.service
+- set AutoEnable=true in /etc/bluetooth/main.conf
+- trust / pair / connect to device
+
+## pcloud
+
 - install pcloudcc on debian
 - login in pcloudcc
-- replace email in .gitconfig
 - replace email in pcloud service
-- replace email in gdrive service
-- create and fill wallpapers dir
-- edit xorg configuration files
-- login in firefox
-- set /tmp/downloads as download destination
-- create bookmarks in gtk file dialog
-- setup netctl-auto
-- configure tree style tab
-- set toolkit.legacyUserProfileCustomizations.stylesheets to true in firefox about:config
-- configure tab suspender
-- enable chrome://flags/#allow-insecure-localhost in chrome
-- create .local/bin/setup.sh
