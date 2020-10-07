@@ -1,0 +1,9 @@
+{
+	"Log warn to the console": {
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+		"prefix": "warn",
+		"body": [
+			"console.warn($1);"
+		]
+	}
+}

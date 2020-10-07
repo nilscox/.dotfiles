@@ -7,13 +7,13 @@
 			"",
 			"import { render } from '@testing-library/react';",
 			"",
-			"import ${1:${TM_FILEPATH/.*\\/(.*)\\/index\\.[jt]sx?$|.*\\/(.*)\\.[jt]sx?$/$1$2/}} from '../${2:index}';",
+			"import ${1:${TM_FILEPATH/.*\\/(.*)\\/index\\.[jt]sx?$|.*\\/(.*)\\.test\\.[jt]sx?$/$1$2/}} from '../${2:index}';",
 			"",
 			"describe('$1', () => {",
 			"  it('should $3', () => {",
-			"    const { $4 } = render(<$1 />);",
+			"    const { $4 } = render(<$1 $5/>);",
 			"    ",
-			"    $5",
+			"    $6",
 			"  });",
 			"});"
 		]

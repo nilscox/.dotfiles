@@ -1,0 +1,13 @@
+{
+	"Unit test": {
+		"prefix": "ut",
+		"scope": "javascript,typescript,javascriptreact,typescriptreact",
+		"body": [
+			"describe('$1', () => {",
+			"  it('should $2', () => {",
+			"    $3",
+			"  });",
+			"});"
+		]
+	}
+}
