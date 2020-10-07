@@ -10,6 +10,7 @@
 - replace email in .gitconfig
 - replace email in gdrive service
 - create and fill ~/.wallpapers
+- enable nptd
 
 ## browser
 
