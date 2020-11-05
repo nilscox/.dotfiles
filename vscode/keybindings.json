@@ -126,7 +126,7 @@
 
   // copy file name / path
   { "key": "ctrl+alt+c", "command": "fileutils.copyFileName" },
-  { "key": "ctrl+alt+shift+c", "command": "copyFilePath" },
+  { "key": "ctrl+alt+shift+c", "command": "copyRelativePath" },
 
   // misc
   // ----
