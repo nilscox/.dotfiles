@@ -1,5 +1,4 @@
 {
-
   // behaviors
   // ---------
 
@@ -16,10 +15,12 @@
   "files.insertFinalNewline": true,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "diffEditor.renderSideBySide": true,
-  "breadcrumbs.enabled": true,
+  "breadcrumbs.enabled": false,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "emmet.showExpandedAbbreviation": "never",
+
+  "editor.wordBasedSuggestions": false,
 
   // "editor.codeActionsOnSave": {
   //   "source.fixAll.eslint": true,
@@ -53,7 +54,10 @@
     "editor.selectionHighlightBorder": "#00000000",
     "editorLineNumber.foreground": "#666666",
     // not working on the current theme
-    "editorLineNumber.activeForeground": "#999999"
+    "editorLineNumber.activeForeground": "#999999",
+    "diffEditor.removedTextBackground": "#cc333320",
+    "diffEditor.insertedTextBackground": "#0033cc20",
+    "diffEditor.diagonalFill": "#cccccc20"
   },
 
   // theme
@@ -68,7 +72,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "search.showLineNumbers": true,
   "explorer.openEditors.visible": 0,
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
 
   // formatters
   "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -103,7 +107,12 @@
   "gitlens.codeLens.enabled": false,
 
   // eslint
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
 
   // findJump
   "findJump.dimWhenActive": true,
@@ -120,5 +129,5 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
+  "gitlens.views.repositories.enabled": true
 }

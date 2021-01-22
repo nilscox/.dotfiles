@@ -78,6 +78,7 @@
   // save
   { "key": "alt+enter", "command": "workbench.action.files.save" },
   { "key": "alt+shift+enter", "command": "workbench.action.files.saveAs" },
+  { "key": "alt+ctrl+enter", "command": "workbench.action.files.saveWithoutFormatting" },
   { "key": "ctrl+alt+shift+enter", "command": "workbench.action.files.saveAll" },
 
   // undo / redo
@@ -169,10 +170,10 @@
   // side views
   { "key": "alt+1", "command": "workbench.view.explorer" },
   { "key": "alt+shift+1", "command": "workbench.files.action.showActiveFileInExplorer" },
-  { "key": "alt+2", "command": "workbench.view.search" },
-  { "key": "alt+3", "command": "workbench.view.debug" },
-  { "key": "alt+4", "command": "workbench.view.scm" },
-  { "key": "alt+5", "command": "gitlens.showRepositoriesView" },
+  { "key": "alt+2", "command": "workbench.view.scm" },
+  { "key": "alt+3", "command": "gitlens.showRepositoriesView" },
+  { "key": "alt+4", "command": "workbench.view.search" },
+  { "key": "alt+5", "command": "workbench.view.debug" },
   { "key": "alt+6", "command": "workbench.view.extensions" },
 
   // fold blocks
