@@ -6,8 +6,3 @@ alias pacy="sudo pacman -Syy"
 
 alias yas="yaourt -Ss"
 alias yai="yaourt -S --noconfirm"
-
-alias status="sys status"
-alias start="sys start"
-alias stop="sys stop"
-alias restart="sys resart"

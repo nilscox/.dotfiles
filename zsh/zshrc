@@ -1,8 +1,20 @@
-# 3rd party
+# Oh My Zsh
 # =========
 
-[ -f ~/.oh-my-zshrc ] && source ~/.oh-my-zshrc
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+HYPHEN_INSENSITIVE="true"
+DISABLE_UPDATE_PROMPT="true"
+ENABLE_CORRECTION="true"
+CORRECT_IGNORE_FILE='.*'
+plugins=(sudo systemd git npm yarn httpie docker docker-compose)
+source /home/nils/.oh-my-zsh/oh-my-zsh.sh
+
+# Shell options
+# =============
+
+setopt histignorealldups
+setopt sharehistory
+setopt auto_cd
+unsetopt rm_star_silent
 
 # History
 # =======
@@ -10,12 +22,6 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=42000
 SAVEHIST=42000
-
-# Shell options
-# =============
-
-setopt auto_cd                  # if command is a path, cd into it
-unsetopt rm_star_silent         # ask for confirmation for `rm *'
 
 # Bind keys
 # =========
@@ -32,25 +38,12 @@ export PAGER='most'
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR='vim'
 
-# Colors
-# ======
-
-# Completion
-# ==========
-
 # Aliases
 # =======
 
-alias v='vim'
-alias g='git'
-alias p='python'
-alias d='docker'
 alias l='ll -H'
-alias dcp='docker-compose'
-
+alias v='vim'
 alias sudo='sudo '
-
-alias dot="~/.dotfiles/setup.sh"
 
 alias -g G="| grep"
 alias -g M=' | most'
@@ -60,32 +53,11 @@ alias -g TF=' | tail -f'
 alias -g NUL=' > /dev/null 2>&1'
 alias -g C=' | xclip -selection clipboard'
 
-alias -s pdf='evince '
+alias -s pdf='firefox '
 alias -s jpg='feh '
 alias -s png='feh '
-alias -s avi='vlc '
-alias -s mpg='vlc '
-alias -s mp3='vlc '
-alias -s mp4='vlc '
-alias -s jar='java -jar '
-
-# Functions
-# =========
-
-port2pid() {
-  if [ -z "$1" ]; then
-    echo "usage: $0 <port>" >&2
-    return 1
-  fi
-
-  pid=$(sudo lsof -i ":$1" | grep '(LISTEN)' | tail -1 | awk '{ print $2 }')
-
-  if [ -n "$pid" ]; then
-    echo "$pid"
-  else
-    return 1
-  fi
-}
+alias -s txt='cat '
+alias -s md='cat '
 
 # Prompt
 # =====
