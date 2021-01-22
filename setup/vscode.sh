@@ -9,21 +9,19 @@ extensions=(
   zhuangtongfa.material-theme
   pkief.material-icon-theme
   anjali.clipboard-history
-  davidanson.vscode-markdownlint
   dbaeumer.vscode-eslint
   esbenp.prettier-vscode
   jpoissonnier.vscode-styled-components
   ms-azuretools.vscode-docker
-  ms-vscode.vscode-typescript-tslint-plugin
   sashaweiss.block-travel
   sleistner.vscode-fileutils
   visualstudioexptteam.vscodeintellicode
   bierner.color-info
   eamodio.gitlens
-  pmneo.tsimporter
   mikestead.dotenv
   mgmcdermott.vscode-language-babel
   adpyke.vscode-sql-formatter
+  ms-vsliveshare.vsliveshare
 )
 
 run_install() {
