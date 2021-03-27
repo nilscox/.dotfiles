@@ -90,6 +90,11 @@ fi
 PROMPT='$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
 RPROMPT='$(prompt_date)'
 
+# fzf
+# ===
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Custom config
 # =============
 
