@@ -3,6 +3,7 @@
 # env
 
 - create ~/.zshrc.local
+- copy ssh keys
 - edit xorg configuration files
 - create bookmarks in gtk file dialog
 - setup netctl-auto

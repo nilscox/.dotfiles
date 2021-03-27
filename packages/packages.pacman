@@ -35,18 +35,18 @@ most
 htop
 tree
 sshfs
-cronie
 docker
 docker-compose
 postgresql
+nginx
 upower
 httpie
 jq
 fzf
-lastpass-cli
 playerctl
 gnome-keyring
 libsecret
+lzop
 
 # wm
 
@@ -58,22 +58,21 @@ i3-wm
 i3lock
 i3blocks
 ttf-bitstream-vera ttf-dejavu
+ttf-font-awesome
 adobe-source-code-pro-fonts
 noto-fonts-emoji
 
 # gui
 
+gnome-screenshot
+peek
 rofi
 terminator
 firefox
 chromium
-thunderbird
 feh
 gimp
 vlc
-seahorse
-ttf-font-awesome
-gnome-screenshot
 
 # audio
 
