@@ -37,13 +37,9 @@
   { "key": "ctrl+e", "command": "editor.action.copyLinesDownAction", "when": "editorTextFocus" },
   { "key": "ctrl+alt+e", "command": "editor.action.deleteLines", "when": "editorTextFocus" },
 
-  // copy
+  // copy / cut / paste
   { "key": "ctrl+c", "command": "clipboard.copy", "when": "editorTextFocus" },
-
-  // cut
   { "key": "ctrl+x", "command": "clipboard.cut", "when": "editorTextFocus && !editorReadonly" },
-
-  // paste
   { "key": "ctrl+v", "command": "clipboard.paste", "when": "editorTextFocus && !editorReadonly" },
   { "key": "ctrl+shift+v", "command": "clipboard.pasteFromClipboard", "when": "editorTextFocus && !editorReadonly" },
 
@@ -71,6 +67,21 @@
   // expand / shrink selection
   { "key": "ctrl+=", "command": "editor.action.smartSelect.expand", "when": "editorTextFocus" },
   { "key": "ctrl+/", "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus" },
+
+  // edition
+  // -------
+
+  // snippets
+  { "key": "alt+q q", "command": "editor.action.showSnippets" },
+  { "key": "alt+q l", "command": "editor.action.insertSnippet", "args": { "name": "log" } },
+  { "key": "alt+q c", "command": "editor.action.insertSnippet", "args": { "name": "React FC" } },
+  { "key": "alt+q n", "command": "editor.action.insertSnippet", "args": { "name": "React FC without props" } },
+  { "key": "alt+q r", "command": "editor.action.insertSnippet", "args": { "name": "Import React" } },
+  { "key": "alt+q i", "command": "editor.action.insertSnippet", "args": { "name": "Import" } },
+  { "key": "alt+q w", "command": "editor.action.insertSnippet", "args": { "name": "wrap" } },
+  { "key": "alt+q s", "command": "editor.action.insertSnippet", "args": { "name": "useState" } },
+  { "key": "alt+q p", "command": "editor.action.insertSnippet", "args": { "name": "wait" } },
+  { "key": "alt+q h", "command": "editor.action.insertSnippet", "args": { "name": "html" } },
 
   // actions
   // -------
@@ -127,7 +138,7 @@
 
   // copy file name / path
   { "key": "ctrl+alt+c", "command": "fileutils.copyFileName" },
-  { "key": "ctrl+alt+shift+c", "command": "copyRelativePath" },
+  { "key": "ctrl+alt+shift+c", "command": "copyRelativeFilePath" },
 
   // misc
   // ----
@@ -135,8 +146,11 @@
   // command palette
   { "key": "alt+,", "command": "workbench.action.showCommands" },
 
-  // settings
-  { "key": "ctrl+p", "command": "workbench.action.openSettings" },
+  // settings / keybindings
+  { "key": "ctrl+p", "command": "workbench.action.openSettingsJson" },
+  { "key": "ctrl+alt+p", "command": "workbench.action.openGlobalKeybindingsFile" },
+
+  // snippet
 
   // comment / uncomment
   { "key": "alt+\\", "command": "editor.action.commentLine" },
@@ -156,25 +170,28 @@
   // fix
   { "key": "ctrl+alt+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
 
-  { "key": "ctrl+shift+f", "command": "workbench.view.search" },
-
   // zoom in / out
-  { "key": "ctrl+numpad_add", "command": "workbench.action.zoomIn" },
-  { "key": "ctrl+shift+numpad_add", "command": "workbench.action.zoomOut" },
-  { "key": "ctrl+shift+alt+numpad_add", "command": "workbench.action.zoomReset" },
+  { "key": "alt+=", "command": "workbench.action.zoomIn" },
+  { "key": "alt+/", "command": "workbench.action.zoomOut" },
+  { "key": "alt+shift+=", "command": "workbench.action.zoomReset" },
+  { "key": "alt+shift+/", "command": "workbench.action.zoomReset" },
 
-  // scroll by 10 lines
-  { "key": "ctrl+up", "command": "editorScroll", "when": "textInputFocus", "args": { "to": "up", "by": "line", "value": 10 } },
-  { "key": "ctrl+down", "command": "editorScroll", "when": "textInputFocus", "args": { "to": "down", "by": "line", "value": 10 } },
+  { "key": "ctrl+alt+=", "command": "editor.action.fontZoomIn" },
+  { "key": "ctrl+alt+/", "command": "editor.action.fontZoomOut" },
+  { "key": "ctrl+alt+shift+=", "command": "editor.action.fontZoomReset" },
+  { "key": "ctrl+alt+shift+/", "command": "editor.action.fontZoomReset" },
+
+  // scroll by half pages
+  { "key": "ctrl+up", "command": "editorScroll", "when": "textInputFocus", "args": { "to": "up", "by": "halfPage", "value": 1 } },
+  { "key": "ctrl+down", "command": "editorScroll", "when": "textInputFocus", "args": { "to": "down", "by": "halfPage", "value": 1 } },
 
   // side views
   { "key": "alt+1", "command": "workbench.view.explorer" },
   { "key": "alt+shift+1", "command": "workbench.files.action.showActiveFileInExplorer" },
   { "key": "alt+2", "command": "workbench.view.scm" },
-  { "key": "alt+3", "command": "gitlens.showRepositoriesView" },
+  { "key": "alt+3", "command": "workbench.view.extensions" },
   { "key": "alt+4", "command": "workbench.view.search" },
   { "key": "alt+5", "command": "workbench.view.debug" },
-  { "key": "alt+6", "command": "workbench.view.extensions" },
 
   // fold blocks
   { "key": "ctrl+1", "command": "editor.foldLevel1", "when": "editorTextFocus && foldingEnabled" },
@@ -198,6 +215,5 @@
   { "key": "ctrl+-", "command": "-workbench.action.zoomOut" },
 
   { "key": "alt+n", "command": "workbench.action.compareEditor.nextChange" },
-  { "key": "ctrl+s w", "command": "editor.action.insertSnippet", "args": { "name": "wrap" } }
 
 ]

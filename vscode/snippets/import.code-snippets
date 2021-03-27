@@ -1,7 +1,7 @@
 {
-  "log": {
+  "Import": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "prefix": "log",
-    "body": ["console.log($1);"]
+    "prefix": "import",
+    "body": ["import $1 from '$2';"]
   }
 }

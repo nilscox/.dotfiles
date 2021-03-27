@@ -1,5 +1,5 @@
 {
-  "React FC": {
+  "React FC without props": {
     "scope": "typescriptreact",
     "prefix": "fc-noprops",
     "body": [

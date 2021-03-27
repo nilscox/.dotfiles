@@ -19,12 +19,17 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "emmet.showExpandedAbbreviation": "never",
+  "workbench.editor.wrapTabs": true,
+
+  // TODO: not working?
+  "editor.linkedEditing": true,
 
   "editor.wordBasedSuggestions": false,
+  "editor.snippetSuggestions": "none",
 
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll.eslint": true,
-  // },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 
   "files.exclude": { "**/.git": true },
 
@@ -34,7 +39,6 @@
   // window
   "window.title": "${dirty}${rootPath}${separator}${activeEditorMedium}${separator}${appName}",
   "window.titleSeparator": " :: ",
-  "window.zoomLevel": 0,
   "window.menuBarVisibility": "hidden",
   "window.titleBarStyle": "custom",
   "window.enableMenuBarMnemonics": false,
@@ -46,19 +50,28 @@
   "editor.rulers": [80, 120],
   "editor.fontSize": 11,
 
+  "editor.lightbulb.enabled": false,
+
   // workbench
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
-    "editor.selectionBackground": "#13559499",
-    "editor.selectionHighlightBackground": "#13645599",
-    "editor.selectionHighlightBorder": "#00000000",
+    "editor.selectionBackground": "#135694a4",
+    "editor.selectionHighlightBackground": "#94949449",
+    "editor.selectionHighlightBorder": "#a5a5a549",
     "editorLineNumber.foreground": "#666666",
     // not working on the current theme
     "editorLineNumber.activeForeground": "#999999",
-    "diffEditor.removedTextBackground": "#cc333320",
-    "diffEditor.insertedTextBackground": "#0033cc20",
+    "diffEditor.removedTextBackground": "#cc333340",
+    "diffEditor.insertedTextBackground": "#0033cc40",
     "diffEditor.diagonalFill": "#cccccc20"
   },
+
+  "workbench.editorAssociations": [
+    {
+      "viewType": "default",
+      "filenamePattern": "git-rebase-todo"
+    }
+  ],
 
   // theme
   "workbench.colorTheme": "One Dark Pro",
@@ -74,6 +87,7 @@
   "explorer.openEditors.visible": 0,
   "editor.minimap.enabled": false,
 
+
   // formatters
   "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -84,6 +98,9 @@
 
   // languages
   // ---------
+
+  // javascript
+  "javascript.updateImportsOnFileMove.enabled": "always",
 
   // typescript
   "typescript.tsserver.log": "verbose",
@@ -119,15 +136,10 @@
   "findJump.jumpChars": "aoeuidhtnspyfgcrlqjkxbmwvz",
   "findJump.onlyVisibleRanges": false,
 
-  // colorize
-  "colorize.languages": [
-    "javascript",
-    "typescript",
+  "auto-rename-tag.activationOnLanguage": [
+    "html",
+    "xml",
     "javascriptreact",
     "typescriptreact"
-  ],
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "gitlens.views.repositories.enabled": true
+  ]
 }
