@@ -1,7 +1,6 @@
 {
 	"wrap": {
 		"scope": "html,javascriptreact,typescriptreact",
-		"prefix": "wrap",
 		"body": "<${0}>$TM_SELECTED_TEXT</$0>"
 	}
 }

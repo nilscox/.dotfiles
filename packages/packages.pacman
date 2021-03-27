@@ -17,6 +17,7 @@ zip
 unzip
 man-db
 man-pages
+sysstat
 
 # network tools
 
@@ -64,7 +65,6 @@ noto-fonts-emoji
 
 rofi
 terminator
-code
 firefox
 chromium
 thunderbird

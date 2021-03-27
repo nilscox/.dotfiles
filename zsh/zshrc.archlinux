@@ -6,3 +6,7 @@ alias pacy="sudo pacman -Syy"
 
 alias yas="yaourt -Ss"
 alias yai="yaourt -S --noconfirm"
+
+alias net='sudo netctl'
+alias netdown='sc-stop 'netctl-auto@*.service'; net stop-all'
+alias netup='netdown; net start'

@@ -1,12 +1,11 @@
 [user]
-  name = Nils
-  email = nils@localhost
+  name = $GIT_USERNAME
+  email = $GIT_EMAIL
 
 [color]
   ui = true
 
 [core]
-  excludesfile = ~/.gitignore_global
   editon = vim
 
 [alias]

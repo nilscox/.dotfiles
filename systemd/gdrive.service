@@ -1,8 +1,0 @@
-[Unit]
-Description=google drive filesystem (gcsf)
-
-[Service]
-ExecStart=/usr/bin/gcsf mount "/home/nils/gdrive" -s 'nils@localhost'
-
-[Install]
-WantedBy=default.target

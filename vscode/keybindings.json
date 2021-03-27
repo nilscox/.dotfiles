@@ -73,14 +73,14 @@
 
   // snippets
   { "key": "alt+q q", "command": "editor.action.showSnippets" },
-  { "key": "alt+q l", "command": "editor.action.insertSnippet", "args": { "name": "log" } },
-  { "key": "alt+q c", "command": "editor.action.insertSnippet", "args": { "name": "React FC" } },
-  { "key": "alt+q n", "command": "editor.action.insertSnippet", "args": { "name": "React FC without props" } },
-  { "key": "alt+q r", "command": "editor.action.insertSnippet", "args": { "name": "Import React" } },
-  { "key": "alt+q i", "command": "editor.action.insertSnippet", "args": { "name": "Import" } },
+  { "key": "alt+q l", "command": "editor.action.insertSnippet", "args": { "name": "console.log" } },
+  { "key": "alt+q c", "command": "editor.action.insertSnippet", "args": { "name": "react function component" } },
+  { "key": "alt+q n", "command": "editor.action.insertSnippet", "args": { "name": "react function component without props" } },
+  { "key": "alt+q r", "command": "editor.action.insertSnippet", "args": { "name": "import react" } },
+  { "key": "alt+q i", "command": "editor.action.insertSnippet", "args": { "name": "import" } },
   { "key": "alt+q w", "command": "editor.action.insertSnippet", "args": { "name": "wrap" } },
-  { "key": "alt+q s", "command": "editor.action.insertSnippet", "args": { "name": "useState" } },
-  { "key": "alt+q p", "command": "editor.action.insertSnippet", "args": { "name": "wait" } },
+  { "key": "alt+q s", "command": "editor.action.insertSnippet", "args": { "name": "react useState" } },
+  { "key": "alt+q p", "command": "editor.action.insertSnippet", "args": { "name": "await new promise" } },
   { "key": "alt+q h", "command": "editor.action.insertSnippet", "args": { "name": "html" } },
 
   // actions

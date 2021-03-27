@@ -1,5 +1,5 @@
 {
-  "useState": {
+  "react useState": {
     "scope": "javascriptreact,typescriptreact",
     "body": ["const [$1, set$2] = useState($3);"],
     "description": "React.useState()"

@@ -1,5 +1,5 @@
 {
-  "React FC": {
+  "react function component": {
     "scope": "typescriptreact",
     "prefix": "fc",
     "body": [

@@ -1,0 +1,9 @@
+[Unit]
+Description=imwheel daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/imwheel -d
+
+[Install]
+WantedBy=default.target

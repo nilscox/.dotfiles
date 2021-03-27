@@ -1,7 +1,6 @@
 {
-  "Import": {
+  "import": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "prefix": "import",
     "body": ["import $1 from '$2';"]
   }
 }

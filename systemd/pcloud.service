@@ -1,8 +1,0 @@
-[Unit]
-Description=pcloud
-
-[Service]
-ExecStart=/usr/bin/pcloudcc -u nils@localhost -m /home/nils/.pcloud/mountpoint
-
-[Install]
-WantedBy=default.target

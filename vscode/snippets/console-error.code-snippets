@@ -1,5 +1,5 @@
 {
-	"Log error to the console": {
+	"console.error": {
 		"scope": "javascript,javascriptreact,typescript,typescriptreact",
 		"prefix": "err",
 		"body": [

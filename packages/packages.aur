@@ -1,6 +1,8 @@
+visual-studio-code-bin
 brightnessctl
-#pcloudcc
+pcloudcc-git
+bitwarden-cli-bin
+bitwarden-rofi-git
 slack-desktop
-#mongodb-tools-bin
-#mongodb-shell-bin
-#ttf-monaco
+mongodb-tools-bin
+mongodb-shell-bin

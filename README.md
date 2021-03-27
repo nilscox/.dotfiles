@@ -5,16 +5,13 @@
 - create ~/.zshrc.local
 - edit xorg configuration files
 - create bookmarks in gtk file dialog
-- create .local/bin/setup.sh
 - setup netctl-auto
-- replace email in .gitconfig
-- replace email in gdrive service
 - create and fill ~/.wallpapers
-- enable nptd
 
-## browser
+# browser
 
-### firefox
+## firefox
+
 - login
 - create ~/.mozilla/firefox/<profile>/chrome/userChrome.css
 - set /tmp/downloads as download destination
@@ -23,19 +20,19 @@
 - configure vimium
 - configure tab suspender
 
-### chrome
+## chrome
+
 - enable chrome://flags/#allow-insecure-localhost
+- set /tmp/downloads as download destination
 - create sessions
 
 # bluetooth
 
 - add user to lp group
-- enable bluetooth.service
 - set AutoEnable=true in /etc/bluetooth/main.conf
-- trust / pair / connect to device
+- trust / pair / connect to devices
 
 ## pcloud
 
 - install pcloudcc on debian
 - login in pcloudcc
-- replace email in pcloud service
