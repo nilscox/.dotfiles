@@ -53,10 +53,12 @@ lzop
 xorg-server
 xorg-xinit
 xorg-xprop
+xorg-xrandr
 xclip
 i3-wm
 i3lock
 i3blocks
+imwheel
 ttf-bitstream-vera ttf-dejavu
 ttf-font-awesome
 adobe-source-code-pro-fonts
@@ -73,6 +75,7 @@ chromium
 feh
 gimp
 vlc
+discord
 
 # audio
 
