@@ -1,15 +1,30 @@
-# Manual steps
+## required packages
 
-# env
+```
+sudo dhcpcd wpa_supplicant netctl syslinux git openssh
+```
+
+## syslinux install
+
+```
+mkdir /boot/efi
+mv /boot/syslinux /boot/efi
+cp -r /usr/lib/syslinux/efi64 /boot/efi/syslinux
+nano /boot/efi/syslinux.cfi # set prompt, vmlinuz, disk
+efibootmgr
+```
+
+# manual steps
+
+## env
 
 - create ~/.zshrc.local
 - copy ssh keys
 - edit xorg configuration files
 - create bookmarks in gtk file dialog
-- setup netctl-auto
+- enable netctl-auto
 - create and fill ~/.wallpapers
-
-# browser
+- login in pcloudcc
 
 ## firefox
 
@@ -17,23 +32,10 @@
 - create ~/.mozilla/firefox/<profile>/chrome/userChrome.css
 - set /tmp/downloads as download destination
 - set toolkit.legacyUserProfileCustomizations.stylesheets to true in firefox about:config
-- configure tree style tab
-- configure vimium
-- configure tab suspender
+- configure extensions (tree style tab, vimium, tab suspender)
 
 ## chrome
 
 - enable chrome://flags/#allow-insecure-localhost
 - set /tmp/downloads as download destination
 - create sessions
-
-# bluetooth
-
-- add user to lp group
-- set AutoEnable=true in /etc/bluetooth/main.conf
-- trust / pair / connect to devices
-
-## pcloud
-
-- install pcloudcc on debian
-- login in pcloudcc
