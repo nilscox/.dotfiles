@@ -27,6 +27,7 @@
   "editor.wordBasedSuggestions": false,
   "editor.snippetSuggestions": "none",
 
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -62,7 +63,7 @@
     // not working on the current theme
     "editorLineNumber.activeForeground": "#999999",
     "diffEditor.removedTextBackground": "#cc333340",
-    "diffEditor.insertedTextBackground": "#0033cc40",
+    "diffEditor.insertedTextBackground": "#0033cc60",
     "diffEditor.diagonalFill": "#cccccc20"
   },
 
@@ -86,7 +87,6 @@
   "search.showLineNumbers": true,
   "explorer.openEditors.visible": 0,
   "editor.minimap.enabled": false,
-
 
   // formatters
   "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },

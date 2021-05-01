@@ -107,6 +107,8 @@
   { "key": "alt+a", "command": "editor.action.organizeImports" },
   { "key": "alt+shift+a", "command": "editor.action.sourceAction", "args": { "kind": "source.addMissingImports", "apply": "first" } },
 
+  { "key": "alt+z", "command": "gitlens.toggleZenMode" },
+
   // tabs
   // ----
 

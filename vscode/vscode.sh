@@ -24,6 +24,7 @@ extensions=(
   ms-vsliveshare.vsliveshare
   usernamehw.find-jump
   cardinal90.multi-cursor-case-preserve
+  dbankier.vscode-quick-select
 )
 
 mkdir -p "$vscode_dir/User"
