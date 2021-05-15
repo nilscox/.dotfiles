@@ -1,0 +1,14 @@
+[Unit]
+Description=Polybar
+Wants=graphical.target
+After=graphical.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+EnvironmentFile=-%t/polybar.env
+ExecStart=/home/nils/.local/bin/polybar.sh
+ExecStop=killall polybar
+
+[Install]
+WantedBy=default.target

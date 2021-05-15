@@ -29,6 +29,7 @@ units=(
   node
   xorg
   i3
+  polybar
   imwheel
   wallpaper
   terminator
@@ -40,6 +41,8 @@ units=(
 )
 
 for unit in "${units[@]}"; do
+  [ -n "$INSTALL" -a "$INSTALL" != "$unit" ] && continue
+
   script="$(dirname "$0")/$unit/$unit.sh"
 
   if [ -f "$script" -a -x "$script" ]; then
