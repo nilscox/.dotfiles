@@ -1,3 +1,4 @@
+// prettier-ignore
 [
   // cursor movement
   // ---------------
@@ -67,6 +68,25 @@
   // expand / shrink selection
   { "key": "ctrl+=", "command": "editor.action.smartSelect.expand", "when": "editorTextFocus" },
   { "key": "ctrl+/", "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus" },
+
+  { "key": "alt+; '", "command": "extension.selectSingleQuote" },
+  { "key": "alt+; \"", "command": "extension.selectDoubleQuote" },
+  { "key": "alt+; ;", "command": "extension.selectEitherQuote" },
+  { "key": "alt+; q", "command": "extension.switchQuotes" },
+
+  { "key": "alt+; `", "command": "extension.selectBackTick" },
+
+  { "key": "alt+; (", "command": "extension.selectParenthesis" },
+  { "key": "alt+; )", "command": "extension.selectParenthesisOuter" },
+
+  { "key": "alt+; [", "command": "extension.selectSquareBrackets" },
+  { "key": "alt+; ]", "command": "extension.selectSquareBracketsOuter" },
+
+  { "key": "alt+; shift+[", "command": "extension.selectCurlyBrackets" },
+  { "key": "alt+; shift+]", "command": "extension.selectCurlyBracketsOuter" },
+
+  { "key": "alt+; <", "command": "extension.selectAngleBrackets" },
+  { "key": "alt+; .", "command": "extension.selectInTag" },
 
   // edition
   // -------
@@ -216,6 +236,5 @@
   { "key": "ctrl++", "command": "-workbench.action.zoomIn" },
   { "key": "ctrl+-", "command": "-workbench.action.zoomOut" },
 
-  { "key": "alt+n", "command": "workbench.action.compareEditor.nextChange" },
-
+  { "key": "alt+n", "command": "workbench.action.compareEditor.nextChange" }
 ]

@@ -46,7 +46,8 @@
   "window.customMenuBarAltFocus": false,
 
   // font
-  "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro'",
+  // "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro'",
+  "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro', 'Iosevka'",
   "editor.fontLigatures": true,
   "editor.rulers": [80, 120],
   "editor.fontSize": 11,
@@ -122,6 +123,7 @@
   // gitlens
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
+  "gitlens.views.commits.files.layout": "tree",
 
   // eslint
   "eslint.validate": [
