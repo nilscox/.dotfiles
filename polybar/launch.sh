@@ -12,7 +12,7 @@ echo "bottom = $BAR_BOTTOM"
 echo "setup = $SETUP"
 echo "monitors = $monitors"
 
-for monitor in "$monitors"; do
+for monitor in $(echo "$monitors"); do
   [ "$BAR_TOP" = 1 ] && MONITOR="$monitor" polybar top 2>&1 | tee -a "/tmp/polybar-top.$monitor.log" >/dev/null & disown
   [ "$BAR_BOTTOM" = 1 ] && MONITOR="$monitor" polybar bottom 2>&1 | tee -a "/tmp/polybar-bottom.$monitor.log" > /dev/null & disown
 done
