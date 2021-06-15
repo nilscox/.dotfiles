@@ -1,5 +1,5 @@
 {
-	"HTML Template": {
+	"HTML document main structure": {
 		"scope": "html",
 		"body": [
 			"<!DOCTYPE html>",
@@ -12,7 +12,6 @@
 			"		$1",
 			"	</body>",
 			"</html>"
-		],
-		"description": "Log output to console"
+		]
 	}
 }

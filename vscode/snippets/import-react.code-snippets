@@ -1,5 +1,5 @@
 {
-	"import react": {
+	"Import react": {
 		"scope": "javascriptreact,typescriptreact",
 		"body": [
 			"import React from 'react';"

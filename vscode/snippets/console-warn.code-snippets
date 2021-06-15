@@ -1,9 +1,8 @@
 {
-	"console.warn": {
-		"scope": "javascript,javascriptreact,typescript,typescriptreact",
-		"prefix": "warn",
-		"body": [
+  "console.warn": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": [
 			"console.warn($1);"
 		]
-	}
+  }
 }

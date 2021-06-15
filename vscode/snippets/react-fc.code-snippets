@@ -1,7 +1,6 @@
 {
-  "react function component": {
+  "React function component": {
     "scope": "typescriptreact",
-    "prefix": "fc",
     "body": [
       "import React from 'react';",
       "",
@@ -18,7 +17,6 @@
       "};",
       "",
       "export default ${1};"
-    ],
-    "description": "Create a react function component"
+    ]
   }
 }

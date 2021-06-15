@@ -1,0 +1,10 @@
+{
+	"Test suite (describe)": {
+		"scope": "javascript,typescript",
+		"body": [
+			"describe('$1', () => {",
+			"  $2",
+			"});"
+		]
+	}
+}
