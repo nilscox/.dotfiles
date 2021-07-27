@@ -3,6 +3,11 @@
 killall -q polybar 2> /dev/null
 
 monitors="eDP-1"
+
+if [ "$SETUP" == 'oa' ]; then
+  monitors="DP-1"
+fi
+
 if [ "$SETUP" == 'work' ]; then
   monitors=$(xrandr --query | grep " connected" | cut -d" " -f1 | tr '\n' ' ')
 fi

@@ -14,8 +14,8 @@ is_bar() {
 }
 
 is_setup() {
-  if [ "$1" != 'work' -a "$1" != 'mirror' -a "$1" != 'laptop' ]; then
-    echo "exepected 'work' | 'mirror' | 'laptop', got '$1'" >&2
+  if [ "$1" != 'work' -a "$1" != 'mirror' -a "$1" != 'laptop' -a "$1" != 'oa' ]; then
+    echo "exepected 'work' | 'mirror' | 'laptop' | 'oa', got '$1'" >&2
     return 1
   fi
 }
