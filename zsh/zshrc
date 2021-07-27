@@ -1,6 +1,8 @@
 # Oh My Zsh
 # =========
 
+plugins=(sudo systemd git npm yarn httpie docker docker-compose)
+
 HYPHEN_INSENSITIVE="true"
 DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
@@ -99,7 +101,8 @@ if [[ $UID == 0 ]]; then
   prompt_user="%{${fg_bold[red]%}%n%{$reset_color%}"
 fi
 
-PROMPT='$(prompt_git)$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
+# PROMPT='$(prompt_git)$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
+PROMPT='$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
 RPROMPT='$(prompt_date)'
 
 # fzf
