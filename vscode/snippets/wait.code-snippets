@@ -1,5 +1,6 @@
 {
-  "Await new promise after a timeout": {
+  "wait": {
+    "description": "Await new promise after a timeout",
     "scope": "javascript,typescript,javascriptreact,typescriptreact",
     "body": [
       "await new Promise(r => setTimeout(r, $1));"

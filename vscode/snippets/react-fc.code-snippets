@@ -1,5 +1,6 @@
 {
-  "React function component": {
+  "fc": {
+    "description": "React function component",
     "scope": "typescriptreact",
     "body": [
       "import React from 'react';",

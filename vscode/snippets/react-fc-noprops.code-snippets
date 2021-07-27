@@ -1,5 +1,6 @@
 {
-  "React function component without props": {
+  "fc no props": {
+    "description": "React function component without props",
     "scope": "typescriptreact",
     "body": [
       "import React from 'react';",

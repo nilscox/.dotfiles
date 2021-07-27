@@ -1,0 +1,9 @@
+{
+  "use effect": {
+    "description": "React useEffect hook",
+    "scope": "javascriptreact,typescriptreact",
+    "body": [
+      "useEffect(() => $1, []);"
+    ]
+  }
+}

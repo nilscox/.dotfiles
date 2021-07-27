@@ -1,5 +1,6 @@
 {
-	"ES6 module export default": {
+	"export default": {
+		"description": "ES6 module export default",
 		"scope": "javascript,typescript,javascriptreact,typescriptreact",
 		"body": [
 			"export default $1;",

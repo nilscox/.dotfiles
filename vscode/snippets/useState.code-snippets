@@ -1,5 +1,6 @@
 {
-  "React useState hook": {
+  "react use state": {
+    "description": "React useState hook",
     "scope": "javascriptreact,typescriptreact",
     "body": [
       "const [$1, set$2] = useState($3);"

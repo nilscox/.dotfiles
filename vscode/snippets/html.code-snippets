@@ -1,5 +1,6 @@
 {
-	"HTML document main structure": {
+	"html": {
+		"description": "HTML document main structure",
 		"scope": "html",
 		"body": [
 			"<!DOCTYPE html>",

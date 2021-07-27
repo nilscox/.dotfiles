@@ -1,5 +1,5 @@
 {
-  "console.error": {
+  "console error": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "body": [
 			"console.error($1);"

@@ -10,6 +10,7 @@
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.autoReveal": false,
+  "explorer.compactFolders": false,
   "files.simpleDialog.enable": true,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
@@ -19,7 +20,6 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "emmet.showExpandedAbbreviation": "never",
-  "workbench.editor.wrapTabs": true,
 
   // TODO: not working?
   "editor.linkedEditing": true,
@@ -37,6 +37,8 @@
   // interface
   // ---------
 
+  "editor.glyphMargin": false,
+
   // window
   "window.title": "${dirty}${rootPath}${separator}${activeEditorMedium}${separator}${appName}",
   "window.titleSeparator": " :: ",
@@ -50,11 +52,14 @@
   "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro', 'Iosevka'",
   "editor.fontLigatures": true,
   "editor.rulers": [80, 120],
-  "editor.fontSize": 11,
+  "editor.fontSize": 12,
+  "terminal.integrated.fontSize": 12,
 
   "editor.lightbulb.enabled": false,
+  "terminal.integrated.tabs.enabled": false,
 
   // workbench
+  "workbench.editor.untitled.hint": "hidden",
   "workbench.activityBar.visible": false,
   "workbench.colorCustomizations": {
     "editor.selectionBackground": "#135694a4",
@@ -62,18 +67,15 @@
     "editor.selectionHighlightBorder": "#a5a5a549",
     "editorLineNumber.foreground": "#666666",
     // not working on the current theme
-    "editorLineNumber.activeForeground": "#999999",
-    "diffEditor.removedTextBackground": "#cc333340",
-    "diffEditor.insertedTextBackground": "#0033cc60",
-    "diffEditor.diagonalFill": "#cccccc20"
+    "editorLineNumber.activeForeground": "#999999"
+    // "diffEditor.removedTextBackground": "#cc333340",
+    // "diffEditor.insertedTextBackground": "#0033cc60",
+    // "diffEditor.diagonalFill": "#cccccc20"
   },
 
-  "workbench.editorAssociations": [
-    {
-      "viewType": "default",
-      "filenamePattern": "git-rebase-todo"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default"
+  },
 
   // theme
   "workbench.colorTheme": "One Dark Pro",
@@ -104,7 +106,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
 
   // typescript
-  "typescript.tsserver.log": "verbose",
+  "typescript.tsserver.log": "normal",
   "typescript.preferences.quoteStyle": "single",
   "typescript.preferences.useAliasesForRenames": false,
   "typescript.autoClosingTags": true,
@@ -112,18 +114,19 @@
   "typescript.suggest.enabled": true,
   "typescript.suggest.autoImports": true,
   "typescript.suggest.paths": true,
-  "vsintellicode.typescript.completionsEnabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsintellicode.typescript.completionsEnabled": true,
   // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   // "typescript.tsserver.maxTsServerMemory": 1024,
 
   // extensions
   // ----------
 
-  // gitlens
+  // git
+  "scm.defaultViewMode": "tree",
+  "gitlens.views.commits.files.layout": "tree",
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
-  "gitlens.views.commits.files.layout": "tree",
 
   // eslint
   "eslint.validate": [
@@ -138,6 +141,11 @@
   "findJump.jumpChars": "aoeuidhtnspyfgcrlqjkxbmwvz",
   "findJump.onlyVisibleRanges": false,
 
+  // textExplorer
+  "testExplorer.gutterDecoration": false,
+  "testExplorer.codeLens": false,
+
+  // auto-rename-tag
   "auto-rename-tag.activationOnLanguage": [
     "html",
     "xml",

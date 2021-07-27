@@ -1,5 +1,6 @@
 {
-	"Test case (it)": {
+	"it": {
+		"description": "Test case",
 		"scope": "javascript,typescript",
 		"body": [
 			"it('$1', $2() => {",

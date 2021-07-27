@@ -5,26 +5,26 @@ source "$(dirname $0)/../functions.sh"
 vscode_dir="$config/Code"
 
 extensions=(
-  zhuangtongfa.material-theme
+  zhuangtongfa.material-theme # one dark pro
   pkief.material-icon-theme
   anjali.clipboard-history
   dbaeumer.vscode-eslint
   esbenp.prettier-vscode
   jpoissonnier.vscode-styled-components
   ms-azuretools.vscode-docker
-  sashaweiss.block-travel
   sleistner.vscode-fileutils
   visualstudioexptteam.vscodeintellicode
-  bierner.color-info
   eamodio.gitlens
   mikestead.dotenv
-  mgmcdermott.vscode-language-babel
-  adpyke.vscode-sql-formatter
   formulahendry.auto-rename-tag
   ms-vsliveshare.vsliveshare
   usernamehw.find-jump
   cardinal90.multi-cursor-case-preserve
   dbankier.vscode-quick-select
+  dcasella.i3
+  ibm.output-colorizer
+  ryanluker.vscode-coverage-gutters
+  ms-vscode.vscode-typescript-tslint-plugin
 )
 
 mkdir -p "$vscode_dir/User"

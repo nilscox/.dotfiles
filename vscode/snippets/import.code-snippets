@@ -1,5 +1,6 @@
 {
-  "ES6 module import": {
+  "import": {
+    "description": "ES6 module import",
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "body": [
       "import $1 from '${2:$1}';"

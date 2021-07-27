@@ -1,5 +1,5 @@
 {
-  "console.warn": {
+  "console warn": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "body": [
 			"console.warn($1);"

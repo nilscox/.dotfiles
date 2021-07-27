@@ -1,5 +1,5 @@
 {
-  "console.log": {
+  "console log": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "body": [
       "console.log($1);"
