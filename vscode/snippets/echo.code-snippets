@@ -1,0 +1,6 @@
+{
+  "echo": {
+    "scope": "shellscript",
+    "body": ["echo \"$1\""]
+  }
+}

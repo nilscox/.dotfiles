@@ -3,6 +3,9 @@
   // ---------
 
   "workbench.startupEditor": "none",
+  "workbench.editor.untitled.hint": "hidden",
+  "editor.lightbulb.enabled": false,
+  "workbench.activityBar.visible": false,
   "editor.tabSize": 2,
   "editor.smoothScrolling": true,
   "editor.scrollBeyondLastLine": false,
@@ -37,7 +40,8 @@
   // interface
   // ---------
 
-  "editor.glyphMargin": false,
+  // hide breakpoints
+  // "editor.glyphMargin": false,
 
   // window
   "window.title": "${dirty}${rootPath}${separator}${activeEditorMedium}${separator}${appName}",
@@ -48,30 +52,11 @@
   "window.customMenuBarAltFocus": false,
 
   // font
-  // "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro'",
   "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro', 'Iosevka'",
   "editor.fontLigatures": true,
-  "editor.rulers": [80, 120],
+  "editor.rulers": [110],
   "editor.fontSize": 12,
   "terminal.integrated.fontSize": 12,
-
-  "editor.lightbulb.enabled": false,
-  "terminal.integrated.tabs.enabled": false,
-
-  // workbench
-  "workbench.editor.untitled.hint": "hidden",
-  "workbench.activityBar.visible": false,
-  "workbench.colorCustomizations": {
-    "editor.selectionBackground": "#135694a4",
-    "editor.selectionHighlightBackground": "#94949449",
-    "editor.selectionHighlightBorder": "#a5a5a549",
-    "editorLineNumber.foreground": "#666666",
-    // not working on the current theme
-    "editorLineNumber.activeForeground": "#999999"
-    // "diffEditor.removedTextBackground": "#cc333340",
-    // "diffEditor.insertedTextBackground": "#0033cc60",
-    // "diffEditor.diagonalFill": "#cccccc20"
-  },
 
   "workbench.editorAssociations": {
     "git-rebase-todo": "default"
@@ -81,6 +66,48 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.hidesExplorerArrows": true,
+  "editor.fontWeight": "500",
+
+  "workbench.colorCustomizations": {
+    "editor.background": "#1e1e22",
+    "terminal.background": "#1a1a20",
+    "editor.lineHighlightBackground": "#24242e",
+    "editor.selectionBackground": "#23394f99",
+    "editor.selectionHighlightBackground": "#ddc70020",
+    "editor.selectionHighlightBorder": "#0000",
+    "editor.wordHighlightBackground": "#fff2",
+    "editor.wordHighlightStrongBackground": "#242489",
+    "editor.wordHighlightBorder": "#0000",
+    "editor.wordHighlightStrongBorder": "#0000",
+    "editorLineNumber.foreground": "#666",
+    "editorLineNumber.activeForeground": "#999",
+    "diffEditor.insertedTextBackground": "#7a53",
+    "diffEditor.removedTextBackground": "#f772",
+    "diffEditor.diagonalFill": "#fff1"
+  },
+
+  "oneDarkPro.italic": true,
+  "oneDarkPro.vivid": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "italic font",
+        "scope": [
+          "comment",
+          "keyword.operator.new",
+          "keyword.control.import",
+          "keyword.control.export",
+          "keyword.control.default",
+          "keyword.control.trycatch",
+          "variable.language.this",
+          "variable.language.super"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
 
   // misc
   // ----
@@ -89,7 +116,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "search.showLineNumbers": true,
   "explorer.openEditors.visible": 0,
-  "editor.minimap.enabled": false,
 
   // formatters
   "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
@@ -106,7 +132,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
 
   // typescript
-  "typescript.tsserver.log": "normal",
+  "typescript.tsserver.log": "off",
   "typescript.preferences.quoteStyle": "single",
   "typescript.preferences.useAliasesForRenames": false,
   "typescript.autoClosingTags": true,
