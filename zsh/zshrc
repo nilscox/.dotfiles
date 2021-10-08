@@ -1,12 +1,16 @@
 # Oh My Zsh
 # =========
 
-plugins=(sudo systemd git npm yarn httpie docker docker-compose)
+plugins=(sudo systemd git zsh-nvm npm yarn httpie docker docker-compose)
 
 HYPHEN_INSENSITIVE="true"
 DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 CORRECT_IGNORE_FILE='.*'
+
+NVM_COMPLETION="true"
+NVM_LAZY_LOAD="true"
+NVM_AUTO_USE="true"
 
 source /home/nils/.oh-my-zsh/oh-my-zsh.sh
 

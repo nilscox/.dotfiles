@@ -1,6 +1,7 @@
 export LOCAL_IP="$(ip a | grep 'inet .* wlp2s0' | sed -E 's,.*inet ([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+).*,\1,')"
 export DEBUG_PRINT_LIMIT=100000
-#export NODE_OPTIONS='--max-old-space-size=4096'
+export TS_NODE_TRANSPILE_ONLY=true
+export NODE_OPTIONS='--max-old-space-size=8192'
 
 alias y='yarn'
 alias ytw='yarn test --watch --notify=false'
@@ -17,6 +18,8 @@ alias d='docker'
 alias dcp='docker-compose'
 
 alias uuid='\uuid | tr -d "\n" C'
+
+alias -g W='--watch'
 
 recreate-database() {
   db=${1:-db}
@@ -42,36 +45,3 @@ frame() {
 
   head -n "$((l + s))" | tail -n "$((2 * s + 1))"
 }
-
-# lazy load nvm
-
-load_nvm() {
-  unset load_nvm
-
-  unalias nvm
-  unalias node
-  unalias yarn
-  unalias npm
-
-  source "$HOME/.nvm/nvm.sh"
-  source "$HOME/.nvm/bash_completion"
-
-  "$@"
-}
-
-alias nvm='load_nvm nvm'
-alias node='load_nvm node'
-alias yarn='load_nvm yarn'
-alias npm='load_nvm npm'
-
-# change node version according to .nvmrc
-
-load_nvmrc() {
-  if [ -f .nvmrc -a -r .nvmrc ]; then
-    alias nvm >/dev/null && load_nvm
-    \nvm use >/dev/null
-  fi
-}
-
-add-zsh-hook chpwd load_nvmrc
-load_nvmrc
