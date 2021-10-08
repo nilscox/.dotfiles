@@ -45,12 +45,6 @@
   { "key": "ctrl+e", "command": "editor.action.duplicateSelection", "when": "editorTextFocus && editorHasSelection" },
   { "key": "ctrl+alt+e", "command": "editor.action.deleteLines", "when": "editorTextFocus" },
 
-  // copy / cut / paste
-  { "key": "ctrl+c", "command": "clipboard.copy", "when": "editorTextFocus" },
-  { "key": "ctrl+x", "command": "clipboard.cut", "when": "editorTextFocus && !editorReadonly" },
-  { "key": "ctrl+v", "command": "clipboard.paste", "when": "editorTextFocus && !editorReadonly" },
-  { "key": "ctrl+shift+v", "command": "clipboard.pasteFromClipboard", "when": "editorTextFocus && !editorReadonly" },
-
   // multi cursor
   // ------------
 
@@ -61,52 +55,16 @@
   // selection
   // ---------
 
-  // select next occurrence
+  // select next occurence
   { "key": "ctrl+l", "command": "editor.action.addSelectionToNextFindMatch", "when": "editorFocus" },
   { "key": "ctrl+shift+l", "command": "editor.action.moveSelectionToNextFindMatch", "when": "editorFocus" },
 
-  // select previous occurrence
+  // select prev occurence
   { "key": "alt+l", "command": "editor.action.addSelectionToPreviousFindMatch", "when": "editorFocus" },
   { "key": "alt+shift+l", "command": "editor.action.moveSelectionToPreviousFindMatch", "when": "editorFocus" },
 
-  // select all occurrences
+  // select all occurences
   { "key": "ctrl+alt+shift+l", "command": "editor.action.selectHighlights", "when": "editorFocus" },
-
-  // expand / shrink selection
-  { "key": "alt+=", "command": "editor.action.smartSelect.expand", "when": "editorTextFocus" },
-  { "key": "alt+/", "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus" },
-
-  // select between quotes
-  { "key": "alt+`", "command": "extension.selectBackTick" },
-  { "key": "alt+'", "command": "extension.selectEitherQuote" },
-  { "key": "alt+shift+'", "command": "extension.switchQuotes" },
-
-  // select between parenthesis
-  { "key": "alt+shift+9", "command": "extension.selectParenthesis" },
-  { "key": "alt+shift+0", "command": "extension.selectParenthesisOuter" },
-
-  // select between square brackets
-  { "key": "alt+[", "command": "extension.selectSquareBrackets" },
-  { "key": "alt+]", "command": "extension.selectSquareBracketsOuter" },
-
-  // select between curly brackets
-  { "key": "alt+shift+[", "command": "extension.selectCurlyBrackets" },
-  { "key": "alt+shift+]", "command": "extension.selectCurlyBracketsOuter" },
-
-  // edition
-  // -------
-
-  // snippets
-  { "key": "alt+q q", "command": "editor.action.showSnippets" },
-  { "key": "alt+q l", "command": "editor.action.insertSnippet", "args": { "name": "console log" } },
-  { "key": "alt+q f", "command": "editor.action.insertSnippet", "args": { "name": "fc" } },
-  { "key": "alt+q n", "command": "editor.action.insertSnippet", "args": { "name": "fc no props" } },
-  { "key": "alt+q r", "command": "editor.action.insertSnippet", "args": { "name": "import react" } },
-  { "key": "alt+q i", "command": "editor.action.insertSnippet", "args": { "name": "import" } },
-  { "key": "alt+q w", "command": "editor.action.insertSnippet", "args": { "name": "wrap" } },
-  { "key": "alt+q s", "command": "editor.action.insertSnippet", "args": { "name": "react use state" } },
-  { "key": "alt+q p", "command": "editor.action.insertSnippet", "args": { "name": "wait" } },
-  { "key": "alt+q h", "command": "editor.action.insertSnippet", "args": { "name": "html" } },
 
   // actions
   // -------
@@ -126,8 +84,6 @@
   { "key": "alt+a", "command": "editor.action.organizeImports" },
   { "key": "alt+shift+a", "command": "editor.action.sourceAction", "args": { "kind": "source.addMissingImports", "apply": "first" } },
 
-  { "key": "alt+z", "command": "gitlens.toggleZenMode" },
-
   // tabs
   // ----
 
@@ -139,42 +95,15 @@
   { "key": "ctrl+alt+w", "command": "workbench.action.closeOtherEditors" },
   { "key": "ctrl+alt+shift+w", "command": "workbench.action.closeAllEditors" },
 
-  // files
-  // -----
-
-  // open files
-  { "key": "ctrl+o", "command": "workbench.action.quickOpen" },
-  { "key": "ctrl+shift+o", "command": "workbench.action.files.openFolderInNewWindow" },
-  { "key": "ctrl+alt+o", "command": "workbench.action.files.openFile" },
-  { "key": "alt+o", "command": "workbench.action.openRecent" },
-
-  // create new file
-  { "key": "ctrl+n", "command": "workbench.action.files.newUntitledFile" },
-
-  // files manipulation
-  { "key": "ctrl+r", "command": "fileutils.renameFile" },
-  { "key": "ctrl+m", "command": "fileutils.moveFile" },
-  { "key": "ctrl+d", "command": "fileutils.duplicateFile" },
-  { "key": "ctrl+shift+d", "command": "fileutils.removeFile" },
-
-  // copy file name / path
-  { "key": "ctrl+alt+c", "command": "fileutils.copyFileName" },
-  { "key": "ctrl+alt+shift+c", "command": "copyRelativeFilePath" },
-
   // misc
   // ----
 
   // command palette
   { "key": "alt+,", "command": "workbench.action.showCommands" },
 
-  // toggle full screen
-  { "key": "F11", "command": "workbench.action.toggleFullScreen" },
-
   // settings / keybindings
   { "key": "ctrl+p", "command": "workbench.action.openSettingsJson" },
   { "key": "ctrl+alt+p", "command": "workbench.action.openGlobalKeybindingsFile" },
-
-  // snippet
 
   // comment / uncomment
   { "key": "alt+\\", "command": "editor.action.commentLine" },
@@ -194,41 +123,18 @@
   // fix
   { "key": "ctrl+alt+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
 
-  // switch branch
-  { "key": "ctrl+b", "command": "git.checkout" },
-
-  // zoom in / out
-  { "key": "ctrl+F1", "command": "workbench.action.zoomIn" },
-  { "key": "ctrl+F2", "command": "workbench.action.zoomOut" },
-
-  { "key": "ctrl+F3", "command": "editor.action.fontZoomIn" },
-  { "key": "ctrl+F4", "command": "editor.action.fontZoomOut" },
-
-  { "key": "ctrl+F5", "command": "workbench.action.zoomReset" },
-  { "key": "ctrl+F6", "command": "editor.action.fontZoomReset" },
-
   // scroll by half pages
   { "key": "ctrl+up", "command": "editorScroll", "when": "textInputFocus", "args": { "to": "up", "by": "halfPage", "value": 1 } },
   { "key": "ctrl+down", "command": "editorScroll", "when": "textInputFocus", "args": { "to": "down", "by": "halfPage", "value": 1 } },
 
-  // views
-  // { "key": "alt+a", "command": "workbench.action.focusActiveEditorGroup" },
+  // side views
   { "key": "alt+e", "command": "workbench.view.explorer" },
   { "key": "alt+shift+e", "command": "workbench.files.action.showActiveFileInExplorer" },
   { "key": "alt+g", "command": "workbench.view.scm" },
-  { "key": "alt+p", "command": "workbench.action.problems.focus" },
-  { "key": "alt+t", "command": "workbench.action.terminal.focus" },
+  { "key": "alt+t", "command": "test-explorer.focus" },
   { "key": "alt+x", "command": "workbench.view.extensions" },
   { "key": "alt+f", "command": "workbench.view.search" },
   { "key": "alt+d", "command": "workbench.view.debug" },
-  { "key": "alt+u", "command": "workbench.action.focusActiveEditorGroup" },
-
-  // ui elements
-  { "key": "alt+s", "command": "workbench.action.toggleSidebarVisibility" },
-  { "key": "alt+m", "command": "editor.action.toggleMinimap" },
-  { "key": "alt+b", "command": "breadcrumbs.toggle" },
-  { "key": "alt+p", "command": "workbench.action.togglePanel", "when": "problemFocus" },
-  { "key": "alt+t", "command": "workbench.action.togglePanel", "when": "terminalFocus" },
 
   // fold blocks
   { "key": "ctrl+1", "command": "editor.foldLevel1", "when": "editorTextFocus && foldingEnabled" },
@@ -246,15 +152,8 @@
   // unfold
   { "key": "ctrl+0", "command": "editor.unfoldAll", "when": "editorTextFocus && foldingEnabled" },
 
-  // find => jump
-  { "key": "alt+j", "command": "findJump.activate", "when": "editorTextFocus" },
-  { "key": "alt+shift+j", "command": "findJump.activateWithSelection", "when": "editorTextFocus" },
-  { "key": "enter", "command": "findJump.goToFirstMatch", "when": "findJumpActive && editorTextFocus" },
-
   // unbindings
   { "key": "ctrl+q", "command": "-workbench.action.quit" },
   { "key": "ctrl++", "command": "-workbench.action.zoomIn" },
-  { "key": "ctrl+-", "command": "-workbench.action.zoomOut" },
-
-  { "key": "alt+n", "command": "workbench.action.compareEditor.nextChange" }
+  { "key": "ctrl+-", "command": "-workbench.action.zoomOut" }
 ]

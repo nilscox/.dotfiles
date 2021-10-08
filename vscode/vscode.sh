@@ -25,6 +25,7 @@ extensions=(
   ibm.output-colorizer
   ryanluker.vscode-coverage-gutters
   ms-vscode.vscode-typescript-tslint-plugin
+  streetsidesoftware.code-spell-checker
 )
 
 mkdir -p "$vscode_dir/User"
