@@ -1,0 +1,10 @@
+{
+	"styled component": {
+		"scope": "javascriptreact,typescriptreact",
+		"body": [
+			"const $1 = styled${2:.div}`",
+			"  $3",
+			"`;"
+		]
+	}
+}
