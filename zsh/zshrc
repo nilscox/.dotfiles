@@ -1,16 +1,19 @@
+# Custom config
+# =============
+
+for file in ~/.zshrc.*; do
+  source "$file"
+done
+
 # Oh My Zsh
 # =========
 
-plugins=(sudo systemd git zsh-nvm npm yarn httpie docker docker-compose)
+plugins=(sudo systemd git git-prompt zsh-nvm npm yarn httpie docker docker-compose)
 
 HYPHEN_INSENSITIVE="true"
 DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 CORRECT_IGNORE_FILE='.*'
-
-NVM_COMPLETION="true"
-NVM_LAZY_LOAD="true"
-NVM_AUTO_USE="true"
 
 source /home/nils/.oh-my-zsh/oh-my-zsh.sh
 
@@ -49,7 +52,6 @@ export EDITOR='vim'
 
 alias l='ll -H'
 alias v='vim'
-# alias sudo='sudo '
 
 alias -g G="| grep"
 alias -g M=' | most'
@@ -66,7 +68,7 @@ alias -s txt='cat '
 alias -s md='cat '
 
 # Prompt
-# =====
+# ======
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
@@ -105,18 +107,10 @@ if [[ $UID == 0 ]]; then
   prompt_user="%{${fg_bold[red]%}%n%{$reset_color%}"
 fi
 
-# PROMPT='$(prompt_git)$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
-PROMPT='$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
+PROMPT='$(prompt_git)$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
 RPROMPT='$(prompt_date)'
 
 # fzf
 # ===
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Custom config
-# =============
-
-for file in ~/.zshrc.*; do
-  source "$file"
-done
