@@ -1,10 +1,3 @@
-# Custom config
-# =============
-
-for file in ~/.zshrc.*; do
-  source "$file"
-done
-
 # Oh My Zsh
 # =========
 
@@ -83,7 +76,6 @@ prompt_git() {
 
   if [ -n "$git_status" ]; then
     echo "$git_status"
-    echo -n "\e[m\n"
   fi
 }
 
@@ -107,10 +99,17 @@ if [[ $UID == 0 ]]; then
   prompt_user="%{${fg_bold[red]%}%n%{$reset_color%}"
 fi
 
-PROMPT='$(prompt_git)$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
+PROMPT=$'$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
 RPROMPT='$(prompt_date)'
 
 # fzf
 # ===
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Custom config
+# =============
+
+for file in ~/.zshrc.*; do
+  source "$file"
+done

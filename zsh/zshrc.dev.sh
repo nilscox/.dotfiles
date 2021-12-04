@@ -16,6 +16,7 @@ alias yb='yarn build'
 alias yl='yarn lint'
 alias ys='yarn start'
 alias yui='yarn upgrade-interactive'
+alias yuil='yarn upgrade-interactive --latest'
 alias ya='yarn add'
 alias yad='yarn add -D'
 alias yar='yarn remove'
@@ -27,6 +28,8 @@ alias d='docker'
 alias dcp='docker-compose'
 
 alias uuid='\uuid | tr -d "\n" C'
+
+alias k9s='\k9s --readonly'
 
 alias -g W='--watch'
 
