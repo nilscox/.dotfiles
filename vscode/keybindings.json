@@ -42,7 +42,6 @@
 
   // duplicate / delete line
   { "key": "ctrl+e", "command": "editor.action.copyLinesDownAction", "when": "editorTextFocus" },
-  { "key": "ctrl+e", "command": "editor.action.duplicateSelection", "when": "editorTextFocus && editorHasSelection" },
   { "key": "ctrl+alt+e", "command": "editor.action.deleteLines", "when": "editorTextFocus" },
 
   // copy / cut / paste
@@ -72,6 +71,9 @@
   // select all occurrences
   { "key": "ctrl+alt+shift+l", "command": "editor.action.selectHighlights", "when": "editorFocus" },
 
+  // select line
+  { "key": "ctrl+alt+l", "command": "expandLineSelection", "when": "editorFocus" },
+
   // expand / shrink selection
   { "key": "alt+=", "command": "editor.action.smartSelect.expand", "when": "editorTextFocus" },
   { "key": "alt+/", "command": "editor.action.smartSelect.shrink", "when": "editorTextFocus" },
@@ -92,6 +94,10 @@
   // select between curly brackets
   { "key": "alt+shift+[", "command": "extension.selectCurlyBrackets" },
   { "key": "alt+shift+]", "command": "extension.selectCurlyBracketsOuter" },
+
+  // select between angle brackets
+  { "key": "alt+shift+,", "command": "extension.selectAngleBrackets" },
+  { "key": "alt+shift+.", "command": "extension.selectInTag" },
 
   // edition
   // -------

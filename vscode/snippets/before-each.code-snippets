@@ -1,0 +1,6 @@
+{
+  "before each": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": ["beforeEach(() => {", "${1:$TM_SELECTED_TEXT}", "});"]
+  }
+}

@@ -52,9 +52,6 @@
   // interface
   // ---------
 
-  // hide breakpoints
-  // "editor.glyphMargin": false,
-
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
 
@@ -95,6 +92,7 @@
     "editor.wordHighlightStrongBorder": "#fff6",
     "editorLineNumber.foreground": "#666",
     "editorLineNumber.activeForeground": "#999",
+    "editorHoverWidget.highlightForeground": "#55bed9",
     "diffEditor.insertedTextBackground": "#7a53",
     "diffEditor.removedTextBackground": "#f772",
     "diffEditor.diagonalFill": "#fff1"
@@ -199,6 +197,7 @@
 
   // cspell
   "cSpell.language": "en,fr",
+  "cSpell.ignorePaths": ["**/yarn.lock", "**/package.json"],
   "cSpell.customDictionaries": {
     "custom-dictionary-user": {
       "name": "custom-dictionary-user",
