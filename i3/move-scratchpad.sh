@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+sway 'resize set width 720 height 1062'
+sway 'move absolute position 1202 18'
+exit 0
+
 wid=$(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}')
 wname=$(xprop -id "$wid" | awk '/_NET_WM_NAME/{$1=$2="";print}' | cut -d'"' -f2)
 test "$wname" != "scratchpad" && exit 0
@@ -28,11 +32,8 @@ if [ "$BAR_BOTTOM" = '1' ]; then
   height=$(($height - $bar_height))
 fi
 
-i3-msg resize set "$width" px "$height" px \
-  && i3-msg move absolute position "$x" px "$y" px
-
-#sway resize set width "$width" px height "$height" px \
-#  && sway move absolute "$x" px "$y" px
+# i3-msg resize set "$width" px "$height" px \
+#   && i3-msg move absolute position "$x" px "$y" px
 
 # echo "x = $x"
 # echo "x = $x"
