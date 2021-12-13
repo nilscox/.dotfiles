@@ -113,3 +113,5 @@ RPROMPT='$(prompt_date)'
 for file in ~/.zshrc.*; do
   source "$file"
 done
+
+[ "$TTY" = /dev/tty1 ] && sway > /tmp/sway.log

@@ -21,8 +21,7 @@ detect_distrib() {
 
 ensure_variable() {
   if [ -z "${!1}" ]; then
-    echo "missing variable $1"
-    exit 1
+    echo "warning: missing variable $1"
   fi
 }
 

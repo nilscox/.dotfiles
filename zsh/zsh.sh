@@ -9,9 +9,11 @@ ln -s "$dot/zsh/zshrc.dev.sh" "$dest/.zshrc.dev"
 ln -s "$dot/zsh/oh-my-zsh.sh" "$dest/.oh-my-zshrc"
 
 if [ "$distrib" = 'debian' ]; then
-  ln -s "$dot/zsh/zshrc.debian" "$dest/.zshrc.debian"
+  ln -s "$dot/zsh/zshrc.debian.sh" "$dest/.zshrc.debian"
 elif [ "$distrib" = 'arch' ]; then
-  ln -s "$dot/zsh/zshrc.archlinux" "$dest/.zshrc.archlinux"
+  ln -s "$dot/zsh/zshrc.archlinux.sh" "$dest/.zshrc.archlinux"
+elif [ "$distrib" = 'fedora' ]; then
+  ln -s "$dot/zsh/zshrc.fedora.sh" "$dest/.zshrc.fedora"
 fi
 
 clone_or_pull https://github.com/junegunn/fzf.git "$dest/.fzf"

@@ -12,6 +12,7 @@ echo "dest = $dest"
 echo "config = $config"
 echo "local = $local"
 echo "distrib = $distrib"
+echo "INSTALL = $INSTALL"
 echo
 echo -n "okay? "
 read

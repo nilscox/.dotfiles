@@ -31,8 +31,14 @@ install_packages_archlinux() {
   yaourt --noconfirm -S $(packages_list packages.aur)
 }
 
+install_packages_fedora() {
+  sudo dnf install -y $(packages_list packages.dnf)
+}
+
 if [ "$distrib" == 'debian' ]; then
   install_packages_debian
+elif [ "$distrib" == 'fedora' ]; then
+  install_packages_fedora
 elif [ "$distrib" == 'arch' ]; then
   install_packages_archlinux
 else
