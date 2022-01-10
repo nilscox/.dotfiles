@@ -15,7 +15,7 @@
   font-weight: bold;
   font-size: 12px;
   min-height: 0;
-  color: #e4e9f1;
+  color: #d2d5d9;
   background-color: transparent;
 }
 
@@ -26,6 +26,15 @@ window#waybar {
 tooltip {
   background: rgba(34, 34, 34, 0.9);
   border: none;
+}
+
+#custom-weather,
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#tray {
+  margin-left: 20px;
 }
 
 #workspaces button {
@@ -54,9 +63,8 @@ tooltip {
   padding: 0 8px;
 }
 
-#battery.charging {
-  color: white;
-  background-color: #26a65b;
+#battery {
+  font-family: Iosevka;
 }
 
 #battery.warning:not(.charging) {
@@ -67,4 +75,24 @@ tooltip {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#tray menu {
+  background: rgba(34, 34, 34, 0.9);
+}
+
+#cpu,
+#memory,
+#disk {
+  margin-right: 15px;
+  color: #7e838b;
+  font-size: 10px;
+}
+
+#custom-ip,
+#network.local-ip,
+#network.bandwidth {
+  margin-left: 15px;
+  color: #7e838b;
+  font-size: 10px;
 }

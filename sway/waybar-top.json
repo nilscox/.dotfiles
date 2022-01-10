@@ -1,13 +1,60 @@
 {
-  "layer": "top",
+  "position": "top",
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["clock"],
-  "modules-right": ["battery"],
+  "modules-right": [
+    "custom/weather",
+    "backlight",
+    "pulseaudio",
+    "network",
+    "battery",
+    "tray"
+  ],
+  "sway/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1:web",
+      "2": "2:sh$",
+      "3": "3:&lt;/&gt;",
+      "4": "4:o&lt;"
+    }
+  },
+  "clock": {
+    "interval": 1,
+    "format-alt": "{:%a, %d. %b  %H:%M:%S}"
+  },
+  "network": {
+    "interface": "wlp2s0",
+    "format-wifi": "{essid} ({signalStrength}%) 📡",
+    "format-disconnected": "not connected"
+  },
+  "custom/weather": {
+    "exec": "curl 'https://wttr.in/?format=1'",
+    "interval": 3600
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["🔅", "🔆"],
+    "on-scroll-up": "brightnessctl set +1%",
+    "on-scroll-down": "brightnessctl set 1%-"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "🔇",
+    "format-icons": {
+      "default": ["🔈", "🔉", "🔊"]
+    },
+    "scroll-step": 1,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
   "battery": {
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""]
   },
-  "clock": {
-    "format-alt": "{:%a, %d. %b  %H:%M}"
+  "tray": {
+    "spacing": 10
   }
 }
