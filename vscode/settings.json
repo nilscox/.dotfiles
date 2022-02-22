@@ -6,7 +6,6 @@
   "workbench.editor.untitled.hint": "hidden",
   "workbench.panel.defaultLocation": "right",
   "editor.lightbulb.enabled": false,
-  "workbench.activityBar.visible": false,
   "editor.tabSize": 2,
   "editor.smoothScrolling": true,
   "editor.scrollBeyondLastLine": false,
@@ -39,7 +38,8 @@
   "files.exclude": { "**/.git": true },
 
   // integrated terminal
-
+  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.showLinkHover": false,
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.fontFamily": "Source Code Pro",
   "terminal.integrated.fontSize": 12,
@@ -48,20 +48,23 @@
   "terminal.integrated.env.linux": {
     "PATH": "${env:PATH}:${env:HOME}/.nvm/versions/node/v14.16.0/bin"
   },
-
-  // interface
-  // ---------
-
-  "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
+  "terminal.integrated.commandsToSkipShell": [
+    "-workbench.action.quickOpen",
+    "workbench.action.toggleAuxiliaryBar"
+  ],
 
   // window
   "window.title": "${dirty}${rootPath}${separator}${activeEditorMedium}${separator}${appName}",
   "window.titleSeparator": " :: ",
-  "window.menuBarVisibility": "hidden",
+  "window.menuBarVisibility": "compact",
   "window.titleBarStyle": "custom",
   "window.enableMenuBarMnemonics": false,
   "window.customMenuBarAltFocus": false,
+
+  // interface
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": false,
+  "breadcrumbs.enabled": false,
 
   // font
   "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro', 'Iosevka'",
@@ -154,6 +157,7 @@
   "typescript.suggest.autoImports": true,
   "typescript.suggest.paths": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.jsxAttributeCompletionStyle": "none",
   "vsintellicode.typescript.completionsEnabled": true,
   // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   // "typescript.tsserver.maxTsServerMemory": 1024,
@@ -166,6 +170,7 @@
   "gitlens.views.commits.files.layout": "tree",
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": true,
 
   // eslint
   "eslint.validate": [
