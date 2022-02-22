@@ -1,0 +1,9 @@
+{
+  "react useRef": {
+    "scope": "javascriptreact,typescriptreact",
+    "body": [
+      // prettier-ignore
+      "const ref = useRef<${1:HTMLDivElement}>(null);"
+    ]
+  }
+}
