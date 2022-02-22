@@ -1,14 +1,14 @@
 # Oh My Zsh
 # =========
 
-plugins=(sudo systemd git git-prompt zsh-nvm npm yarn httpie docker docker-compose)
-
 HYPHEN_INSENSITIVE="true"
 DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 CORRECT_IGNORE_FILE='.*'
 
-source /home/nils/.oh-my-zsh/oh-my-zsh.sh
+plugins=(sudo systemd git git-prompt zsh-nvm npm yarn httpie docker docker-compose)
+
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # Shell options
 # =============
@@ -24,6 +24,12 @@ unsetopt rm_star_silent
 HISTFILE=~/.zsh_history
 HISTSIZE=42000
 SAVEHIST=42000
+
+# Completion
+# ==========
+
+autoload -U compinit
+compinit
 
 # Bind keys
 # =========
@@ -52,7 +58,6 @@ alias -g H=' | head'
 alias -g T=' | tail'
 alias -g TF=' | tail -f'
 alias -g NUL=' > /dev/null 2>&1'
-alias -g C=' | xclip -selection clipboard'
 
 alias -s pdf='firefox '
 alias -s jpg='feh '
@@ -105,7 +110,9 @@ RPROMPT='$(prompt_date)'
 # fzf
 # ===
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+fi
 
 # Custom config
 # =============
@@ -113,5 +120,3 @@ RPROMPT='$(prompt_date)'
 for file in ~/.zshrc.*; do
   source "$file"
 done
-
-[ "$TTY" = /dev/tty1 ] && sway > /tmp/sway.log
