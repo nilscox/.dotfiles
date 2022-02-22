@@ -1,5 +1,6 @@
 #!/bin/env bash
 
-source "$(dirname $0)/../functions.sh"
+source "$DOT/functions.sh"
+set -xeo pipefail
 
-ln -s "$dot/sqlite/sqliterc" "$dest/.sqliterc"
+ln -sf "$dot/sqlite/sqliterc" "$dest/.sqliterc"

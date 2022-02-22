@@ -1,6 +1,7 @@
 #!/bin/env bash
 
-source "$(dirname $0)/../functions.sh"
+source "$DOT/functions.sh"
+set -xeo pipefail
 
 mkdir -p "$config/polybar"
 ln -s "$dot/polybar/launch.sh" "$config/polybar/launch.sh"

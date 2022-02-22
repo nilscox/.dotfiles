@@ -1,6 +1,7 @@
 #!/bin/env bash
 
-source "$(dirname $0)/../functions.sh"
+source "$DOT/functions.sh"
+set -xeo pipefail
 
 ensure_variable GIT_USERNAME
 ensure_variable GIT_EMAIL

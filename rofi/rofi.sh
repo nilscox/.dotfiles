@@ -1,6 +1,7 @@
 #!/bin/env bash
 
-source "$(dirname $0)/../functions.sh"
+source "$DOT/functions.sh"
+set -xeo pipefail
 
 mkdir -p "$config/rofi"
-ln -s "$dot/rofi/config.rasi" "$config/rofi"
+ln -sf "$dot/rofi/config.rasi" "$config/rofi"

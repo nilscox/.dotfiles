@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+err() {
+  echo "$@" >&2
+  exit 1
+}
+
 detect_distrib() {
   os_release='/etc/os-release'
 
@@ -39,3 +44,5 @@ dest="${DEST:-$HOME}"
 config="${CONFIG:-$dest/.config}"
 local="${LOCAL:-$dest/.local}"
 distrib="${DISTRIB:-$(detect_distrib)}"
+
+export DOT="$dot"

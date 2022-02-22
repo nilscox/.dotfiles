@@ -1,8 +1,7 @@
 #!/bin/env bash
 
-source "$(dirname $0)/../functions.sh"
-
-config="$dest/.config"
+source "$DOT/functions.sh"
+set -xeo pipefail
 
 blocklets="$config/i3blocks-blocklets"
 i3blocks_contrib="$config/i3blocks-contrib"

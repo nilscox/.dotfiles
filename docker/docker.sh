@@ -1,6 +1,7 @@
 #!/bin/env bash
 
-source "$(dirname $0)/../functions.sh"
+source "$DOT/functions.sh"
+set -xeo pipefail
 
 # https://docs.docker.com/engine/install/fedora/
 if [ $distrib == 'fedora' ]; then

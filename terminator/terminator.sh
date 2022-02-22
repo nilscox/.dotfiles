@@ -1,9 +1,10 @@
 #!/bin/env bash
 
-source "$(dirname $0)/../functions.sh"
+source "$DOT/functions.sh"
+set -xeo pipefail
 
 mkdir -p "$config/terminator"
-ln -s "$dot/terminator/terminator.config" "$config/terminator/config"
+ln -sf "$dot/terminator/terminator.config" "$config/terminator/config"
 
 mkdir -p "$config/gtk-3.0"
-ln -s "$dot/terminator/gtk.css" "$config/gtk-3.0/gtk.css"
+ln -sf "$dot/terminator/gtk.css" "$config/gtk-3.0/gtk.css"

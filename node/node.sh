@@ -1,6 +1,7 @@
 #!/bin/env bash
 
-source "$(dirname $0)/../functions.sh"
+source "$DOT/functions.sh"
+set -xeo pipefail
 
 clone_or_pull 'git://github.com/creationix/nvm.git' "$dest/.nvm"
 

@@ -1,8 +1,9 @@
 #!/bin/env bash
 
-source "$(dirname $0)/../functions.sh"
+source "$DOT/functions.sh"
+set -xeo pipefail
 
-ln -s "$dot/xorg/xinitrc" "$dest/.xinitrc"
+ln -sf "$dot/xorg/xinitrc" "$dest/.xinitrc"
 
 sudo mkdir -p "$root/etc/X11/xorg.conf.d"
 
