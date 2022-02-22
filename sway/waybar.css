@@ -23,6 +23,14 @@ window#waybar {
   background: rgba(34, 34, 34, 0.9);
 }
 
+window#waybar.bottom {
+  border-top: 1px solid #333;
+}
+
+window#waybar.bottom > * {
+  margin-top: 2px;
+}
+
 tooltip {
   background: rgba(34, 34, 34, 0.9);
   border: none;
