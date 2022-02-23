@@ -6,7 +6,7 @@
   ui = true
 
 [core]
-  editon = vim
+  editor = code --wait
 
 [alias]
   s = status
@@ -30,7 +30,7 @@
   status = false
 
 [help]
-  autocorrect = 1
+  autocorrect = 20
 
 [push]
   default = current
