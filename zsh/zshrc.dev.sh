@@ -15,10 +15,6 @@ export NODE_ENV=development
 
 LOCAL_IP="$(ip a | grep 'inet .* wlp2s0' | sed -E 's,.*inet ([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+).*,\1,')"
 
-# node
-
-# todo auto load nvm
-
 alias y='yarn'
 alias yt='yarn test'
 alias ytw='yarn test --watch --notify=false'
@@ -32,6 +28,7 @@ alias yuil='yarn upgrade-interactive --latest'
 alias ya='yarn add'
 alias yad='yarn add -D'
 alias yar='yarn remove'
+alias ysb='yarn storybook'
 
 alias g='git'
 alias p='python'

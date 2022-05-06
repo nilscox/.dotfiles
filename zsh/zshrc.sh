@@ -6,7 +6,9 @@ DISABLE_UPDATE_PROMPT="true"
 ENABLE_CORRECTION="true"
 CORRECT_IGNORE_FILE='.*'
 
-plugins=(sudo systemd git git-prompt zsh-nvm npm yarn httpie docker docker-compose)
+plugins=(sudo systemd git zsh-nvm npm yarn httpie docker docker-compose)
+
+export NVM_AUTO_USE=true
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
@@ -105,7 +107,7 @@ if [[ $UID == 0 ]]; then
 fi
 
 PROMPT=$'$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
-RPROMPT='$(prompt_date)'
+# RPROMPT='$(prompt_date)'
 
 # fzf
 # ===
