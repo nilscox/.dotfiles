@@ -7,7 +7,7 @@ clone_or_pull "git://github.com/robbyrussell/oh-my-zsh.git" "$dest/.oh-my-zsh"
 
 ln -s "$dot/zsh/zshrc.sh" "$dest/.zshrc"
 ln -s "$dot/zsh/zshrc.dev.sh" "$dest/.zshrc.dev"
-ln -s "$dot/zsh/xorg.sh" "$dest/.zshrc.xorg"
+ln -s "$dot/zsh/zshrc.xorg.sh" "$dest/.zshrc.xorg"
 
 if [ "$distrib" = 'debian' ]; then
   ln -s "$dot/zsh/zshrc.debian.sh" "$dest/.zshrc.debian"

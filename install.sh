@@ -28,5 +28,5 @@ set +x
 for unit in "${install[@]}"; do
   echo -e "\ninstall $unit\n"
   script="$dot/$unit/$unit.sh"
-  "$script"
+  bash "$script"
 done

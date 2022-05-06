@@ -25,10 +25,11 @@ install_packages_debian() {
 
 install_packages_archlinux() {
   sudo pacman-key --init
-  sudo pacman-key --popuplate archlinux
+  sudo pacman-key --populate archlinux
   sudo pacman -S $(packages_list packages.pacman)
 
   install_yaourt
+  yaourt -Syy
   yaourt --noconfirm -S $(packages_list packages.aur)
 }
 

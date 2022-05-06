@@ -7,4 +7,4 @@ sudo sed -i 's/^#AutoEnable=false$/AutoEnable=true/' "$root/etc/bluetooth/main.c
 
 systemctl enable bluetooth.service
 
-sudo groupmod -aG lp $(whoami)
+sudo usermod -aG lp $(whoami)

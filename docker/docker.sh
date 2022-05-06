@@ -9,8 +9,8 @@ if [ $distrib == 'fedora' ]; then
   sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose
 fi
 
-sc-enable docker.service
-sc-start docker.service
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
 
 sudo usermod -aG docker $(whoami)
 newgrp docker
