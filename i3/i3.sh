@@ -11,7 +11,7 @@ mkdir -p "$config/i3" "$config/i3blocks" "$blocklets"
 ln -s "$dot/i3/i3.config" "$config/i3/config"
 ln -s "$dot/i3/i3blocks.config" "$config/i3blocks/config"
 
-clone_or_pull "git://github.com/vivien/i3blocks-contrib.git" "$i3blocks_contrib"
+clone_or_pull "git@github.com/vivien/i3blocks-contrib.git" "$i3blocks_contrib"
 
 ln -s "$i3blocks_contrib/mediaplayer/mediaplayer" "$blocklets"
 ln -s "$i3blocks_contrib/volume/volume" "$blocklets"

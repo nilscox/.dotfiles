@@ -3,7 +3,7 @@
 source "$DOT/functions.sh"
 set -xeo pipefail
 
-clone_or_pull 'git://github.com/creationix/nvm.git' "$dest/.nvm"
+clone_or_pull 'git@github.com:creationix/nvm.git' "$dest/.nvm"
 
 source "$dest/.nvm/nvm.sh"
 nvm install --lts
