@@ -244,6 +244,7 @@
   { "key": "alt+x", "command": "workbench.view.extensions" },
   { "key": "alt+f", "command": "workbench.view.search" },
   { "key": "alt+d", "command": "workbench.view.debug" },
+  { "key": "alt+r", "command": "workbench.view.extension.references-view" },
   { "key": "alt+u", "command": "workbench.action.focusActiveEditorGroup" },
 
   // ui elements

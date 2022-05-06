@@ -11,7 +11,6 @@ extensions=(
   anjali.clipboard-history
   dbaeumer.vscode-eslint
   esbenp.prettier-vscode
-  jpoissonnier.vscode-styled-components
   ms-azuretools.vscode-docker
   sleistner.vscode-fileutils
   visualstudioexptteam.vscodeintellicode
@@ -23,9 +22,6 @@ extensions=(
   cardinal90.multi-cursor-case-preserve
   dbankier.vscode-quick-select
   dcasella.i3
-  ibm.output-colorizer
-  ryanluker.vscode-coverage-gutters
-  ms-vscode.vscode-typescript-tslint-plugin
   bradlc.vscode-tailwindcss
   streetsidesoftware.code-spell-checker
   streetsidesoftware.code-spell-checker-french
