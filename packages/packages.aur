@@ -1,15 +1,24 @@
-perl-anyevent-i3
 ttf-jetbrains-mono
 brightnessctl
 pcloudcc-git
-mongodb-tools-bin
-mongodb-shell-bin
-bitwarden-bin
-bitwarden-cli-bin
-bitwarden-rofi-git
-thunderbird-beta-bin
+inkdrop
+bitwarden-cli
+bitwarden-rofi
 visual-studio-code-bin
-slack-desktop
-rofi-emoji
-spotify
-zscroll-git
+
+# optional
+
+#slack-desktop
+#spotify
+#thunderbird-beta-bin
+
+# i3
+
+#perl-anyevent-i3
+#rofi-emoji
+#polybar
+#zscroll-git
+
+# sway
+
+rofi-lbonn-wayland

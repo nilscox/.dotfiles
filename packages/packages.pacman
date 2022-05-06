@@ -18,14 +18,14 @@ unzip
 man-db
 man-pages
 sysstat
+reflector
 
 # network tools
 
-dialog
 openssh
 wireless_tools
 wpa_supplicant
-netctl
+#netctl
 dhcpcd
 
 # secondary tools
@@ -43,40 +43,49 @@ upower
 httpie
 jq
 fzf
-playerctl
-gnome-keyring
-libsecret
+#playerctl
+#gnome-keyring
+#libsecret
 lzop
 
-# wm
+# i3
 
-xorg-server
-xorg-xinit
-xorg-xprop
-xorg-xrandr
-xclip
-i3-wm
-i3lock
-i3blocks
-imwheel
-ttf-bitstream-vera ttf-dejavu
+#xorg-server
+#xorg-xinit
+#xorg-xprop
+#xorg-xrandr
+#xorg-xwininfo
+#xclip
+#i3-wm
+#i3lock
+#i3blocks
+#imwheel
+#rofi
+
+# sway
+
+sway
+swayidle
+swaybg
+swaylock
+waybar
+
+# fonts
+
+ttf-liberation
+ttf-dejavu
+ttf-bitstream-vera
 ttf-font-awesome
 adobe-source-code-pro-fonts
-noto-fonts-emoji
+noto-fonts
 
 # gui
 
-gnome-screenshot
-peek
-rofi
 terminator
 firefox
 chromium
 feh
 gimp
-vlc
-discord
-seahorse
 
 # audio
 
@@ -88,3 +97,13 @@ pulseaudio-bluetooth
 bluez
 bluez-utils
 pavucontrol
+
+# not installed by default
+
+#nautilus
+#sushi
+#vlc
+#discord
+#seahorse
+#gnome-screenshot
+#peek
