@@ -24,7 +24,7 @@
     "format-alt": "{:%a, %d. %b  %H:%M:%S}"
   },
   "network": {
-    "interface": "wlp2s0",
+    "interface": "wlp0s20f3",
     "format-wifi": "{essid} ({signalStrength}%) 📡",
     "format-disconnected": "not connected"
   },
