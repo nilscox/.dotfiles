@@ -122,3 +122,7 @@ fi
 for file in ~/.zshrc.*; do
   source "$file"
 done
+
+if [ "$TTY" = /dev/tty1 ]; then
+  sway > /tmp/sway.stdout 2> /tmp/sway.stderr
+fi

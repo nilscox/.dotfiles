@@ -2,12 +2,10 @@
 
 PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 PATH="$PATH:$HOME/.krew/bin"
-PATH="$PATH:/opt/android-sdk/cmdline-tools/latest/bin"
-PATH="$PATH:/opt/android-sdk/tools"
-PATH="$PATH:/opt/android-sdk/platform-tools"
+PATH="$PATH:$HOME/go/bin"
 
 export ANDROID_SDK_ROOT=/opt/android-sdk
-export CLOUDSDK_PYTHON=/usr/bin/python3.7
+export CLOUDSDK_PYTHON=/usr/bin/python
 export DEBUG_PRINT_LIMIT=100000
 export TS_NODE_TRANSPILE_ONLY=true
 export NODE_ENV=development
@@ -17,7 +15,7 @@ LOCAL_IP="$(ip a | grep 'inet .* wlp2s0' | sed -E 's,.*inet ([0-9]+\.[0-9]+\.[0-
 
 alias y='yarn'
 alias yt='yarn test'
-alias ytw='yarn test --watch --notify=false'
+alias ytw='yarn test --watch'
 alias yb='yarn build'
 alias ytc='yarn tsc --noEmit'
 alias yl='yarn lint'
