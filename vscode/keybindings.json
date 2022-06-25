@@ -114,6 +114,7 @@
   { "key": "alt+q s", "command": "editor.action.insertSnippet", "args": { "name": "react use state" } },
   { "key": "alt+q p", "command": "editor.action.insertSnippet", "args": { "name": "wait" } },
   { "key": "alt+q h", "command": "editor.action.insertSnippet", "args": { "name": "html" } },
+  { "key": "alt+q t", "command": "editor.action.insertSnippet", "args": { "name": "react-intl" } },
 
   // actions
   // -------
@@ -133,6 +134,7 @@
   { "key": "alt+a", "command": "editor.action.organizeImports" },
   { "key": "alt+shift+a", "command": "editor.action.sourceAction", "args": { "kind": "source.addMissingImports", "apply": "first" } },
 
+  // remove?
   { "key": "alt+z", "command": "gitlens.toggleZenMode" },
 
   // tabs
