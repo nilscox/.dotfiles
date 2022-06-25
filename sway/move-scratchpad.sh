@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-outputs=$(swaymsg -r -t get_outputs)
+outputs=$(swaymsg -r -t get_outputs | jq '.[] | select(.focused)')
 
-mode=$(echo "$outputs" | jq '.[0].current_mode')
+mode=$(echo "$outputs" | jq '.current_mode')
 
 screen_width=$(echo "$mode" | jq '.width')
 screen_height=$(echo "$mode" | jq '.height')

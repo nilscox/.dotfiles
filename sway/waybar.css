@@ -1,17 +1,7 @@
-@keyframes blink {
-  0% {
-    background-color: #ffca0a;
-  }
-
-  10% {
-    background-color: inherit;
-  }
-}
-
 * {
   border: none;
   border-radius: 0;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "JetBrains Mono", FontAwesome, monospace;
   font-weight: bold;
   font-size: 12px;
   min-height: 0;
@@ -23,17 +13,25 @@ window#waybar {
   background: rgba(34, 34, 34, 0.9);
 }
 
+window#waybar.top > * {
+  margin-right: 8px;
+}
+
 window#waybar.bottom {
   border-top: 1px solid #333;
 }
 
 window#waybar.bottom > * {
-  margin-top: 2px;
+  margin: 2px 4px 0 4px;
 }
 
 tooltip {
   background: rgba(34, 34, 34, 0.9);
   border: none;
+}
+
+#custom-gnma {
+  margin-right: 30px;
 }
 
 #custom-weather,
@@ -61,7 +59,7 @@ tooltip {
 }
 
 #workspaces button.urgent {
-  animation: blink 1s linear infinite;
+  animation: urgent 1s linear infinite;
 }
 
 #mode {
@@ -71,18 +69,13 @@ tooltip {
   padding: 0 8px;
 }
 
-#battery {
-  font-family: Iosevka;
+#battery.warning:not(.charging) {
+  color: #ffca0a;
 }
 
-#battery.warning:not(.charging) {
+#battery.critical:not(.charging) {
   background: #f53c3c;
-  color: white;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation: blink 0.5s linear infinite reverse;
 }
 
 #tray menu {
@@ -90,10 +83,11 @@ tooltip {
 }
 
 #cpu,
+#temperature,
 #memory,
 #disk {
   margin-right: 15px;
-  color: #7e838b;
+  color: #81868f;
   font-size: 10px;
 }
 
@@ -101,6 +95,27 @@ tooltip {
 #network.local-ip,
 #network.bandwidth {
   margin-left: 15px;
-  color: #7e838b;
+  color: #81868f;
   font-size: 10px;
+}
+
+#temperature.critical {
+  background-color: #c73f3e;
+  color: #fff;
+}
+
+@keyframes blink {
+  0% {
+    background-color: inherit;
+  }
+}
+
+@keyframes urgent {
+  0% {
+    background-color: #ffca0a;
+  }
+
+  10% {
+    background-color: inherit;
+  }
 }

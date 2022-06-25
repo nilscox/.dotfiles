@@ -5,5 +5,5 @@ dir="${WALLPAPERS_DIR:-$HOME/.wallpapers}"
 
 wallpaper="$dir/$(ls "$dir" | sort -R | tail -1)"
 
-feh --bg-scale "$wallpaper"
-# sway output '*' bg "$wallpaper" fill
+# feh --bg-scale "$wallpaper"
+sway output '*' bg "$wallpaper" fill
