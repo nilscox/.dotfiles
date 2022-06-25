@@ -23,6 +23,7 @@ extensions=(
   dbankier.vscode-quick-select
   dcasella.i3
   bradlc.vscode-tailwindcss
+  stkb.rewrap
   streetsidesoftware.code-spell-checker
   streetsidesoftware.code-spell-checker-french
   graphql.vscode-graphql

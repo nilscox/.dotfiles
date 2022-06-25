@@ -23,6 +23,8 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "emmet.showExpandedAbbreviation": "never",
+  "editor.bracketPairColorization.enabled": false,
+  // "editor.mouseWheelScrollSensitivity": 5,
 
   // TODO: not working?
   "editor.linkedEditing": true,
@@ -45,6 +47,7 @@
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
   "terminal.integrated.commandsToSkipShell": [
     "-workbench.action.quickOpen",
     "workbench.action.toggleAuxiliaryBar"
