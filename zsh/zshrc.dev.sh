@@ -1,17 +1,17 @@
-# variables
-
 PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 PATH="$PATH:$HOME/.krew/bin"
 PATH="$PATH:$HOME/go/bin"
 
 export ANDROID_SDK_ROOT=/opt/android-sdk
 export CLOUDSDK_PYTHON=/usr/bin/python
-export DEBUG_PRINT_LIMIT=100000
-export TS_NODE_TRANSPILE_ONLY=true
-export NODE_ENV=development
-#export NODE_OPTIONS='--max-old-space-size=8192'
-
 LOCAL_IP="$(ip a | grep 'inet .* wlp2s0' | sed -E 's,.*inet ([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+).*,\1,')"
+
+source "$HOME/.nvm/nvm.sh"
+source "$HOME/.nvm/bash_completion"
+
+export NODE_ENV=development
+export TS_NODE_TRANSPILE_ONLY=true
+export DEBUG_PRINT_LIMIT=100000
 
 alias y='yarn'
 alias yt='yarn test'
@@ -19,10 +19,10 @@ alias ytw='yarn test --watch'
 alias yb='yarn build'
 alias ytc='yarn tsc --noEmit'
 alias yl='yarn lint'
+alias yd='yarn dev'
 alias ys='yarn start'
 alias ysw='yarn start --watch'
 alias yui='yarn upgrade-interactive'
-alias yuil='yarn upgrade-interactive --latest'
 alias ya='yarn add'
 alias yad='yarn add -D'
 alias yar='yarn remove'
@@ -39,8 +39,6 @@ alias uuid='\uuid | tr -d "\n" C'
 alias k9s='\k9s --readonly'
 
 alias -g W='--watch'
-
-# utils
 
 recreate-database() {
   db=${1:-db}

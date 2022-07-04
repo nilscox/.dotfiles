@@ -1,127 +1,107 @@
-# Oh My Zsh
-# =========
+# plugins
 
-HYPHEN_INSENSITIVE="true"
-DISABLE_UPDATE_PROMPT="true"
-ENABLE_CORRECTION="true"
-CORRECT_IGNORE_FILE='.*'
+eval "$(starship init zsh)"
 
-plugins=(sudo systemd git zsh-nvm npm yarn httpie docker docker-compose)
+source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
-export NVM_AUTO_USE=true
+# exported variables
 
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
+export PATH="$HOME/.local/bin:$PATH"
+export PAGER='most'
+export EDITOR='vim'
 
-# Shell options
-# =============
-
-setopt histignorealldups
-setopt sharehistory
-setopt auto_cd
-unsetopt rm_star_silent
-
-# History
-# =======
+# history
 
 HISTFILE=~/.zsh_history
-HISTSIZE=42000
-SAVEHIST=42000
+HISTSIZE=50000
+SAVEHIST=10000
 
-# Completion
-# ==========
+# aliases
 
-autoload -U compinit
-compinit
+alias ls='ls --color=auto'
+alias grep='grep --color=auto --exclude-dir={.git,node_modules}'
 
-# Bind keys
-# =========
+alias l='ls -lh'
+alias la='l -A'
+alias v='vim'
+
+alias -g G='| grep'
+alias -g M='| most'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g C='| wl-copy'
+alias -g TF='| tail -f'
+alias -g NUL='> /dev/null 2>&1'
+
+alias -s pdf='firefox '
+alias -s jpg='firefox '
+alias -s png='firefox '
+alias -s txt='cat '
+alias -s md='cat '
+
+# options
+
+setopt correct
+setopt rcexpandparam
+setopt numericglobsort
+setopt nobeep
+setopt appendhistory
+setopt histignorealldups
+setopt autocd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+
+# keybindings
+
+bindkey -e
 
 autoload -U select-word-style
 select-word-style bash
 
-# Exported varialbes
-# ==================
-
-export LANG='en_US.UTF-8'
-export TERM='xterm-256color'
-export PAGER='most'
-export PATH="$HOME/.local/bin:$PATH"
-export EDITOR='vim'
-
-# Aliases
-# =======
-
-alias l='ll -H'
-alias v='vim'
-
-alias -g G="| grep"
-alias -g M=' | most'
-alias -g H=' | head'
-alias -g T=' | tail'
-alias -g TF=' | tail -f'
-alias -g NUL=' > /dev/null 2>&1'
-
-alias -s pdf='firefox '
-alias -s jpg='feh '
-alias -s png='feh '
-alias -s txt='cat '
-alias -s md='cat '
-
-# Prompt
-# ======
-
-ZSH_THEME_GIT_PROMPT_PREFIX=""
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
-
-prompt_user="%{$fg_no_bold[cyan]%}%n%{$reset_color%}"
-prompt_host="%{$fg_bold[black]%}%m%{$reset_color%}"
-prompt_dir="%{$fg_no_bold[yellow]%}%2~%{$reset_color%}"
-prompt_sudo="%#"
-
-prompt_git() {
-  git_status=$(git_super_status)
-
-  if [ -n "$git_status" ]; then
-    echo "$git_status"
+bindkey_() {
+  if [[ -n "$1" ]]; then
+    bindkey "$1" "$2"
   fi
 }
 
-prompt_date() {
-  echo "%{$fg_bold[black]%}[%{$fg_bold[yellow]%}$(date '+%H:%M:%S')%{$fg_bold[black]%}]%{$reset_color%}"
-}
+bindkey_ "${terminfo[kLFT5]}" backward-word
+bindkey_ "${terminfo[kRIT5]}" forward-word
 
-prompt_status() {
-  last_status="$?"
+autoload -U history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey_ "${terminfo[cuu1]}" history-beginning-search-backward-end
+zle -N history-beginning-search-backward-end history-search-end
+bindkey_ "${terminfo[cud1]}" history-beginning-search-forward-end
 
-  if [[ "$last_status" -ne 0 ]]; then
-    echo "%{$fg_bold[black]%}[%{$fg_no_bold[red]%}$last_status%{$fg_bold[black]%}]%{$reset_color%} "
-  fi
-}
+# completion
 
-if [[ -n "$SSH_CLIENT" ]]; then
-  prompt_host="%{$fg_bold[green]%}%m%{$reset_color%}"
-fi
+autoload -Uz compinit
+compinit
 
-if [[ $UID == 0 ]]; then
-  prompt_user="%{${fg_bold[red]%}%n%{$reset_color%}"
-fi
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' menu select
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
 
-PROMPT=$'$(prompt_status)${prompt_user}:${prompt_host} ${prompt_dir} ${prompt_sudo} '
-# RPROMPT='$(prompt_date)'
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zcache
 
-# fzf
-# ===
+autoload -U +X bashcompinit && bashcompinit
 
-if [ -f ~/.fzf.zsh ]; then
-  source ~/.fzf.zsh
-fi
-
-# Custom config
-# =============
+# custom configs
 
 for file in ~/.zshrc.*; do
   source "$file"
 done
+
+# start sway
 
 if [ "$TTY" = /dev/tty1 ]; then
   sway > /tmp/sway.stdout 2> /tmp/sway.stderr
