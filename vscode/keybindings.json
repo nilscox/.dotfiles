@@ -249,6 +249,12 @@
   { "key": "alt+r", "command": "workbench.view.extension.references-view" },
   { "key": "alt+u", "command": "workbench.action.focusActiveEditorGroup" },
 
+  // editor groups
+  { "key": "ctrl+alt+pageUp", "command": "workbench.action.focusLeftGroup" },
+  { "key": "ctrl+alt+shift+pageUp", "command": "workbench.action.moveEditorToLeftGroup" },
+  { "key": "ctrl+alt+pageDown", "command": "workbench.action.focusRightGroup" },
+  { "key": "ctrl+alt+shift+pageDown", "command": "workbench.action.moveEditorToRightGroup" },
+
   // ui elements
   { "key": "alt+s", "command": "workbench.action.toggleSidebarVisibility" },
   { "key": "alt+m", "command": "editor.action.toggleMinimap" },
