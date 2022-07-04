@@ -1,0 +1,8 @@
+output eDP-1 mode 1920x1200
+output HDMI-A-1 mode 2560x1440
+output DP-2 mode 2560x1440
+
+output * bg ~/.default-wallpaper.png center
+
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable

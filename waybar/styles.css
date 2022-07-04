@@ -1,16 +1,16 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "JetBrains Mono", FontAwesome, monospace;
-  font-weight: bold;
-  font-size: 12px;
+  font-family: JetBrainsMonoNL, UbuntuMono;
+  font-weight: 500;
+  font-size: 14px;
   min-height: 0;
-  color: #d2d5d9;
+  color: #eceff4;
   background-color: transparent;
 }
 
 window#waybar {
-  background: rgba(34, 34, 34, 0.9);
+  background: rgba(46, 52, 64, 0.9);
 }
 
 window#waybar.top > * {
@@ -26,8 +26,8 @@ window#waybar.bottom > * {
 }
 
 tooltip {
-  background: rgba(34, 34, 34, 0.9);
-  border: none;
+  background: rgba(46, 52, 64, 0.9);
+  border: 1px solid rgba(56, 62, 74, 0.9);
 }
 
 #custom-gnma {
@@ -39,8 +39,13 @@ tooltip {
 #pulseaudio,
 #network,
 #battery,
-#tray {
+#tray,
+#custom-power {
   margin-left: 20px;
+}
+
+#clock {
+  margin: 0 60px;
 }
 
 #workspaces button {
@@ -69,6 +74,11 @@ tooltip {
   padding: 0 8px;
 }
 
+#window {
+  margin-left: 8px;
+  color: rgba(236, 239, 244, 0.5);
+}
+
 #battery.warning:not(.charging) {
   color: #ffca0a;
 }
@@ -87,7 +97,7 @@ tooltip {
 #memory,
 #disk {
   margin-right: 15px;
-  color: #81868f;
+  color: rgba(236, 239, 244, 0.6);
   font-size: 10px;
 }
 
@@ -95,7 +105,7 @@ tooltip {
 #network.local-ip,
 #network.bandwidth {
   margin-left: 15px;
-  color: #81868f;
+  color: rgba(236, 239, 244, 0.6);
   font-size: 10px;
 }
 

@@ -1,0 +1,6 @@
+exec_always systemctl --user restart kanshi.service
+
+exec mkdir -p /tmp/downloads
+exec mako
+
+exec alacritty

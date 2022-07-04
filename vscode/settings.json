@@ -133,6 +133,10 @@
   "search.showLineNumbers": true,
   "explorer.openEditors.visible": 0,
 
+  "files.associations": {
+    "*.sway": "i3"
+  },
+
   // formatters
   "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },

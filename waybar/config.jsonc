@@ -1,31 +1,22 @@
-// #!/bin/bash
-
-// CONFIG_FILES="$HOME/.config/waybar/config $HOME/.config/waybar/style.css"
-
-// trap "killall waybar" EXIT
-
-// while true; do
-//     waybar &
-//     inotifywait -e create,modify $CONFIG_FILES
-//     killall waybar
-// done
-
 [
   {
     "position": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": [
-      // "custom/random",
       "custom/gnma",
       "custom/weather",
       "backlight",
       "pulseaudio",
       "network",
       "battery",
-      "tray"
+      "tray",
+      "custom/power"
     ],
+
+    // left
     "sway/workspaces": {
+      "disable-scroll": true,
       "format": "{icon}",
       "format-icons": {
         "1": "1:web",
@@ -34,6 +25,22 @@
         "4": "4:o&lt;"
       }
     },
+    "sway/mode": {
+      "format": "{}"
+    },
+    "sway/window": {
+      "format": "{}"
+    },
+
+    // center
+    "clock": {
+      "interval": 1,
+      "format": " {:%H:%M}",
+      "format-alt": " {:%a %d %b  %H:%M:%S}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    // right
     "custom/gnma": {
       "format": " {}",
       "interval": 5,
@@ -43,22 +50,14 @@
       "min-length": 1,
       "on-click": "gnome-next-meeting-applet dbus open_event_url"
     },
-    "clock": {
-      "interval": 1,
-      "format-alt": "{:%a, %d. %b  %H:%M:%S}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-    },
     "custom/weather": {
       "exec": "curl 'https://wttr.in/?format=1'",
       "interval": 600
     },
-    "custom/random": {
-      "exec": "while true; do echo $RANDOM; sleep 0.1; done"
-    },
     "backlight": {
       "device": "intel_backlight",
       "format": "{icon} {percent}%",
-      "format-icons": [""],
+      "format-icons": ["", ""],
       "on-scroll-up": "brightnessctl set +1%",
       "on-scroll-down": "brightnessctl set 1%-"
     },
@@ -90,6 +89,11 @@
     },
     "tray": {
       "spacing": 10
+    },
+    "custom/power": {
+      "format": "⏻",
+      "on-click": "nwg-bar",
+      "tooltip": false
     }
   },
   {
@@ -103,6 +107,8 @@
       "disk#tmp"
     ],
     "modules-right": ["custom/ip", "network#local-ip", "network#bandwidth"],
+
+    // left
     "cpu": {
       "interval": 10,
       "format": "cpu: {usage}% ({load})",
@@ -135,6 +141,8 @@
       "path": "/tmp",
       "tooltip-format": "{used} used out of {total} ({percentage_free}% remaining)"
     },
+
+    // right
     "custom/ip": {
       "format": "{}",
       "exec": "curl -s https://ifconfig.me",
