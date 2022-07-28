@@ -71,9 +71,9 @@ bindkey_ "${terminfo[kLFT5]}" backward-word
 bindkey_ "${terminfo[kRIT5]}" forward-word
 
 autoload -U history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey_ "${terminfo[cuu1]}" history-beginning-search-backward-end
 zle -N history-beginning-search-backward-end history-search-end
+bindkey_ "${terminfo[cuu1]}" history-beginning-search-backward-end
+zle -N history-beginning-search-forward-end history-search-end
 bindkey_ "${terminfo[cud1]}" history-beginning-search-forward-end
 
 # completion
@@ -94,6 +94,8 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zcache
 
 autoload -U +X bashcompinit && bashcompinit
+
+bindkey_ "${terminfo[kcbt]}" reverse-menu-complete
 
 # custom configs
 
