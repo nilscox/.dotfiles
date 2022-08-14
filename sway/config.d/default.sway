@@ -90,6 +90,7 @@ bindsym $mod+Return exec "swaymsg scratchpad show && ~/.config/sway/scripts/move
 # screenshot
 
 bindsym Print exec 'grim -g "$(slurp)" -c - | wl-copy'
+bindsym shift+Print exec 'grim -g "$(slurp; sleep 4)" -c - | wl-copy'
 
 # resize mode
 
