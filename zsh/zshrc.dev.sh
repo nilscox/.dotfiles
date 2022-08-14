@@ -44,12 +44,12 @@ recreate-database() {
   db=${1:-db}
   template=${2}
 
-  psql -h localhost -U root postgres -c "drop database \"$db\""
+  psql -h localhost -U postgres postgres -c "drop database \"$db\""
 
   if [ -n "$template" ]; then
-    psql -h localhost -U root postgres -c "create database \"$db\" template \"$template\""
+    psql -h localhost -U postgres postgres -c "create database \"$db\" template \"$template\""
   else
-    psql -h localhost -U root postgres -c "create database \"$db\""
+    psql -h localhost -U postgres postgres -c "create database \"$db\""
   fi
 }
 
