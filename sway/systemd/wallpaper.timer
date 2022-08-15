@@ -1,0 +1,8 @@
+[Unit]
+Description=Update the current wallpaper every 4 hours
+
+[Timer]
+OnCalendar=0/4:0
+
+[Install]
+WantedBy=timers.target

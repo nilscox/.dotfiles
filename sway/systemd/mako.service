@@ -1,0 +1,10 @@
+[Unit]
+Description=Notification daemon
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mako
+
+[Install]
+WantedBy=sway-session.target

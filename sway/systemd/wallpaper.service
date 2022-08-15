@@ -1,0 +1,9 @@
+[Unit]
+Description=Update the current wallpaper
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/sway/scripts/set-wallpaper.sh
+
+[Install]
+WantedBy=sway-session.target
