@@ -17,16 +17,18 @@ extensions=(
   eamodio.gitlens
   mikestead.dotenv
   formulahendry.auto-rename-tag
-  ms-vsliveshare.vsliveshare
-  usernamehw.find-jump
   cardinal90.multi-cursor-case-preserve
   dbankier.vscode-quick-select
   dcasella.i3
   bradlc.vscode-tailwindcss
-  stkb.rewrap
   streetsidesoftware.code-spell-checker
   streetsidesoftware.code-spell-checker-french
-  graphql.vscode-graphql
+  bungcip.better-toml
+  hangxingliu.vscode-systemd-support
+  # ms-vsliveshare.vsliveshare
+  # usernamehw.find-jump
+  # stkb.rewrap
+  # graphql.vscode-graphql
 )
 
 # https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
