@@ -1,5 +1,4 @@
 exec mkdir -p /tmp/downloads
-exec mako
 exec ~/.config/sway/scripts/set-wallpaper.sh
 exec_always systemctl --user restart kanshi.service
 
