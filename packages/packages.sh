@@ -3,16 +3,19 @@
 source "$DOT/functions.sh"
 set -xeo pipefail
 
-install_yaourt() {
+install_yay() {
+  sudo pacman -S --needed git base-devel
+
   tmp=$(mktemp -d)
 
   (
     cd "$tmp"
-    for r in package-query yaourt; do
-      git clone "https://aur.archlinux.org/$r.git"
-      (cd "$r" && makepkg -is)
-    done
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -is
   )
+
+  rm -rf "$tmp"
 }
 
 packages_list() {
@@ -28,9 +31,9 @@ install_packages_archlinux() {
   sudo pacman-key --populate archlinux
   sudo pacman -S $(packages_list packages.pacman)
 
-  install_yaourt
-  yaourt -Syy
-  yaourt --noconfirm -S $(packages_list packages.aur)
+  install_yay
+  yay -Syy
+  yay --noconfirm -S $(packages_list packages.aur)
 }
 
 install_packages_fedora() {

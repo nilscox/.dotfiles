@@ -19,6 +19,7 @@ man-db
 man-pages
 sysstat
 reflector
+polkit
 
 # network tools
 
@@ -30,7 +31,10 @@ dhcpcd
 
 # secondary tools
 
+alacritty
 acpi
+bitwarden-cli
+brightnessctl
 most
 htop
 tree
@@ -40,6 +44,7 @@ docker-compose
 postgresql
 nginx
 upower
+starship
 httpie
 jq
 fzf
@@ -69,6 +74,7 @@ swayidle
 swaybg
 swaylock
 waybar
+kanshi
 
 # fonts
 
@@ -76,6 +82,7 @@ ttf-liberation
 ttf-dejavu
 ttf-bitstream-vera
 ttf-font-awesome
+ttf-jetbrains-mono
 adobe-source-code-pro-fonts
 noto-fonts
 

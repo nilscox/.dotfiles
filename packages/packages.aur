@@ -1,10 +1,9 @@
-ttf-jetbrains-mono
-brightnessctl
 pcloudcc-git
 inkdrop
-bitwarden-cli
 bitwarden-rofi
 visual-studio-code-bin
+zsh-sudo-git
+nerd-fonts-fira-code
 
 # optional
 
@@ -22,3 +21,4 @@ visual-studio-code-bin
 # sway
 
 rofi-lbonn-wayland
+nwg-bar
