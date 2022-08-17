@@ -15,6 +15,8 @@ ln -sf "$dot/sway/systemd/mako.service" "$config/systemd/user"
 ln -sf "$dot/sway/systemd/wallpaper.service" "$config/systemd/user"
 ln -sf "$dot/sway/systemd/wallpaper.timer" "$config/systemd/user"
 
+ln -sf /usr/share/pixmaps/archlinux-logo ~/.default-wallpaper.png
+
 systemctl --user enable kanshi
 systemctl --user enable mako
 systemctl --user enable wallpaper
