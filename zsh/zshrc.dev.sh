@@ -9,6 +9,9 @@ LOCAL_IP="$(ip a | grep 'inet .* wlp2s0' | sed -E 's,.*inet ([0-9]+\.[0-9]+\.[0-
 source "$HOME/.nvm/nvm.sh"
 source "$HOME/.nvm/bash_completion"
 
+[ -f /opt/google-cloud-sdk/completion.zsh.inc ] && source /opt/google-cloud-sdk/completion.zsh.inc
+[ -f /opt/google-cloud-sdk/path.zsh.inc ] && source /opt/google-cloud-sdk/path.zsh.inc
+
 export NODE_ENV=development
 export TS_NODE_TRANSPILE_ONLY=true
 export DEBUG_PRINT_LIMIT=100000
