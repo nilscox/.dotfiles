@@ -20,23 +20,22 @@ efibootmgr
 
 - create ~/.zshrc.local
 - copy ssh keys
-- edit xorg configuration files
 - create bookmarks in gtk file dialog
-- enable netctl-auto
 - create and fill ~/.wallpapers
-- login in pcloudcc
 
 ## firefox
 
 - login
 - create ~/.mozilla/firefox/<profile>/chrome/userChrome.css
-- set /tmp/downloads as download destination
 - set toolkit.legacyUserProfileCustomizations.stylesheets to true in firefox about:config
 - set apz.gtk.kinetic_scroll.enabled to false
-- configure extensions (tree style tab, vimium, tab suspender)
 
 ## chrome
 
 - enable chrome://flags/#allow-insecure-localhost
 - set /tmp/downloads as download destination
-- create sessions
+
+## flatpak
+
+- edit /var/lib/flatpak/exports/share/applications/com.slack.Slack.desktop
+- set `Exec=... --command=slack --socket=wayland ...`
