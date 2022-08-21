@@ -51,7 +51,7 @@
       "on-click": "gnome-next-meeting-applet dbus open_event_url"
     },
     "custom/weather": {
-      "exec": "curl 'https://wttr.in/?format=1'",
+      "exec": "curl -s 'https://wttr.in/?format=1'",
       "interval": 600
     },
     "backlight": {
