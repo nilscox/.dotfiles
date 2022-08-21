@@ -1,7 +1,7 @@
 ## required packages
 
 ```
-sudo dhcpcd wpa_supplicant netctl syslinux git openssh
+base linux linux-firmware dosfstools efibootmgr syslinux dhcpcd wpa_supplicant vim sudo git
 ```
 
 ## syslinux install
