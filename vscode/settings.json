@@ -175,6 +175,7 @@
 
   // git
   "scm.defaultViewMode": "tree",
+  "git.mergeEditor": false,
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.views.commits.files.layout": "tree",
   "gitlens.statusBar.enabled": true,

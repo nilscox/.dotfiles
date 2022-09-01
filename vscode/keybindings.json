@@ -223,14 +223,14 @@
   { "key": "ctrl+b", "command": "git.checkout" },
 
   // zoom in / out
-  { "key": "ctrl+F1", "command": "workbench.action.zoomIn" },
-  { "key": "ctrl+F2", "command": "workbench.action.zoomOut" },
+  // { "key": "", "command": "workbench.action.zoomIn" },
+  // { "key": "", "command": "workbench.action.zoomOut" },
 
-  { "key": "ctrl+F3", "command": "editor.action.fontZoomIn" },
-  { "key": "ctrl+F4", "command": "editor.action.fontZoomOut" },
+  // { "key": "", "command": "editor.action.fontZoomIn" },
+  // { "key": "", "command": "editor.action.fontZoomOut" },
 
-  { "key": "ctrl+F5", "command": "workbench.action.zoomReset" },
-  { "key": "ctrl+F6", "command": "editor.action.fontZoomReset" },
+  // { "key": "", "command": "workbench.action.zoomReset" },
+  // { "key": "", "command": "editor.action.fontZoomReset" },
 
   // scroll by half pages
   { "key": "ctrl+up", "command": "editorScroll", "when": "textInputFocus", "args": { "to": "up", "by": "halfPage", "value": 1 } },
@@ -241,8 +241,7 @@
   { "key": "alt+e", "command": "workbench.view.explorer" },
   { "key": "alt+shift+e", "command": "workbench.files.action.showActiveFileInExplorer" },
   { "key": "alt+g", "command": "workbench.view.scm" },
-  { "key": "alt+p", "command": "workbench.action.problems.focus" },
-  { "key": "alt+t", "command": "workbench.action.terminal.focus" },
+  { "key": "alt+v", "command": "workbench.action.terminal.toggleTerminal" },
   { "key": "alt+x", "command": "workbench.view.extensions" },
   { "key": "alt+f", "command": "workbench.view.search" },
   { "key": "alt+d", "command": "workbench.view.debug" },
@@ -259,8 +258,8 @@
   { "key": "alt+s", "command": "workbench.action.toggleSidebarVisibility" },
   { "key": "alt+m", "command": "editor.action.toggleMinimap" },
   { "key": "alt+b", "command": "breadcrumbs.toggle" },
-  { "key": "alt+t", "command": "terminal.focus" },
-  { "key": "alt+v", "command": "workbench.action.toggleAuxiliaryBar" },
+  // { "key": "alt+t", "command": "terminal.focus" },
+  // { "key": "alt+v", "command": "workbench.action.toggleAuxiliaryBar" },
 
   // fold blocks
   { "key": "ctrl+1", "command": "editor.foldLevel1", "when": "editorTextFocus && foldingEnabled" },
