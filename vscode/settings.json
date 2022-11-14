@@ -29,7 +29,6 @@
   // TODO: not working?
   "editor.linkedEditing": true,
 
-  "editor.wordBasedSuggestions": false,
   "editor.snippetSuggestions": "none",
 
   "editor.formatOnSave": true,
@@ -45,10 +44,11 @@
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.fontFamily": "'JetBrains Mono NL', 'Symbols Nerd Font'",
   "terminal.integrated.fontWeight": "500",
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 12,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.wordSeparators": " (){}',\"`─‘’",
   "terminal.integrated.commandsToSkipShell": [
     "-workbench.action.quickOpen",
     "workbench.action.toggleAuxiliaryBar"
@@ -71,7 +71,7 @@
   "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro', 'Iosevka'",
   "editor.fontLigatures": true,
   "editor.rulers": [110],
-  "editor.fontSize": 13,
+  "editor.fontSize": 12,
 
   "workbench.editorAssociations": {
     "git-rebase-todo": "default"
@@ -113,6 +113,7 @@
           "comment",
           "keyword.operator.new",
           "keyword.control.import",
+          "keyword.control.from",
           "keyword.control.export",
           "keyword.control.default",
           "keyword.control.trycatch",

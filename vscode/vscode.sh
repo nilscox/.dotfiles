@@ -25,6 +25,7 @@ extensions=(
   streetsidesoftware.code-spell-checker-french
   bungcip.better-toml
   hangxingliu.vscode-systemd-support
+  csstools.postcss
   # ms-vsliveshare.vsliveshare
   # usernamehw.find-jump
   # stkb.rewrap
