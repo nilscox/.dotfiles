@@ -20,6 +20,7 @@ man-pages
 sysstat
 reflector
 polkit
+notify-tools
 
 # network tools
 
@@ -39,8 +40,9 @@ most
 htop
 tree
 sshfs
-docker
-docker-compose
+#docker
+#docker-compose
+podman
 postgresql
 nginx
 upower
@@ -75,6 +77,7 @@ swaybg
 swaylock
 waybar
 kanshi
+mako
 wl-clipboard
 grim
 slurp
@@ -88,6 +91,7 @@ ttf-font-awesome
 ttf-jetbrains-mono
 adobe-source-code-pro-fonts
 noto-fonts
+noto-fonts-emoji
 
 # gui
 
@@ -106,6 +110,7 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 bluez
 bluez-utils
+blueman
 pavucontrol
 
 # not installed by default
