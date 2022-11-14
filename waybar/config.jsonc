@@ -29,7 +29,7 @@
       "format": "{}"
     },
     "sway/window": {
-      "format": "{}"
+      "format": " •  {}"
     },
 
     // center

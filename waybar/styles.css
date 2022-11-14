@@ -3,26 +3,22 @@
   border-radius: 0;
   font-family: JetBrainsMonoNL, UbuntuMono;
   font-weight: 500;
-  font-size: 14px;
   min-height: 0;
-  color: #eceff4;
-  background-color: transparent;
+}
+
+button {
+  padding: 0;
+  color: inherit;
+}
+
+button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: inherit;
 }
 
 window#waybar {
   background: rgba(46, 52, 64, 0.9);
-}
-
-window#waybar.top > * {
-  margin-right: 8px;
-}
-
-window#waybar.bottom {
-  border-top: 1px solid #333;
-}
-
-window#waybar.bottom > * {
-  margin: 2px 4px 0 4px;
 }
 
 tooltip {
@@ -30,8 +26,35 @@ tooltip {
   border: 1px solid rgba(56, 62, 74, 0.9);
 }
 
+@keyframes blink {
+  0% {
+    background-color: inherit;
+  }
+}
+
+@keyframes urgent {
+  0% {
+    background-color: #ffca0a;
+  }
+
+  10% {
+    background-color: inherit;
+  }
+}
+
+/* top */
+
+window#waybar.top {
+  font-size: 14px;
+  color: #eceff4;
+}
+
+window#waybar.top button {
+  margin-right: 8px;
+}
+
 #custom-gnma {
-  margin-right: 30px;
+  font-size: 0.8rem;
 }
 
 #custom-weather,
@@ -50,13 +73,7 @@ tooltip {
 
 #workspaces button {
   padding: 0 8px;
-  background: transparent;
   border-bottom: 2px solid transparent;
-}
-
-#workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
 }
 
 #workspaces button.focused {
@@ -75,8 +92,7 @@ tooltip {
 }
 
 #window {
-  margin-left: 8px;
-  color: rgba(236, 239, 244, 0.5);
+  color: #a3a5a8;
 }
 
 #battery.warning:not(.charging) {
@@ -92,40 +108,32 @@ tooltip {
   background: rgba(34, 34, 34, 0.9);
 }
 
+/* bottom */
+
+window#waybar.bottom {
+  border-top: 1px solid #333;
+  font-size: 10px;
+  color: #a3a5a8;
+}
+
+window#waybar.bottom button {
+  margin-top: 1px;
+}
+
 #cpu,
 #temperature,
 #memory,
 #disk {
   margin-right: 15px;
-  color: rgba(236, 239, 244, 0.6);
-  font-size: 10px;
 }
 
 #custom-ip,
 #network.local-ip,
 #network.bandwidth {
   margin-left: 15px;
-  color: rgba(236, 239, 244, 0.6);
-  font-size: 10px;
 }
 
 #temperature.critical {
   background-color: #c73f3e;
   color: #fff;
-}
-
-@keyframes blink {
-  0% {
-    background-color: inherit;
-  }
-}
-
-@keyframes urgent {
-  0% {
-    background-color: #ffca0a;
-  }
-
-  10% {
-    background-color: inherit;
-  }
 }
