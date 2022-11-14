@@ -29,6 +29,7 @@ efibootmgr
 - create ~/.mozilla/firefox/<profile>/chrome/userChrome.css
 - set toolkit.legacyUserProfileCustomizations.stylesheets to true in firefox about:config
 - set apz.gtk.kinetic_scroll.enabled to false
+- set privacy.webrtc.legacyGlobalIndicator to false
 
 ## chrome
 

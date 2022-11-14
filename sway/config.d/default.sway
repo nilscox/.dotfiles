@@ -44,6 +44,7 @@ bindsym $mod+t layout tabbed
 bindsym $mod+w layout toggle split
 
 bindsym $mod+f fullscreen
+bindsym $mod+Shift+f exec "systemctl --user is-active waybar.service -q && systemctl --user stop waybar.service || systemctl --user start waybar.service"
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
@@ -110,3 +111,17 @@ bindsym --whole-window --border $mod+button4 resize shrink height 5 px or 5 ppt
 bindsym --whole-window --border $mod+button5 resize grow height 5 px or 5 ppt
 bindsym --whole-window --border $mod+shift+button4 resize shrink width 5 px or 5 ppt
 bindsym --whole-window --border $mod+shift+button5 resize grow width 5 px or 5 ppt
+
+# fn keys
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%

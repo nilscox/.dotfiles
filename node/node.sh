@@ -12,6 +12,5 @@ nvm use --lts
 npm i -g yarn
 npm i -g typescript
 npm i -g ts-node
-npm i -g http-server
 npm i -g nodemon
 npm i -g uuid
