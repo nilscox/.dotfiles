@@ -1,12 +1,14 @@
 [Unit]
-Description=Update the current wallpaper
+Description=Waybar
 PartOf=graphical-session.target
 After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-Type=oneshot
-ExecStart=%h/.config/sway/scripts/set-wallpaper.sh
+Type=simple
+ExecStart=/usr/bin/waybar
+ExecReload=kill -SIGUSR2 $MAINPID
+Restart=on-failure
 
 [Install]
 WantedBy=sway-session.target

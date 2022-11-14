@@ -1,6 +1,8 @@
 [Unit]
 Description=Dynamic display configuration
 PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
 
 [Service]
 Type=simple
