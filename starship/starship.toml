@@ -1,3 +1,8 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$git_branch$git_commit$git_metrics$git_status
+$all"""
+
 add_newline = true
 
 [username]
@@ -24,12 +29,12 @@ truncation_symbol = "…/"
 [sudo]
 disabled = false
 
-[git_status]
-ahead = "⇡${count}"
-behind = "⇣${count}"
-deleted = "x"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-style = "white dimmed"
+# [git_status]
+# ahead = "⇡${count}"
+# behind = "⇣${count}"
+# deleted = "x"
+# diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+# style = "white dimmed"
 
 [cmd_duration]
 disabled = false
@@ -51,12 +56,37 @@ disabled = true
 
 [git_branch]
 style = "yellow"
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[git_commit]
+format = "[$hash$tag]($style) "
+style = 'blue dimmed'
+only_detached = false
+
+[git_metrics]
+disabled = false
+
+[git_status]
+format = '| [$all_status$ahead_behind]($style)'
+conflicted = "🏳"
+ahead = "⬆️${count} "
+behind = "⬇️${count} "
+diverged = "↕️${ahead_count}⇣${behind_count} "
+up_to_date = "✓"
+untracked = "🤷${count} "
+stashed = "📦"
+modified = "📝${count} "
+staged = '[++\($count\)](green)'
+renamed = "👅${count} "
+deleted = "🗑${count} "
+style = "white"
 
 [golang]
 symbol = " "
 
 [nodejs]
 symbol = " "
+format = "[$symbol($version )]($style)"
 
 [package]
 symbol = " "
