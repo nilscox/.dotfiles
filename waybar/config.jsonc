@@ -29,7 +29,7 @@
       "format": "{}"
     },
     "sway/window": {
-      "format": " •  {}"
+      "format": "{}"
     },
 
     // center
@@ -57,41 +57,46 @@
     "backlight": {
       "device": "intel_backlight",
       "format": "{icon} {percent}%",
-      "format-icons": ["", ""],
+      "format-icons": "",
       "on-scroll-up": "brightnessctl set +1%",
       "on-scroll-down": "brightnessctl set 1%-"
     },
     "pulseaudio": {
       "format": "{icon} {volume}%",
-      "format-bluetooth": "{volume}% {icon}",
-      "format-muted": "🔇",
+      "format-bluetooth": " {icon} {volume}%",
+      "format-muted": "",
       "format-icons": {
-        "default": ["🔈", "🔉", "🔊"]
+        "default": ["", "", ""]
       },
       "scroll-step": 1,
       "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
       "on-click-right": "pavucontrol"
     },
     "network": {
-      "interface": "wlan0",
+      "interface": "wlp0s20f3",
       "format-wifi": " {essid} ({signalStrength}%)",
       "format-disconnected": "not connected"
     },
     "battery": {
+      "bat": "BAT0",
       "states": {
         "warning": 25,
         "critical": 10
       },
+      "full-at": 99,
       "format": "{capacity}% {icon}",
-      "format-charging": "{capacity}% ",
-      "format-plugged": "{capacity}% ",
-      "format-icons": ["", "", "", "", ""]
+      "format-icons": {
+        "default": ["", "", "", "", ""],
+        "plugged": "",
+        "not-charging": "",
+        "charging": ""
+      }
     },
     "tray": {
       "spacing": 10
     },
     "custom/power": {
-      "format": "⏻",
+      "format": "",
       "on-click": "nwg-bar",
       "tooltip": false
     }

@@ -6,7 +6,6 @@ STYLES="$HOME/.dotfiles/waybar/styles.css"
 trap "killall waybar" EXIT
 
 while true; do
-  waybar -c "$CONFIG" -s "$STYLES" &
+  systemctl --user restart waybar
   inotifywait -e create,modify "$CONFIG" "$STYLES"
-  killall waybar
 done
