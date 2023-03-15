@@ -1,13 +1,12 @@
 {
-  "fc": {
-    "description": "React function component",
+  "react component": {
     "scope": "typescriptreact",
     "body": [
       "type ${1:${TM_FILEPATH/.*\\/(.*)\\/index\\.[jt]sx?$|.*\\/(.*)\\.[jt]sx?$/$1$2/}}Props = {",
       "  $2",
       "};",
       "",
-      "const ${1}: React.FC<${1}Props> = ({ $3 }) => {",
+      "const ${1} = ({ $3 }: ${1}Props) => {",
       "  return (",
       "    <$4>",
       "      $0",

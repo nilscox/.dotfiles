@@ -1,7 +1,7 @@
 {
   "react-intl": {
     "description": "Wrap a selection in intl.formatMessage",
-    "scope": "html,javascriptreact,typescriptreact",
+    "scope": "html,javascript,typescript,javascriptreact,typescriptreact",
     "body": ["intl.formatMessage({ defaultMessage: '$TM_SELECTED_TEXT' })"]
   }
 }

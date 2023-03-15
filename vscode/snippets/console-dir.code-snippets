@@ -1,8 +1,6 @@
 {
   "console dir": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
-    "body": [
-      "console.dir(${1:$TM_SELECTED_TEXT}, { depth: null });"
-    ]
+    "body": ["console.dir(${1:$TM_SELECTED_TEXT}, { depth: null });"]
   }
 }
