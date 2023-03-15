@@ -26,3 +26,5 @@ chpwd() {
     loaded=true
   fi
 }
+
+[ -f ./.nvmrc ] && chpwd

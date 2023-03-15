@@ -17,6 +17,11 @@ export NODE_ENV=development
 export TS_NODE_TRANSPILE_ONLY=true
 export DEBUG_PRINT_LIMIT=100000
 
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && source ~/.config/tabtab/zsh/__tabtab.zsh
+
 alias y='yarn'
 alias yt='yarn test'
 alias ytw='yarn test --watch'
@@ -32,8 +37,23 @@ alias yad='yarn add -D'
 alias yar='yarn remove'
 alias ysb='yarn storybook'
 
+alias p='pnpm'
+alias pt='pnpm run test'
+alias ptw='pnpm run test --watch'
+alias pb='pnpm build'
+alias ptc='pnpm tsc --noEmit'
+alias pl='pnpm lint'
+alias pd='pnpm dev'
+alias ps='pnpm start'
+alias psw='pnpm start --watch'
+alias pui='pnpm upgrade-interactive'
+alias pa='pnpm add'
+alias pad='pnpm add -D'
+alias pr='pnpm remove'
+alias psb='pnpm storybook'
+
 alias g='git'
-alias p='python'
+alias py='python'
 
 alias d='docker'
 alias dcp='docker-compose'
