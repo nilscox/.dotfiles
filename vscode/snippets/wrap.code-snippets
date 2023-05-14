@@ -1,7 +1,7 @@
 {
   "wrap": {
-    "description": "Wrap a selection between a JSX tag",
-    "scope": "markdown,html,javascriptreact,typescriptreact",
+    "description": "Wrap a selection between a tag",
+    "scope": "markdown,html,svg,javascriptreact,typescriptreact",
     "body": ["<${0}>$TM_SELECTED_TEXT</$0>"]
   }
 }

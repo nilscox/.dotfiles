@@ -42,7 +42,7 @@
   "terminal.integrated.tabs.location": "left",
   "terminal.integrated.showLinkHover": false,
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "terminal.integrated.fontFamily": "'JetBrains Mono NL', 'Symbols Nerd Font'",
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Source Code Pro', 'Font Awesome 6 Free Solid', 'Iosevka'",
   "terminal.integrated.fontWeight": "500",
   "terminal.integrated.fontSize": 12,
   "terminal.integrated.scrollback": 10000,
@@ -68,7 +68,7 @@
   "breadcrumbs.enabled": false,
 
   // font
-  "editor.fontFamily": "'JetBrains Mono', 'Monaco', 'Source Code Pro', 'Iosevka'",
+  "editor.fontFamily": "'JetBrains Mono', 'Source Code Pro', 'Font Awesome 6 Free Solid', 'Iosevka'",
   "editor.fontLigatures": true,
   "editor.rulers": [110],
   "editor.fontSize": 12,
@@ -143,6 +143,7 @@
   "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[xml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
