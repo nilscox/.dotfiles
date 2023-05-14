@@ -20,7 +20,7 @@ man-pages
 sysstat
 reflector
 polkit
-notify-tools
+inotify-tools
 
 # network tools
 
@@ -29,6 +29,8 @@ wireless_tools
 wpa_supplicant
 #netctl
 dhcpcd
+networkmanager
+network-manager-applet
 
 # secondary tools
 
@@ -54,6 +56,7 @@ fzf
 #gnome-keyring
 #libsecret
 lzop
+imagemagick
 
 # i3
 
@@ -81,6 +84,8 @@ mako
 wl-clipboard
 grim
 slurp
+libappindicator-gtk2
+libappindicator-gtk3
 
 # fonts
 
@@ -99,8 +104,10 @@ otf-font-awesome
 terminator
 firefox
 chromium
+epiphany
 feh
 gimp
+ksnip
 
 # audio
 
@@ -113,6 +120,14 @@ bluez
 bluez-utils
 blueman
 pavucontrol
+gstreamer
+gst-plugin-pipewire
+gst-plugins-ugly
+gst-plugins-bad
+gst-plugins-good
+gst-plugins-base
+gst-plugins-base-libs
+gst-libav
 
 # not installed by default
 
