@@ -1,2 +1,4 @@
 include /etc/sway/config.d/*
-include $HOME/.config/sway/config.d/*
+include $XDG_CONFIG_HOME/sway/config.d/*
+
+exec "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
