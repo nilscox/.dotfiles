@@ -1,7 +1,27 @@
-/*
- * Do not remove the @namespace line -- it's required for correct functioning
- */
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+#tabbrowser-tabs {
+  visibility: collapse !important;
+  min-height: 0 !important;
+}
 
-#tabbrowser-tabs { visibility: collapse !important; }
-#sidebar-header { visibility: collapse !important; }
+tab {
+  display: none !important;
+}
+
+#titlebar {
+  appearance: none !important;
+  height: 0px;
+}
+
+#titlebar > #toolbar-menubar {
+  margin-top: 0px;
+}
+
+#TabsToolbar {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
+  #sidebar-header {
+  display: none;
+}
