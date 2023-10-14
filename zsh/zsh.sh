@@ -1,20 +1,15 @@
 #!/bin/env bash
 
 source "$DOT/functions.sh"
-set -xeo pipefail
+set -eo pipefail
 
-ln -s "$dot/zsh/zshrc.sh" "$dest/.zshrc"
-ln -s "$dot/zsh/zshrc.dev.sh" "$dest/.zshrc.dev"
+for file in $(ls "$dot/zsh/configs" | grep -E -v '^(zshrc|env).zsh$'); do
+  ln -sf "$dot/zsh/configs/$file" "$config/zsh"
+done
 
-if [ "$distrib" = 'debian' ]; then
-  ln -s "$dot/zsh/zshrc.debian.sh" "$dest/.zshrc.debian"
-elif [ "$distrib" = 'arch' ]; then
-  ln -s "$dot/zsh/zshrc.archlinux.sh" "$dest/.zshrc.archlinux"
-elif [ "$distrib" = 'fedora' ]; then
-  ln -s "$dot/zsh/zshrc.fedora.sh" "$dest/.zshrc.fedora"
-fi
-
-ln -s "$dot/zsh/scripts" "$local/scripts"
+ln -sf "$dot/zsh/configs/zshrc.zsh" "$config/zsh/.zshrc"
+ln -sf "$dot/zsh/configs/zshenv.zsh" "$config/zsh/.zshenv"
+ln -sf "$config/zsh/.zshenv" "$dest/.zshenv"
 
 chsh -s $(which zsh)
 
