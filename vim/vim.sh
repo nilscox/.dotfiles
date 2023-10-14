@@ -3,7 +3,8 @@
 source "$DOT/functions.sh"
 set -xeo pipefail
 
-ln -sf "$dot/vim/vimrc" "$dest/.vimrc"
-clone_or_pull 'https://github.com/VundleVim/Vundle.vim.git' "$dest/.vim/bundle/Vundle.vim"
+mkdir -p "$config/nvim"
 
-vim +PluginInstall +qall
+ln -sf "$dot/vim/init.lua" "$config/nvim/init.lua"
+ln -sf "$dot/vim/lazy-lock.json" "$config/nvim/lazy-lock.json"
+ln -sf "$dot/vim/lua" "$config/nvim/lua"
