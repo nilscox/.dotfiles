@@ -1,25 +1,12 @@
-pcloudcc-git
+bitwarden-rofi-git
 inkdrop
-bitwarden-rofi
-visual-studio-code-bin
-zsh-sudo-git
-nerd-fonts-fira-code
-jetbrains-fleet
-
-# optional
-
-# slack-desktop # flatpak
+nwg-bar-bin
+pcloudcc-git
+rofi-lbonn-wayland
+slack-desktop
 spotify
 thunderbird-beta-bin
+visual-studio-code-bin
+zsh-sudo-git
 
-# i3
-
-#perl-anyevent-i3
-#rofi-emoji
-#polybar
-#zscroll-git
-
-# sway
-
-rofi-lbonn-wayland
-nwg-bar
+# jetbrains-fleet

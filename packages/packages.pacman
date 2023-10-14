@@ -2,139 +2,124 @@
 
 base
 base-devel
-syslinux
-dosfstools
-efibootmgr
-
-# main tools
-
-sudo
-ntp
-git
-zsh
-vim
-zip
-unzip
 man-db
 man-pages
-sysstat
-reflector
-polkit
-inotify-tools
+sudo
+git
+zsh
 
-# network tools
+# main packages
 
-openssh
-wireless_tools
-wpa_supplicant
-#netctl
-dhcpcd
-networkmanager
-network-manager-applet
-
-# secondary tools
-
-alacritty
-acpi
-bitwarden-cli
-brightnessctl
-most
-htop
-tree
-sshfs
 #docker
 #docker-compose
-podman
-postgresql
-nginx
-upower
-starship
-httpie
-jq
+aardvark-dns
+acpi
+alacritty
+bat
+bitwarden-cli
+brightnessctl
+dhcpcd
+dosfstools
+efibootmgr
 fzf
-#playerctl
-#gnome-keyring
-#libsecret
-lzop
+google-cloud-cli
+google-cloud-cli-gke-gcloud-auth-plugin
+htop
+httpie
 imagemagick
-
-# i3
-
-#xorg-server
-#xorg-xinit
-#xorg-xprop
-#xorg-xrandr
-#xorg-xwininfo
-#xclip
-#i3-wm
-#i3lock
-#i3blocks
-#imwheel
-#rofi
+inotify-tools
+jq
+lua-language-server
+lzop
+most
+neovim
+network-manager-applet
+networkmanager
+nginx
+ntp
+openssh
+podman
+polkit
+postgresql
+reflector
+sshfs
+starship
+sysstat
+tree
+tree-sitter-cli
+unzip
+upower
+vim
+vivid
+vlc
+wireless_tools
+wpa_supplicant
+ydotool
+zip
 
 # sway
 
-sway
-swayidle
-swaybg
-swaylock
-waybar
-kanshi
-mako
-wl-clipboard
 grim
-slurp
+kanshi
 libappindicator-gtk2
 libappindicator-gtk3
+mako
+slurp
+sway
+swaybg
+swayidle
+swaylock
+waybar
+wireplumber
+wl-clipboard
+wl-mirror
+xdg-desktop-portal-wlr
 
 # fonts
 
-ttf-liberation
-ttf-dejavu
-ttf-bitstream-vera
-ttf-font-awesome
-ttf-jetbrains-mono
 adobe-source-code-pro-fonts
+nerd-fonts
 noto-fonts
 noto-fonts-emoji
 otf-font-awesome
+ttf-bitstream-vera
+ttf-dejavu
+ttf-font-awesome
+ttf-jetbrains-mono
+ttf-liberation
 
 # gui
 
-terminator
-firefox
 chromium
+discord
 epiphany
-feh
+firefox
 gimp
 ksnip
+nautilus
+sushi
+thunderbird
 
 # audio
 
-alsa-lib
-alsa-utils
-pulseaudio
-pulseaudio-alsa
-pulseaudio-bluetooth
+blueman
 bluez
 bluez-utils
-blueman
-pavucontrol
-gstreamer
+gst-libav
 gst-plugin-pipewire
-gst-plugins-ugly
 gst-plugins-bad
-gst-plugins-good
 gst-plugins-base
 gst-plugins-base-libs
-gst-libav
+gst-plugins-good
+gst-plugins-ugly
+gstreamer
+pavucontrol
+pipewire
+pipewire-pulse
+sof-firmware
 
 # not installed by default
 
-#nautilus
-#sushi
-#vlc
-#discord
 #seahorse
 #gnome-screenshot
 #peek
