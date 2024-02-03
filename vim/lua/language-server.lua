@@ -1,7 +1,6 @@
-local neodev = require("neodev")
-local lspconfig = require("lspconfig")
+require("neodev").setup {}
 
-neodev.setup {}
+local lspconfig = require("lspconfig")
 
 lspconfig.lua_ls.setup {}
 
