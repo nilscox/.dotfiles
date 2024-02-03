@@ -8,8 +8,9 @@ source "$ZDOTDIR/history.zsh"
 source "$ZDOTDIR/keybindings.zsh"
 source "$ZDOTDIR/completion.zsh"
 source "$ZDOTDIR/prompt.zsh"
-source "$ZDOTDIR/cursor-mode.zsh"
 source "$ZDOTDIR/fzf.zsh"
+
+source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 
 if [ -f "$ZDOTDIR/local.zsh" ]; then
   source "$ZDOTDIR/local.zsh"
