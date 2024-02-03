@@ -131,4 +131,4 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
 # xwayland
 
-xwayland disable
+# xwayland disable
