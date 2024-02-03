@@ -3,7 +3,6 @@
   // ---------
 
   "workbench.startupEditor": "none",
-  "workbench.editor.untitled.hint": "hidden",
   "workbench.panel.defaultLocation": "right",
   "editor.lightbulb.enabled": false,
   "editor.tabSize": 2,
@@ -18,27 +17,34 @@
   "files.simpleDialog.enable": true,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "editor.acceptSuggestionOnCommitCharacter": false,
+  "files.exclude": { "**/.git": true },
   "diffEditor.renderSideBySide": true,
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "emmet.showExpandedAbbreviation": "never",
   "editor.bracketPairColorization.enabled": false,
   // "editor.mouseWheelScrollSensitivity": 5,
-
   // TODO: not working?
   "editor.linkedEditing": true,
 
-  "editor.snippetSuggestions": "none",
-
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
 
-  "files.exclude": { "**/.git": true },
+  // suggest / autocomplete
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.quickSuggestionsDelay": 0,
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.tabCompletion": "on",
+  "editor.suggest.localityBonus": true,
+  "editor.suggestSelection": "first",
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "editor.parameterHints.enabled": true,
+  "editor.snippetSuggestions": "none",
+  // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   // integrated terminal
+  "terminal.integrated.tabFocusMode": false,
   "terminal.integrated.tabs.location": "left",
   "terminal.integrated.showLinkHover": false,
   "terminal.integrated.defaultProfile.linux": "zsh",
@@ -63,8 +69,10 @@
   "window.customMenuBarAltFocus": false,
 
   // interface
-  "editor.minimap.enabled": false,
   "workbench.activityBar.visible": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.empty.hint": "hidden",
+  "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
 
   // font

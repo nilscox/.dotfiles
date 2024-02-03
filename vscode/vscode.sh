@@ -26,10 +26,10 @@ extensions=(
   bungcip.better-toml
   hangxingliu.vscode-systemd-support
   csstools.postcss
-  # ms-vsliveshare.vsliveshare
-  # usernamehw.find-jump
-  # stkb.rewrap
+  usernamehw.find-jump
+  # tamasfe.even-better-toml
   # graphql.vscode-graphql
+  # ms-vsliveshare.vsliveshare
 )
 
 # https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
