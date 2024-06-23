@@ -175,7 +175,7 @@
 
   // organize / add imports
   { "key": "ctrl+j", "command": "editor.action.organizeImports", "when": "editorTextFocus && !editorReadonly" },
-  { "key": "ctrl+alt+j", "command": "editor.action.sourceAction", "args": { "kind": "source.addMissingImports", "apply": "first" } },
+  { "key": "ctrl+alt+j", "command": "editor.action.sourceAction", "args": { "kind": "source.addMissingImports", "apply": "ifSingle" } },
 
   // eslint autofix
   // { "key": "", "command": "eslint.executeAutofix", "when": "editorTextFocus && !editorReadonly" },
@@ -260,7 +260,6 @@
 
   // fold
   { "key": "alt+shift+1", "command": "editor.fold", "when": "editorTextFocus && foldingEnabled" },
-  { "key": "alt+shift+1", "command": "editor.createFoldingRangeFromSelection", "when": "editorTextFocus && foldingEnabled && editorHasSelection" },
   { "key": "ctrl+alt+shift+1", "command": "editor.foldRecursively", "when": "editorTextFocus && foldingEnabled" },
 
   // unfold
@@ -279,6 +278,8 @@
   { "key": "alt+t", "command": "workbench.action.terminal.focus" },
   { "key": "alt+t", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus" },
   { "key": "alt+shift+t", "command": "workbench.action.togglePanel", "when": "terminalIsOpen" },
+  { "key": "alt+left", "command": "workbench.action.terminal.sendSequence", "args": { "text": "\u001b[1;3D" }, "when": "terminalFocus" },
+  { "key": "alt+right", "command": "workbench.action.terminal.sendSequence", "args": { "text": "\u001b[1;3C" }, "when": "terminalFocus" },
 
   // other
   { "key": "alt+v g", "command": "workbench.view.scm" },
@@ -290,7 +291,7 @@
   { "key": "alt+v t", "command": "terminal.focus" },
 
   // toggle ui elements
-  // -----------
+  // ------------------
 
   { "key": "alt+u s", "command": "workbench.action.toggleSidebarVisibility" },
   { "key": "alt+u m", "command": "editor.action.toggleMinimap" },

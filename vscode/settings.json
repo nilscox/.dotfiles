@@ -4,7 +4,7 @@
 
   "workbench.startupEditor": "none",
   "workbench.panel.defaultLocation": "right",
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "editor.tabSize": 2,
   "editor.smoothScrolling": true,
   "editor.scrollBeyondLastLine": false,
@@ -22,8 +22,7 @@
   "emmet.showExpandedAbbreviation": "never",
   "editor.bracketPairColorization.enabled": false,
   // "editor.mouseWheelScrollSensitivity": 5,
-  // TODO: not working?
-  "editor.linkedEditing": true,
+  "editor.linkedEditing": false,
 
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
@@ -33,7 +32,7 @@
   // suggest / autocomplete
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.acceptSuggestionOnEnter": "on",
-  "editor.quickSuggestionsDelay": 0,
+  "editor.quickSuggestionsDelay": 10,
   "editor.suggestOnTriggerCharacters": true,
   "editor.tabCompletion": "on",
   "editor.suggest.localityBonus": true,
@@ -41,10 +40,10 @@
   "editor.wordBasedSuggestions": "matchingDocuments",
   "editor.parameterHints.enabled": true,
   "editor.snippetSuggestions": "none",
+  "editor.foldingStrategy": "indentation",
   // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   // integrated terminal
-  "terminal.integrated.tabFocusMode": false,
   "terminal.integrated.tabs.location": "left",
   "terminal.integrated.showLinkHover": false,
   "terminal.integrated.defaultProfile.linux": "zsh",
@@ -67,13 +66,9 @@
   "window.titleBarStyle": "custom",
   "window.enableMenuBarMnemonics": false,
   "window.customMenuBarAltFocus": false,
-
-  // interface
-  "workbench.activityBar.visible": false,
   "workbench.activityBar.location": "hidden",
   "workbench.editor.empty.hint": "hidden",
   "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
 
   // font
   "editor.fontFamily": "'JetBrains Mono', 'Source Code Pro', 'Font Awesome 6 Free Solid', 'Iosevka'",
@@ -141,7 +136,7 @@
   "keyboard.dispatch": "keyCode",
   "diffEditor.ignoreTrimWhitespace": false,
   "search.showLineNumbers": true,
-  "explorer.openEditors.visible": 0,
+  "explorer.openEditors.minVisible": 0,
 
   "files.associations": {
     "*.sway": "i3"
@@ -155,6 +150,7 @@
   "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 
   // languages
   // ---------
@@ -164,18 +160,21 @@
 
   // javascript
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.renameMatchingJsxTags": true,
 
   // typescript
   "typescript.tsserver.log": "off",
   "typescript.preferences.quoteStyle": "single",
   "typescript.preferences.useAliasesForRenames": false,
   "typescript.autoClosingTags": true,
+  "typescript.preferences.renameMatchingJsxTags": true,
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.suggest.enabled": true,
   "typescript.suggest.autoImports": true,
   "typescript.suggest.paths": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.jsxAttributeCompletionStyle": "none",
+  "typescript.disableAutomaticTypeAcquisition": true,
   "vsintellicode.typescript.completionsEnabled": true,
   // "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   // "typescript.tsserver.maxTsServerMemory": 1024,
@@ -236,7 +235,10 @@
 
   // liveshare
   "liveshare.presence": true,
-  "liveshare.launcherClient": "visualStudioCode"
+  "liveshare.launcherClient": "visualStudioCode",
 
   // other
+  "": "",
+  "gitlens.mode.active": "zen",
+  "editor.suggest.showSnippets": false
 }
