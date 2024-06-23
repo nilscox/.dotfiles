@@ -2,8 +2,9 @@
 # gaps inner 5
 # gaps outer 5
 
-# Hide titlebar on windows:
+# Hide titlebar on windows
 default_border pixel 1
+titlebar_padding 4 1
 
 # Default Font
 font pango:JetBrainsMonoNL Medium 9

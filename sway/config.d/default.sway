@@ -8,16 +8,15 @@ set $up Up
 set $right Right
 
 set $term alacritty
-set $menu "rofi -show drun -modi drun"
 set $powermenu nwg-bar
 
 # key bindings
 
 bindsym $mod+Shift+Return exec $term
 bindsym $mod+q kill
-bindsym $mod+e exec $menu
-bindsym $mod+u exec rofi -modi emoji -show emoji
-bindsym $mod+p exec bwmenu --clear 15 --auto-lock 25200
+bindsym $mod+e exec wofi --show drun
+bindsym $mod+u exec wofi-emoji
+bindsym $mod+p exec ~/.local/bin/wofi-bitwarden.sh
 bindsym $mod+l exec swaylock -f -c 000000
 bindsym $mod+Shift+e exec $powermenu
 bindsym $mod+Shift+r reload

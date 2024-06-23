@@ -75,6 +75,8 @@ wl-clipboard
 wl-mirror
 xdg-desktop-portal-wlr
 wf-recorder
+wofi
+wofi-emoji
 
 # fonts
 
