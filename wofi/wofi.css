@@ -1,0 +1,19 @@
+#window {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+}
+
+#outer-box {
+  padding: 8px;
+}
+
+#input {
+  background-color: transparent;
+  margin-bottom: 16px;
+}
+
+#entry:selected {
+  background-color: rgba(255, 255, 255, 0.1);
+  outline: none;
+  border-radius: 4px;
+}

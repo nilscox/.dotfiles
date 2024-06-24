@@ -1,0 +1,10 @@
+[Unit]
+Description=Waybar
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/waybar
+ExecReload=kill -SIGUSR2 $MAINPID
+
+[Install]
+WantedBy=sway-session.target

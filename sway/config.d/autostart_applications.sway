@@ -1,4 +1,0 @@
-exec mkdir -p /tmp/downloads
-exec systemctl --user start sway-session.target
-exec_always systemctl --user restart kanshi.service
-exec alacritty

@@ -1,10 +1,4 @@
-inkdrop
-nwg-bar-bin
-pcloudcc-git
-slack-desktop
-spotify
-thunderbird-beta-bin
-visual-studio-code-bin
-zsh-sudo-git
-
-# jetbrains-fleet
+slack-desktop-wayland
+vscodium-bin
+yay
+wofi-emoji
