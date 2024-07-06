@@ -60,7 +60,7 @@
 
   // select between quotes
   { "key": "alt+'", "command": "extension.selectEitherQuote" },
-  { "key": "alt+`", "command": "extension.selectBackTick" },
+  // { "key": "alt+`", "command": "extension.selectBackTick" },
   { "key": "alt+shift+'", "command": "extension.switchQuotes" },
 
   // select between parenthesis
@@ -126,14 +126,14 @@
   // ------
 
   // go to prev / next find match
-  { "key": "f3", "command": "actions.find", "when": "editorFocus && !findInputFocussed" },
-  { "key": "alt+f3", "command": "editor.action.nextMatchFindAction", "when": "editorFocus && findInputFocussed" },
-  { "key": "alt+shift+f3", "command": "editor.action.previousMatchFindAction", "when": "editorFocus && findInputFocussed" },
+  // { "key": "f3", "command": "actions.find", "when": "editorFocus && !findInputFocussed" },
+  // { "key": "alt+f3", "command": "editor.action.nextMatchFindAction", "when": "editorFocus && findInputFocussed" },
+  // { "key": "alt+shift+f3", "command": "editor.action.previousMatchFindAction", "when": "editorFocus && findInputFocussed" },
 
   // go to prev / next find match
-  { "key": "f4", "command": "workbench.view.search", "when": "!inSearchEditor" },
-  { "key": "alt+f4", "command": "search.action.focusNextSearchResult" },
-  { "key": "alt+shift+f4", "command": "search.action.focusPreviousSearchResult" },
+  // { "key": "f4", "command": "workbench.view.search", "when": "!inSearchEditor" },
+  // { "key": "alt+f4", "command": "search.action.focusNextSearchResult" },
+  // { "key": "alt+shift+f4", "command": "search.action.focusPreviousSearchResult" },
 
   //////////
   // code //
@@ -151,10 +151,10 @@
   { "key": "ctrl+alt+e", "command": "editor.action.deleteLines", "when": "editorTextFocus && !editorReadonly" },
 
   // copy / cut / paste
-  { "key": "ctrl+c", "command": "clipboard.copy", "when": "editorTextFocus" },
-  { "key": "ctrl+x", "command": "clipboard.cut", "when": "editorTextFocus && !editorReadonly" },
-  { "key": "ctrl+v", "command": "clipboard.paste", "when": "editorTextFocus && !editorReadonly" },
-  { "key": "ctrl+shift+v", "command": "clipboard.pasteFromClipboard", "when": "editorTextFocus && !editorReadonly" },
+  // { "key": "ctrl+c", "command": "clipboard.copy", "when": "editorTextFocus" },
+  // { "key": "ctrl+x", "command": "clipboard.cut", "when": "editorTextFocus && !editorReadonly" },
+  // { "key": "ctrl+v", "command": "clipboard.paste", "when": "editorTextFocus && !editorReadonly" },
+  // { "key": "ctrl+shift+v", "command": "clipboard.pasteFromClipboard", "when": "editorTextFocus && !editorReadonly" },
 
   // transform case
   { "key": "ctrl+alt+shift+up", "command": "editor.action.transformToUppercase", "when": "editorTextFocus && !editorReadonly" },
@@ -282,13 +282,14 @@
   { "key": "alt+right", "command": "workbench.action.terminal.sendSequence", "args": { "text": "\u001b[1;3C" }, "when": "terminalFocus" },
 
   // other
-  { "key": "alt+v g", "command": "workbench.view.scm" },
-  { "key": "alt+v x", "command": "workbench.view.extensions" },
-  { "key": "alt+v s", "command": "workbench.view.search" },
-  { "key": "alt+v d", "command": "workbench.view.debug" },
-  { "key": "alt+v r", "command": "workbench.view.extension.references-view" },
-  { "key": "alt+v p", "command": "workbench.actions.view.problems" },
-  { "key": "alt+v t", "command": "terminal.focus" },
+  { "key": "alt+`", "command": "workbench.action.toggleMaximizedPanel" },
+  { "key": "alt+1", "command": "workbench.view.explorer" },
+  { "key": "alt+2", "command": "workbench.view.search" },
+  { "key": "alt+3", "command": "workbench.view.scm" },
+  { "key": "alt+4", "command": "workbench.view.extensions" },
+  { "key": "alt+5", "command": "workbench.actions.view.problems" },
+  { "key": "alt+6", "command": "workbench.view.debug" },
+  { "key": "alt+7", "command": "workbench.view.extension.references-view" },
 
   // toggle ui elements
   // ------------------
@@ -314,7 +315,7 @@
   { "key": "alt+u alt+enter", "command": "editor.action.fontZoomReset" },
 
   // toggle full screen
-  { "key": "ctrl+f", "command": "workbench.action.toggleFullScreen" },
+  // { "key": "ctrl+f", "command": "workbench.action.toggleFullScreen" },
 
   // tabs
   // ----

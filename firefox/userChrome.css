@@ -1,27 +1,9 @@
-#tabbrowser-tabs {
+/* Hide horizontal tabbar */
+#main-window #TabsToolbar {
   visibility: collapse !important;
-  min-height: 0 !important;
 }
 
-tab {
+/* Don't display the sidebar splitter */
+#sidebar-box + #sidebar-splitter {
   display: none !important;
-}
-
-#titlebar {
-  appearance: none !important;
-  height: 0px;
-}
-
-#titlebar > #toolbar-menubar {
-  margin-top: 0px;
-}
-
-#TabsToolbar {
-  min-width: 0 !important;
-  min-height: 0 !important;
-}
-
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]
-  #sidebar-header {
-  display: none;
 }

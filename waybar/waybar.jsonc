@@ -1,0 +1,168 @@
+[
+  {
+    "position": "top",
+    "spacing": 20,
+    "modules-left": [
+      "sway/workspaces",
+      "sway/mode",
+      "sway/window"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "backlight",
+      "pulseaudio",
+      "network",
+      "battery",
+      "tray"
+    ],
+    // left
+    "sway/workspaces": {
+      "all-outputs": false,
+      "disable-scroll": true,
+      "format": "{name}",
+      "format-icons": {
+        "1": "1:web",
+        "2": "2:sh$",
+        "3": "3:&lt;/&gt;",
+        "4": "4:o&lt;"
+      }
+    },
+    "sway/mode": {
+      "format": "{}"
+    },
+    "sway/window": {
+      "format": "{}"
+    },
+    // center
+    "clock": {
+      "interval": 1,
+      "format": " {:%H:%M}",
+      "format-alt": " {:%a %d %b  %H:%M:%S}",
+      "tooltip-format": "{calendar}"
+    },
+    // right
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon} {percent}%",
+      "format-icons": "🔆",
+      "on-scroll-up": "brightnessctl set +1%",
+      "on-scroll-down": "brightnessctl set 1%-"
+    },
+    // todo
+    "pulseaudio": {
+      "format": " {icon} {volume}% {format_source}",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "on-click": "pavucontrol"
+    },
+    "network": {
+      "format-wifi": " {essid} ({signalStrength}%)",
+      "format-disconnected": "⚠ not connected",
+      "tooltip-format": "{ifname}\n{gwaddr}"
+    },
+    "battery": {
+      "bat": "BAT0",
+      "states": {
+        "warning": 25,
+        "critical": 10
+      },
+      "full-at": 99,
+      "format": "{icon} {capacity}%",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "plugged": "",
+        "not-charging": "",
+        "charging": ""
+      }
+    },
+    "tray": {
+      "spacing": 10
+    }
+  },
+  {
+    "position": "bottom",
+    "spacing": 12,
+    "modules-left": [
+      "cpu",
+      "temperature",
+      "memory",
+      "disk#root",
+      "disk#home",
+      "disk#tmp"
+    ],
+    "modules-right": ["custom/ip", "network#local-ip", "network#bandwidth"],
+
+    // left
+    "cpu": {
+      "interval": 10,
+      "format": "cpu: {usage}% ({load})",
+      "tooltip": false,
+      "on-click": "alacritty -e htop"
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "temp: {temperatureC}°C"
+    },
+    "memory": {
+      "interval": 10,
+      "format": "ram: {used:0.1f}G/{total:0.1f}G",
+      "on-click": "alacritty -e htop"
+    },
+    "disk#root": {
+      "interval": 30,
+      "format": "/: {used} ({percentage_used}%)",
+      "path": "/",
+      "tooltip-format": "{used} used out of {total} ({percentage_free}% remaining)"
+    },
+    "disk#home": {
+      "interval": 30,
+      "format": "/home: {used} ({percentage_used}%)",
+      "path": "/home",
+      "tooltip-format": "{used} used out of {total} ({percentage_free}% remaining)"
+    },
+    "disk#tmp": {
+      "interval": 30,
+      "format": "{path}: {used} ({percentage_used}%)",
+      "path": "/tmp",
+      "tooltip-format": "{used} used out of {total} ({percentage_free}% remaining)"
+    },
+
+    // right
+    "custom/ip": {
+      "format": "{}",
+      "exec": "curl -s https://ifconfig.me",
+      "exec-if": "ping 8.8.8.8",
+      "restart-interval": 300
+    },
+    "network#local-ip": {
+      "format": "{ipaddr}"
+    },
+    "network#bandwidth": {
+      "format": "↑ {bandwidthUpBits} ↓ {bandwidthDownBits}"
+    }
+  }
+]

@@ -1,4 +1,31 @@
 include /etc/sway/config.d/*
-include $XDG_CONFIG_HOME/sway/config.d/*
+include ./config.d/*
 
-exec "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
+xwayland disable
+
+for_window [app_id="blueman-manager"] floating enable, resize set width 40 ppt height 30 ppt
+for_window [app_id="pavucontrol" ] floating enable, resize set width 40 ppt height 30 ppt
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [title="Picture in picture"] floating enable, sticky enable
+for_window [title="Save File"] floating enable
+
+assign [app_id="firefox"] 1
+assign [class="^chromium"] 1
+assign [app_id="Alacritty"] 2
+assign [app_id="codium-url-handler"] 3
+assign [class="^(?i)thunderbird$"] 4
+assign [app_id="Slack"] 4
+
+# start applications
+
+exec --no-startup-id mkdir -p /tmp/downloads
+exec --no-startup-id systemctl --user start sway-session.target
+exec_always --no-startup-id systemctl --user restart kanshi.service
+
+exec firefox
+exec alacritty
+exec slack

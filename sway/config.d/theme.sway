@@ -4,10 +4,10 @@
 
 # Hide titlebar on windows
 default_border pixel 1
-titlebar_padding 4 1
+titlebar_padding 4 2
 
 # Default Font
-font pango:JetBrainsMonoNL Medium 9
+font JetBrainsMono Nerd Font Propo Medium 9
 
 # Thin borders:
 smart_borders on
