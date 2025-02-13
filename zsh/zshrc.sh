@@ -24,10 +24,22 @@ export NVM_AUTO_USE="true"
 HYPHEN_INSENSITIVE="true" # hyphen-insensitive completion
 ENABLE_CORRECTION="true"  # enable command auto-correction
 HISTFILE="$ZDOTDIR/.zsh_history"
+DISABLE_MAGIC_FUNCTIONS=true
 
 plugins=(archlinux httpie git starship systemd sudo zsh-nvm)
 
 source "$XDG_DATA_HOME/oh-my-zsh/oh-my-zsh.sh"
+
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'"
+
+source <(fzf --zsh)
 
 alias -g G='| grep'
 alias -g GI='| grep -i'
@@ -39,16 +51,19 @@ alias -g W='--watch'
 
 alias t='true'
 alias g='git'
-alias h='http --session /tmp/http-session.json'
+alias v='vim'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias ls='ls --color=auto'
 alias l='ls -lh'
 alias ll='l -A'
+alias h='http --session /tmp/http-session.json'
+alias py='python'
 alias tmp='cd $(mktemp -d)'
 alias uuid='uuidgen | tr -d "\n" C'
 alias k9s='k9s --readonly'
+alias serve='pnpx serve -s -l 8080'
 
 alias p='pnpm'
 alias pt='pnpm run test'
@@ -64,6 +79,28 @@ alias pa='pnpm add'
 alias pad='pnpm add -D'
 alias pr='pnpm remove'
 alias psb='pnpm storybook'
+
+recreate-database() {
+  db=${1:-db}
+  template=${2}
+
+  psql -h localhost -U postgres postgres -c "drop database \"$db\""
+
+  if [ -n "$template" ]; then
+    psql -h localhost -U postgres postgres -c "create database \"$db\" template \"$template\""
+  else
+    psql -h localhost -U postgres postgres -c "create database \"$db\""
+  fi
+}
+
+port2pid() {
+  if [ -z "$1" ]; then
+    echo "usage: port2pid <port>"
+    return 1
+  fi
+
+  ss -lptnH "sport = :$1" | awk '{ print $6 }' | grep -o 'pid=[0-9]\+' | sed 's/^pid=//'
+}
 
 if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec sway > /tmp/sway.out 2> /tmp/sway.err

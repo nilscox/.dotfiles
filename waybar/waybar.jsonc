@@ -2,14 +2,8 @@
   {
     "position": "top",
     "spacing": 20,
-    "modules-left": [
-      "sway/workspaces",
-      "sway/mode",
-      "sway/window"
-    ],
-    "modules-center": [
-      "clock"
-    ],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": ["clock"],
     "modules-right": [
       "backlight",
       "pulseaudio",
@@ -21,7 +15,7 @@
     "sway/workspaces": {
       "all-outputs": false,
       "disable-scroll": true,
-      "format": "{name}",
+      "format": "{icon}",
       "format-icons": {
         "1": "1:web",
         "2": "2:sh$",
@@ -65,11 +59,7 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "default": [
-          "",
-          "",
-          ""
-        ]
+        "default": ["", "", ""]
       },
       "on-click": "pavucontrol"
     },
@@ -82,18 +72,12 @@
       "bat": "BAT0",
       "states": {
         "warning": 25,
-        "critical": 10
+        "critical": 5
       },
       "full-at": 99,
       "format": "{icon} {capacity}%",
       "format-icons": {
-        "default": [
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
+        "default": ["", "", "", "", ""],
         "plugged": "",
         "not-charging": "",
         "charging": ""

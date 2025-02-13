@@ -4,6 +4,7 @@ alsa-utils
 base
 base-devel
 bash
+bat
 bitwarden
 blueman
 bluez
@@ -18,6 +19,7 @@ e2fsprogs
 efibootmgr
 epiphany
 firefox
+fzf
 gimp
 git
 gnome-themes-extra
