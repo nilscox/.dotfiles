@@ -10,11 +10,9 @@ set $right Right
 
 bindsym $mod+Shift+Return exec alacritty
 bindsym $mod+q kill
-bindsym $mod+comma exec wofi --show drun
-bindsym $mod+apostrophe exec wofi-emoji
-bindsym $mod+period bitwarden
+bindsym $mod+tab exec ulauncher
 bindsym $mod+l swaylock -f -c 000000
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
 bindsym $mod+Shift+r reload
 
 # layout

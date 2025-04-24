@@ -2,7 +2,7 @@
   "console log": {
     "scope": "javascript,javascriptreact,typescript,typescriptreact",
     "body": [
-      "console.log(${1:$TM_SELECTED_TEXT});"
+      "console.log(${1:$TM_SELECTED_TEXT})"
     ]
   }
 }

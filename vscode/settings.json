@@ -47,7 +47,7 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.wordSeparators": " (){}',\"`─‘’",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 14,
   "keyboard.dispatch": "keyCode",
   "typescript.autoClosingTags": true,
   "typescript.preferences.quoteStyle": "double",
@@ -71,5 +71,10 @@
     "xml",
     "javascriptreact",
     "typescriptreact"
-  ]
+  ],
+  "diffEditor.ignoreTrimWhitespace": true,
+  "gitlens.plusFeatures.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.blame.highlight.enabled": false,
+  "gitlens.codeLens.enabled": false
 }

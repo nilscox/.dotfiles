@@ -1,0 +1,9 @@
+[Unit]
+Description=pCloud
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/pcloudcc -u <email> -m %h/pcloud
+
+[Install]
+WantedBy=default.target

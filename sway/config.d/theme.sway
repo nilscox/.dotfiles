@@ -1,19 +1,7 @@
-# Set inner/outer gaps
-# gaps inner 5
-# gaps outer 5
+# class                   border      background  text        indicator   child_border
+client.focused          #434c5e   #434c5e   #eceff4   #8fbcbb   #7685a6
+client.focused_inactive #434c5e   #2e3440   #d8dee9   #4c566a   #4c566a
+client.unfocused        #434c5e   #2e3440   #d8dee9   #4c566a   #4c566a
+client.urgent           #ebcb8b   #ebcb8b   #2e3440   #8fbcbb   #ebcb8b
 
-# Hide titlebar on windows
-default_border pixel 1
-titlebar_padding 4 2
-
-# Default Font
 font JetBrainsMono Nerd Font Propo Medium 9
-
-# Thin borders:
-smart_borders on
-
-# class                 border   background  text     indicator   child_border
-client.focused          #434c5e  #434c5e     #eceff4  #8fbcbb     #7685a6
-client.focused_inactive #434c5e  #2e3440     #d8dee9  #4c566a     #4c566a
-client.unfocused        #434c5e  #2e3440     #d8dee9  #4c566a     #4c566a
-client.urgent           #ebcb8b  #ebcb8b     #2e3440  #8fbcbb     #ebcb8b
