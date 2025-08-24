@@ -4,11 +4,12 @@ set -eo pipefail
 
 dot=$(dirname $(readlink -f "$0"))
 config="${XDG_CONFIG_HOME:-$HOME/.config}"
+data="${XDG_DATA_HOME:-$HOME/.local/share}"
 
 packages() {
   sudo pacman-key --init
   sudo pacman-key --populate archlinux
-  sudo pacman -S $(cat ./packages/packages.pacman)
+  sudo pacman -S $(cat ./packages/packages.pacman | grep -v '^#')
 
   tmp=$(mktemp -d)
 
@@ -22,14 +23,17 @@ packages() {
   rm -rf "$tmp"
 
   yay -Syy
-  yay -S --noconfirm $(cat ./packages/packages.aur)
+  yay -S --noconfirm $(cat ./packages/packages.aur | grep -v '^#')
 }
 
 zsh() {
   mkdir -p "$config/zsh"
 
-  ln -s "$dot/zsh/zshrc.sh" "$config/zsh/.zshrc"
-  ln -s "$dot/zsh/zshenv.sh" "$HOME/.zshenv"
+  ln -sf "$dot/zsh/zshrc.sh" "$config/zsh/.zshrc"
+  ln -sf "$dot/zsh/zshenv.sh" "$HOME/.zshenv"
+
+  ZDOTDIR="$config/zsh" ZSH="$data/oh-my-zsh" CHSH="no" RUNZSH="no" KEEP_ZSHRC="yes" sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  git clone https://github.com/lukechilds/zsh-nvm "$data/oh-my-zsh/custom/plugins/zsh-nvm"
 
   chsh -s $(which zsh)
 }
@@ -103,32 +107,35 @@ systemd() {
 }
 
 vscode() {
-  dir="$config/VSCodium/User"
+  dir="$config/Code - OSS/User"
 
   mkdir -p "$dir"
-  ln -s "$dot/vscode/settings.json" "$dir/settings.json"
-  ln -s "$dot/vscode/keybindings.json" "$dir/keybindings.json"
-  ln -s "$dot/vscode/snippets.json" "$dir/snippets.json"
+  [ -d "$dir/snippets" ] && rmdir "$dri/snippets"
+
+  ln -sf "$dot/vscode/settings.json" "$dir/settings.json"
+  ln -sf "$dot/vscode/keybindings.json" "$dir/keybindings.json"
+  ln -sf "$dot/vscode/snippets" "$dir/snippets"
+
+  ln -sf "$dot/vscode/code-flags.conf" "$config/code-flags.conf"
 
   extensions=(
+    Anjali.clipboard-history
     bradlc.vscode-tailwindcss
     cardinal90.multi-cursor-case-preserve
     catppuccin.catppuccin-vsc
     Catppuccin.catppuccin-vsc
     dbaeumer.vscode-eslint
+    dbankier.vscode-quick-select
     esbenp.prettier-vscode
+    formulahendry.auto-rename-tag
     PKief.material-icon-theme
     sleistner.vscode-fileutils
     streetsidesoftware.code-spell-checker
     streetsidesoftware.code-spell-checker-french
   )
 
-  # not available with vscodium
-  # Anjali.clipboard-history
-  # dbankier.vscode-quick-select
-
   for extension in "${extensions[@]}"; do
-    vscodium --install-extension "$extension"
+    code --install-extension "$extension"
   done
 }
 
