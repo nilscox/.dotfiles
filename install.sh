@@ -139,6 +139,10 @@ vscode() {
   done
 }
 
+wallpaper() {
+  ln -s /usr/share/pixmaps/archlinux-logo.png $HOME/.default-wallpaper.png
+}
+
 waybar() {
   mkdir -p "$config/waybar"
   ln -s "$dot/waybar/waybar.jsonc" "$config/waybar/config.jsonc"
