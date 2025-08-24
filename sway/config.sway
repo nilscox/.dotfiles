@@ -22,5 +22,3 @@ exec_always --no-startup-id systemctl --user restart kanshi.service
 
 exec firefox
 exec alacritty
-exec pavucontrol
-exec blueman-manager
