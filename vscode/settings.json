@@ -16,9 +16,11 @@
   "editor.acceptSuggestionOnEnter": "on",
   "editor.snippetSuggestions": "none",
   "editor.suggest.localityBonus": true,
-  "editor.linkedEditing": false,
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
   "editor.formatOnSave": true,
-  "editor.foldingStrategy": "indentation",
+  "editor.foldingStrategy": "auto",
+  "editor.foldingImportsByDefault": true,
   "emmet.showExpandedAbbreviation": "never",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
