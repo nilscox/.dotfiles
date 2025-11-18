@@ -140,7 +140,7 @@ vscode() {
 }
 
 wallpaper() {
-  ln -s /usr/share/pixmaps/archlinux-logo.png $HOME/.default-wallpaper.png
+  ln -s /usr/share/pixmaps/archlinux-logo.png $HOME/.default.png
 }
 
 waybar() {
