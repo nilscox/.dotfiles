@@ -96,21 +96,29 @@ sway() {
 }
 
 systemd() {
-  sudo systemctl enable reflector.timer
-  sudo systemctl enable systemd-timesyncd.service
+  sudo systemctl enable --now polkit
+  sudo systemctl enable --now NetworkManager.service
+  sudo systemctl enable --now systemd-timesyncd.service
+  sudo systemctl enable --now reflector.timer
 
   mkdir -p "$config/systemd/user"
 
   for unit in $(ls "$dot/systemd"); do
     ln -s "$dot/systemd/$unit" "$config/systemd/user/$unit"
   done
+
+  systemctl --user enable --now ssh-agent.service
+  systemctl --user enable --now kanshi.service
+  systemctl --user enable --now mako.service
+  systemctl --user enable --now ulanucher.service
+  systemctl --user enable --now waybar.service
+  systemctl --user enable --now wallpaper.timer
 }
 
 vscode() {
   dir="$config/Code - OSS/User"
 
   mkdir -p "$dir"
-  [ -d "$dir/snippets" ] && rmdir "$dri/snippets"
 
   ln -sf "$dot/vscode/settings.json" "$dir/settings.json"
   ln -sf "$dot/vscode/keybindings.json" "$dir/keybindings.json"
