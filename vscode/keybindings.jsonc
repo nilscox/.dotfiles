@@ -143,5 +143,5 @@
   { "key": "alt+f shift+d", "command": "fileutils.removeFile", "when": "editorTextFocus && !editorReadonly" },
 
   // UI
-  { "key": "alt+j", "command": "workbench.action.toggleMaximizedPanel" },
+  { "key": "alt+j", "command": "workbench.action.toggleMaximizedPanel" }
 ]

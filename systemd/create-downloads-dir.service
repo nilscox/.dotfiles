@@ -1,9 +1,0 @@
-[Unit]
-Description=Create downloads directory
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/mkdir /tmp/downloads
-
-[Install]
-WantedBy=default.target

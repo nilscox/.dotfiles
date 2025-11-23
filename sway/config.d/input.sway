@@ -1,3 +1,9 @@
+input type:keyboard {
+    xkb_layout us
+    xkb_variant dvorak-alt-intl
+    xkb_options caps:escape
+}
+
 input type:touchpad {
     dwt enabled
     tap enabled
@@ -6,10 +12,4 @@ input type:touchpad {
 
 input type:pointer {
     scroll_factor 2
-}
-
-input type:keyboard {
-    xkb_layout us
-    xkb_variant dvorak-alt-intl
-    xkb_options caps:escape
 }

@@ -1,6 +1,10 @@
 # variables
 
 set $mod Mod4
+
+set $term alacritty
+set $menu wmenu-run -bi
+
 set $left Left
 set $down Down
 set $up Up
@@ -8,9 +12,9 @@ set $right Right
 
 # key bindings
 
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Shift+Return exec $term
 bindsym $mod+q kill
-bindsym $mod+tab exec ulauncher-toggle
+bindsym $mod+tab exec $menu
 bindsym $mod+l swaylock -f -c 000000
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -B 'Yes' 'swaymsg exit'
 bindsym $mod+Shift+r reload
@@ -37,7 +41,6 @@ bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+f fullscreen
-bindsym $mod+Shift+f exec "systemctl --user is-active waybar.service -q && systemctl --user stop waybar.service || systemctl --user start waybar.service"
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle

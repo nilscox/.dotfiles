@@ -7,14 +7,8 @@ assign {
   [app_id="firefox"] 1
   [class="^chromium"] 1
   [app_id="Alacritty"] 2
-  [app_id="codium-url-handler"] 3
-  [class="^(?i)thunderbird$"] 4
   [app_id="Slack"] 4
-  [app_id="pavucontrol"] 10
-  [app_id="blueman-manager"] 10
 }
-
-# start applications
 
 exec --no-startup-id mkdir -p /tmp/downloads
 exec --no-startup-id systemctl --user start sway-session.target

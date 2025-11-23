@@ -1,84 +1,109 @@
-#/usr/bin/env zsh
+#!/usr/bin/env zsh
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_SESSION_TYPE="wayland"
-export XDG_CURRENT_DESKTOP="sway"
-
-export NVM_DIR="$XDG_DATA_HOME/nvm"
-export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-
-export PATH="$PNPM_HOME:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
-export LS_COLORS="$(vivid generate one-dark)"
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-export NVM_COMPLETION="true"
-export NVM_LAZY_LOAD="true"
-export NVM_AUTO_USE="true"
-
-# CASE_SENSITIVE="true"   # case sensitive completion
-HYPHEN_INSENSITIVE="true" # hyphen-insensitive completion
-ENABLE_CORRECTION="true"  # enable command auto-correction
 HISTFILE="$ZDOTDIR/.zsh_history"
-DISABLE_MAGIC_FUNCTIONS=true
+HISTSIZE=10000
+SAVEHIST=100000
 
-plugins=(archlinux httpie git starship systemd sudo zsh-nvm)
+LS_COLORS="$(vivid generate one-dark)"
+SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+NVM_DIR="$XDG_CONFIG_HOME/nvm"
+PNPM_HOME="$XDG_DATA_HOME/pnpm"
+PATH="$PNPM_HOME:$HOME/.local/bin:$PATH"
 
-source "$XDG_DATA_HOME/oh-my-zsh/oh-my-zsh.sh"
+setopt AUTO_CD
+setopt NOCLOBBER
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt AUTO_MENU
+setopt COMPLETE_IN_WORD
+setopt ALWAYS_TO_END
 
-export FZF_CTRL_T_OPTS="
-  --walker-skip .git,node_modules,target
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+autoload -Uz compinit && compinit
+autoload -U colors && colors
+autoload -U zmv
 
-export FZF_ALT_C_OPTS="
-  --walker-skip .git,node_modules,target
-  --preview 'tree -C {}'"
+autoload -U select-word-style
+select-word-style bash
 
-source <(fzf --zsh)
+bindkey -e
+
+bindkey "^[[1;3C" forward-word      # Alt+ArrowRight
+bindkey "^[[1;3D" backward-word     # Alt+ArrowLeft
+bindkey "^[[1;5C" forward-word      # Ctrl+ArrowRight
+bindkey "^[[1;5D" backward-word     # Ctrl+ArrowLeft
+bindkey '^[[A' up-line-or-search    # ArrowUp
+bindkey '^[[B' down-line-or-search  # ArrowDown
+
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' list-colors "$LS_COLORS"
+
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy-cmd tsx
+zstyle ':omz:plugins:nvm' autoload yes
+
+source "$XDG_DATA_HOME/oh-my-zsh/plugins/sudo/sudo.plugin.zsh"
+source "$XDG_DATA_HOME/oh-my-zsh/plugins/nvm/nvm.plugin.zsh"
 
 alias -g G='| grep'
-alias -g GI='| grep -i'
 alias -g L='| less'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g C='| wl-copy'
-alias -g W='--watch'
 
 alias t='true'
 alias g='git'
 alias v='vim'
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias rm='rm -iv'
 alias ls='ls --color=auto'
 alias l='ls -lh'
 alias ll='l -A'
-alias h='http --session /tmp/http-session.json'
+alias http='http --session /tmp/http-session.json'
+alias h='http'
 alias py='python'
 alias tmp='cd $(mktemp -d)'
-alias uuid='uuidgen | tr -d "\n" C'
-alias k9s='k9s --readonly'
-alias serve='pnpx serve -s -l 8080'
+alias uuid='uuidgen | tr -d "\n" | wl-copy'
+alias sc='systemctl'
+alias scu='systemctl --user'
 
 alias p='pnpm'
 alias pt='pnpm run test'
 alias ptw='pnpm run test --watch'
 alias pb='pnpm build'
-alias ptc='pnpm tsc --noEmit'
 alias pl='pnpm lint'
 alias pd='pnpm dev'
 alias ps='pnpm start'
-alias psw='pnpm start --watch'
-alias pup='pnpm up -iL'
 alias pa='pnpm add'
 alias pad='pnpm add -D'
 alias pr='pnpm remove'
-alias psb='pnpm storybook'
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+zstyle ':vcs_info:git:*' formats '%b '
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd prompt-variables
+
+PROMPT='$prompt'
+RPROMPT='$rprompt'
+
+prompt-variables() {
+  local -i exit_code="$?"
+  local newline=$'\n'
+
+  prompt="%F{blue}%3~%f $ "
+  rprompt='%*'
+
+  if [ "$exit_code" -ne 0 ]; then
+    prompt="%F{red}%B[${exit_code}]%b%f ${prompt}"
+  fi
+
+  if [ -n "$vcs_info_msg_0_" ]; then
+    prompt="%F{yellow} ${vcs_info_msg_0_}%f${newline}${prompt}"
+  fi
+
+  prompt="${newline}${prompt}"
+}
 
 recreate-database() {
   db=${1:-db}
@@ -105,3 +130,11 @@ port2pid() {
 if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec sway > /tmp/sway.out 2> /tmp/sway.err
 fi
+
+# pnpm
+export PNPM_HOME="/home/nils/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

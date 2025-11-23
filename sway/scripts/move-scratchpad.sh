@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 focused_window_name=$(swaymsg -t get_tree | jq -r '.. | select(.type?) | select(.focused==true).name')
 

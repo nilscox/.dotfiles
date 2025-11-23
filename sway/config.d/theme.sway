@@ -1,7 +1,20 @@
-# class                   border      background  text        indicator   child_border
-client.focused          #434c5e   #434c5e   #eceff4   #8fbcbb   #7685a6
-client.focused_inactive #434c5e   #2e3440   #d8dee9   #4c566a   #4c566a
-client.unfocused        #434c5e   #2e3440   #d8dee9   #4c566a   #4c566a
-client.urgent           #ebcb8b   #ebcb8b   #2e3440   #8fbcbb   #ebcb8b
+default_border pixel 1
+default_floating_border pixel 1
+titlebar_padding 4 2
 
-font JetBrainsMono Nerd Font Propo Medium 9
+font JetBrainsMono Medium 9
+
+set {
+  $bright     #383d46
+  $dim        #1e2127
+  $text       #dce2eb
+  $text_dim   #9ea4b1
+  $indicator  #61afef
+  $todo       #e06c75
+}
+
+# class                 border      background  text        indicator   child_border
+client.focused          $bright     $bright     $text       $indicator  $bright
+client.focused_inactive $dim        $dim        $text       $indicator  $dim
+client.unfocused        $dim        $dim        $text_dim   $indicator  $dim
+client.urgent           $todo       $todo       $todo       $indicator  $todo

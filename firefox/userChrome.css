@@ -1,9 +1,0 @@
-/* Hide horizontal tabbar */
-#main-window #TabsToolbar {
-  visibility: collapse !important;
-}
-
-/* Don't display the sidebar splitter */
-#sidebar-box + #sidebar-splitter {
-  display: none !important;
-}
