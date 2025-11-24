@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-dot=${dot:-(dirname $(readlink -f "$0"))}
+dot=${dot:-$(dirname $(readlink -f "$0"))}
 config="${XDG_CONFIG_HOME:-$HOME/.config}"
 data="${XDG_DATA_HOME:-$HOME/.local/share}"
 
@@ -24,6 +24,17 @@ install_packages_aur() {
   yay -Syyu --noconfirm $(cat "$dot/packages/packages.aur" | grep -v '^#')
 }
 
+setup_autologin() {
+  [ $(whoami) == 'root' ] && exit_error 'must not be root'
+
+  file=/etc/systemd/system/getty@tty1.service.d/autologin.conf
+  sudo mkdir -p $(dirname "$file")
+
+  echo "[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --noreset --noclear --autologin $(whoami) - \${TERM}" | sudo tee "$file"
+}
+
 setup_zsh() {
   mkdir -p "$config/zsh"
 
@@ -34,18 +45,6 @@ setup_zsh() {
   ZDOTDIR="$config/zsh" ZSH="$data/oh-my-zsh" CHSH="no" RUNZSH="no" KEEP_ZSHRC="yes" sh -c "$(curl -fsSL $omz_install)"
 
   sudo chsh $(whoami) -s $(which zsh)
-}
-
-setup_ssh() {
-  ln -s "$dot/ssh/config" "$HOME/.ssh/config"
-}
-
-setup_git() {
-  [ -z "$GIT_NAME" ] && exit_error "\$GIT_NAME is not set"
-  [ -z "$GIT_EMAIL" ] && exit_error "\$GIT_EMAIL is not set"
-
-  mkdir -p "$config/git"
-  envsubst < "$dot/git/config.ini" > "$config/git/config"
 }
 
 setup_systemd() {
@@ -67,6 +66,26 @@ setup_systemd() {
   systemctl --user enable wallpaper.timer
 }
 
+setup_ssh() {
+  mkdir -p "$HOME/.ssh"
+  ln -s "$dot/ssh/config" "$HOME/.ssh/config"
+}
+
+setup_git() {
+  [ -z "$GIT_NAME" ] && exit_error "\$GIT_NAME is not set"
+  [ -z "$GIT_EMAIL" ] && exit_error "\$GIT_EMAIL is not set"
+
+  mkdir -p "$config/git"
+  envsubst < "$dot/git/config.ini" > "$config/git/config"
+}
+
+setup_node() {
+  git clone https://github.com/nvm-sh/nvm "$data/nvm"
+  source "$data/nvm/nvm.sh"
+  nvm install --lts
+  corepack enable pnpm
+}
+
 setup_sway() {
   mkdir -p "$config/sway"
   ln -s "$dot/sway/config.sway" "$config/sway/config"
@@ -80,7 +99,7 @@ setup_waybar() {
   ln -s "$dot/waybar/style.css" "$config/waybar/style.css"
 }
 
-setup_wallpaper() {
+setup_wallpapers() {
   ln -s /usr/share/pixmaps/archlinux-logo.png $HOME/.wallpaper.png
 }
 
@@ -136,15 +155,18 @@ setup_vscode() {
 }
 
 setup_all() {
+  setup_autologin
   setup_zsh
+  setup_systemd
   setup_ssh
   setup_git
-  setup_systemd
+  setup_node
   setup_sway
   setup_waybar
+  setup_wallpapers
   setup_alacritty
   setup_kanshi
   setup_mako
-  setup_wallpaper
+  setup_chromium
   setup_vscode
 }

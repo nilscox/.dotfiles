@@ -12,14 +12,17 @@ ENV NAME name
 ENV EMAIL email
 
 RUN source /dotfiles/setup.sh; install_packages_aur
+RUN source /dotfiles/setup.sh; setup_autologin
 RUN source /dotfiles/setup.sh; setup_zsh
+# RUN source /dotfiles/setup.sh; setup_systemd
 RUN source /dotfiles/setup.sh; setup_ssh
 RUN source /dotfiles/setup.sh; setup_git
-# RUN source /dotfiles/setup.sh; setup_systemd
+RUN source /dotfiles/setup.sh; setup_node
 RUN source /dotfiles/setup.sh; setup_sway
 RUN source /dotfiles/setup.sh; setup_waybar
+RUN source /dotfiles/setup.sh; setup_wallpapers
 RUN source /dotfiles/setup.sh; setup_alacritty
 RUN source /dotfiles/setup.sh; setup_kanshi
 RUN source /dotfiles/setup.sh; setup_mako
-RUN source /dotfiles/setup.sh; setup_wallpaper
-# RUN source /dotfiles/setup.sh; setup_vscode
+RUN source /dotfiles/setup.sh; setup_chromium
+RUN source /dotfiles/setup.sh; setup_vscode

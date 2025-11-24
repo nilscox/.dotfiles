@@ -2,7 +2,7 @@ default_border pixel 1
 default_floating_border pixel 1
 titlebar_padding 4 2
 
-font JetBrainsMono Medium 9
+font JetBrainsMono Nerd Font Propo Medium 9
 
 set {
   $bright     #383d46

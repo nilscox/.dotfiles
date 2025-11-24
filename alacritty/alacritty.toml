@@ -6,7 +6,7 @@ import = ["./themes/themes/one_dark.toml"]
 size = 10
 
 [font.normal]
-family = "JetBrains Mono"
+family = "JetBrainsMono Nerd Font Propo"
 style = "Regular"
 
 [[keyboard.bindings]]

@@ -15,5 +15,3 @@ profile tv {
   output eDP-1 mode 1920x1200 position 2560,240
   exec bash -c 'swaymsg mouse_warping output'
 }
-
-include ./config.local

@@ -3,7 +3,7 @@
   "editor.fontSize": 12,
   "editor.rulers": [110],
   "editor.cursorBlinking": "solid",
-  "editor.fontFamily": "'JetBrains Mono', 'Symbols Nerd Font Mono'",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Propo', 'Symbols Nerd Font Mono'",
   "editor.fontWeight": "400",
   "editor.fontLigatures": true,
   "editor.smoothScrolling": true,

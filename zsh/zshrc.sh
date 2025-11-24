@@ -6,7 +6,7 @@ SAVEHIST=100000
 
 LS_COLORS="$(vivid generate one-dark)"
 SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-NVM_DIR="$XDG_CONFIG_HOME/nvm"
+NVM_DIR="$XDG_DATA_HOME/nvm"
 PNPM_HOME="$XDG_DATA_HOME/pnpm"
 PATH="$PNPM_HOME:$HOME/.local/bin:$PATH"
 
@@ -18,6 +18,7 @@ setopt HIST_IGNORE_SPACE
 setopt AUTO_MENU
 setopt COMPLETE_IN_WORD
 setopt ALWAYS_TO_END
+setopt PROMPT_SUBST
 
 autoload -Uz compinit && compinit
 autoload -U colors && colors
@@ -128,13 +129,5 @@ port2pid() {
 }
 
 if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec sway > /tmp/sway.out 2> /tmp/sway.err
+  exec sway >| /tmp/sway.out 2>| /tmp/sway.err
 fi
-
-# pnpm
-export PNPM_HOME="/home/nils/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
