@@ -10,6 +10,8 @@ NVM_DIR="$XDG_DATA_HOME/nvm"
 PNPM_HOME="$XDG_DATA_HOME/pnpm"
 PATH="$PNPM_HOME:$HOME/.local/bin:$PATH"
 
+export SSH_AUTH_SOCK NVM_DIR PNPM_HOME
+
 setopt AUTO_CD
 setopt NOCLOBBER
 setopt SHARE_HISTORY
@@ -29,12 +31,13 @@ select-word-style bash
 
 bindkey -e
 
-bindkey "^[[1;3C" forward-word      # Alt+ArrowRight
-bindkey "^[[1;3D" backward-word     # Alt+ArrowLeft
-bindkey "^[[1;5C" forward-word      # Ctrl+ArrowRight
-bindkey "^[[1;5D" backward-word     # Ctrl+ArrowLeft
-bindkey '^[[A' up-line-or-search    # ArrowUp
-bindkey '^[[B' down-line-or-search  # ArrowDown
+bindkey "^[[1;3C" forward-word        # Alt+ArrowRight
+bindkey "^[[1;3D" backward-word       # Alt+ArrowLeft
+bindkey "^[[1;5C" forward-word        # Ctrl+ArrowRight
+bindkey "^[[1;5D" backward-word       # Ctrl+ArrowLeft
+bindkey '^[[A' up-line-or-search      # ArrowUp
+bindkey '^[[B' down-line-or-search    # ArrowDown
+bindkey '^[[Z' reverse-menu-complete  # Shift+Tab
 
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' list-colors "$LS_COLORS"
@@ -43,8 +46,8 @@ zstyle ':omz:plugins:nvm' lazy yes
 zstyle ':omz:plugins:nvm' lazy-cmd tsx
 zstyle ':omz:plugins:nvm' autoload yes
 
-source "$XDG_DATA_HOME/oh-my-zsh/plugins/sudo/sudo.plugin.zsh"
-source "$XDG_DATA_HOME/oh-my-zsh/plugins/nvm/nvm.plugin.zsh"
+source "$XDG_DATA_HOME/ohmyzsh/plugins/sudo/sudo.plugin.zsh"
+source "$XDG_DATA_HOME/ohmyzsh/plugins/nvm/nvm.plugin.zsh"
 
 alias -g G='| grep'
 alias -g L='| less'
@@ -80,7 +83,8 @@ alias pr='pnpm remove'
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
-zstyle ':vcs_info:git:*' formats '%b '
+zstyle ':vcs_info:git:*' formats '%F{yellow} %b%f %F{008}%8.8i%f'
+zstyle ':vcs_info:git:*' get-revision 'true'
 
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd prompt-variables
@@ -100,7 +104,7 @@ prompt-variables() {
   fi
 
   if [ -n "$vcs_info_msg_0_" ]; then
-    prompt="%F{yellow} ${vcs_info_msg_0_}%f${newline}${prompt}"
+    prompt="${vcs_info_msg_0_}${newline}${prompt}"
   fi
 
   prompt="${newline}${prompt}"
