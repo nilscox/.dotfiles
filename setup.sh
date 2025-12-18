@@ -39,8 +39,7 @@ setup_zsh() {
   ln -sf "$dot/zsh/zshrc.sh" "$config/zsh/.zshrc"
   ln -sf "$dot/zsh/zshenv.sh" "$HOME/.zshenv"
 
-  omz_install="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
-  ZDOTDIR="$config/zsh" ZSH="$data/oh-my-zsh" CHSH="no" RUNZSH="no" KEEP_ZSHRC="yes" sh -c "$(curl -fsSL $omz_install)"
+  git clone https://github.com/ohmyzsh/ohmyzsh "$data/ohmyzsh"
 
   sudo chsh $(whoami) -s $(which zsh)
 }
@@ -52,7 +51,6 @@ setup_systemd() {
     ln -s "$dot/systemd/$unit" "$config/systemd/user/$unit"
   done
 
-  sudo systemctl enable polkit.service
   sudo systemctl enable NetworkManager.service
   sudo systemctl enable systemd-timesyncd.service
   sudo systemctl enable reflector.timer
@@ -127,7 +125,7 @@ setup_chromium() {
 setup_vscode() {
   ln -sf "$dot/vscode/code-flags.conf" "$config/code-flags.conf"
 
-  dest="$config/Code - OSS/User"
+  dest="$config/Code/User"
   mkdir -p "$dest"
 
   ln -sf "$dot/vscode/settings.jsonc" "$dest/settings.json"
