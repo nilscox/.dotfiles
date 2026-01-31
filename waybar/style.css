@@ -1,29 +1,12 @@
-window,
-tooltip {
-  font-family: "JetBrainsMono Nerd Font Propo", "Symbols Nerd Font Mono";
-}
+@define-color bg_bar rgba(0, 0, 0, 0.75);
+@define-color bg_active rgba(255, 255, 255, 0.15);
+@define-color bg_inverted rgba(255, 255, 255, 0.9);
+@define-color bg_alert rgba(255, 48, 48, 0.9);
 
-button {
-  border: none;
-  border-radius: 0;
-  color: inherit;
-}
-
-button:hover {
-  background: inherit;
-  box-shadow: inherit;
-  text-shadow: inherit;
-}
-
-@keyframes urgent {
-  0% {
-    background-color: #ffca0a;
-  }
-
-  10% {
-    background-color: inherit;
-  }
-}
+@define-color fg_bar rgba(255, 255, 255, 1);
+@define-color fg_dim rgba(255, 255, 255, 0.6);
+@define-color fg_inverted rgba(0, 0, 0, 1.0);
+@define-color fg_warning rgba(255, 192, 0, 1);
 
 @keyframes blink {
   100% {
@@ -31,45 +14,79 @@ button:hover {
   }
 }
 
-/* top */
-
-#waybar.top {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #eceff4;
-  font-weight: 500;
+window,
+tooltip {
+  font-family: "JetBrainsMono Nerd Font Propo", "Symbols Nerd Font Mono";
   font-size: 14px;
 }
 
-#workspaces button {
-  margin: 0 4px;
+#waybar.top {
+  background-color: @bg_bar;
+  color: @fg_bar;
+}
+
+#mode,
+#workspaces button,
+#temperature,
+#cpu,
+#memory,
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#tray,
+#custom-power {
   padding: 0 4px;
+  margin: 2px 0;
+  border-radius: 4px;
+}
+
+#workspaces button {
+  margin-left: 2px;
+  margin-right: 2px;
+  border: none;
+}
+
+#workspaces button {
+  font-weight: 700;
 }
 
 #workspaces button.focused {
-  box-shadow: inset 0px -3px #ffca0a;
+  background-color: @bg_active;
+}
+
+#workspaces button:not(.focused) {
+  color: @fg_dim;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: @fg_bar;
 }
 
 #workspaces button.urgent {
-  animation: urgent 1s linear infinite;
-}
-
-#workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: @bg_inverted;
+  animation: blink 850ms linear infinite;
+  animation-timing-function: steps(24);
 }
 
 #mode {
-  background: #ffca0a;
-  color: #2b384f;
-  padding: 0 8px;
+  background: @bg_inverted;
+  color: @fg_inverted;
+}
+
+#temperature.critical {
+  color: @fg_warning;
 }
 
 #battery.warning:not(.charging) {
-  color: #ffca0a;
+  color: @fg_warning;
 }
 
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  animation: blink 1s linear infinite;
+  background-color: @bg_alert;
+  animation: blink 850ms linear infinite;
   animation-timing-function: steps(24);
 }
 
@@ -77,24 +94,6 @@ button:hover {
   opacity: 0.75;
 }
 
-#tray {
-  margin-right: 8px;
-}
-
-/* bottom */
-
-#waybar.bottom {
-  background-color: rgba(0, 0, 0, 0.9);
-  border-top: 1px solid #333;
-  font-size: 10px;
-  color: #a3a5a8;
-}
-
-#waybar.bottom > * {
-  margin-top: 2px;
-}
-
-#temperature.critical {
-  background-color: #c73f3e;
-  color: #fff;
+#custom-power {
+  margin-right: 2px;
 }

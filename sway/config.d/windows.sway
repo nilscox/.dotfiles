@@ -1,33 +1,29 @@
+set $float floating enable; border pixel 1
+set $popup $float; sticky enable
+
 mouse_warping none
 smart_borders on
 
-no_focus [app_id="at.yrlf.wl_mirror"]
-
-set $popup floating enable; border pixel 1; sticky enable; shadows enable
-set $float floating enable; border pixel 1; shadows enable
-
 for_window {
   [shell="xwayland"] title_format "%title [XWayland]"
+	[floating] shadows enable
 
-  #popup - floating enable; sticky enable
+  # popup
 	[app_id="firefox" title="^Picture-in-Picture$"] $popup
 	[app_id="firefox" title="^Extension:"] $popup
+	[app_id="org.pulseaudio.pavucontrol"] $popup; resize set 1150 600
 
-  #float - floating enable; border pixel 1
-	[window_role="pop-up,task_dialog,About"] $float; shadows enable
-	[window_type="dialog"] $float; shadows enable
-	[window_type="utility"] $float; shadows enable
-	[window_type="toolbar"] $float; shadows enable
-	[window_type="splash"] $float; shadows enable
-	[window_type="menu"] $float; shadows enable
-	[window_type="dropdown_menu"] $float; shadows enable
-	[window_type="popup_menu"] $float; shadows enable
-	[window_type="tooltip"] $float; shadows enable
-	[window_type="notification"] $float; shadows enable
-
-  #misc
-	[urgent=latest] focus
-	[floating] shadows enable
-	[app_id="alacritty"] saturation set 2; blur enable
+  # float
+	[window_role="pop-up,task_dialog,About"] $float
+	[window_type="dialog"] $float
+	[window_type="utility"] $float
+	[window_type="toolbar"] $float
+	[window_type="splash"] $float
+	[window_type="menu"] $float
+	[window_type="dropdown_menu"] $float
+	[window_type="popup_menu"] $float
+	[window_type="tooltip"] $float
+	[window_type="notification"] $float
 }
 
+no_focus [app_id="at.yrlf.wl_mirror"]
