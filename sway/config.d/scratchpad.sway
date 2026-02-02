@@ -1,4 +1,8 @@
 exec alacritty -t scratchpad
-for_window [title="^scratchpad$"] move scratchpad
+
+for_window [title="^scratchpad$"] {
+  border none
+  move scratchpad
+}
 
 bindsym $mod+Return exec "swaymsg scratchpad show && ~/.config/sway/scripts/move-scratchpad.sh"

@@ -1,8 +1,9 @@
 #!/usr/bin/env sh
 
-dir="$HOME/.wallpapers"
+dir="$HOME/.local/share/wallpapers"
 
 if [ ! -d "$dir" ]; then
+    echo "Missing $dir directory" >&2
     exit 1
 fi
 

@@ -3,7 +3,7 @@
 set $mod Mod4
 
 set $term alacritty
-set $menu j4-dmenu-desktop --dmenu 'wmenu -ib -f "JetBrainsMono Nerd Font Propo SemiBold 9" -N 000000bf -n ffffff -S ffffff -s 000000bf'
+set $menu j4-dmenu-desktop --dmenu 'wmenu -ib -f "JetBrainsMono Nerd Font Propo SemiBold 9" -N 111111 -n cccccc -S 999999 -s 111111'
 
 set $left Left
 set $down Down

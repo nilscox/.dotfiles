@@ -131,7 +131,8 @@
     "menu-actions": {
       "lock": "swaylock -f -c 000000",
       "logout": "swaymsg exit",
-      "shutdown": "shutdown",
+      "suspend": "systemctl suspend",
+      "shutdown": "poweroff",
       "reboot": "reboot",
     },
   },

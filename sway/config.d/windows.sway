@@ -6,24 +6,24 @@ smart_borders on
 
 for_window {
   [shell="xwayland"] title_format "%title [XWayland]"
-	[floating] shadows enable
+  [floating] shadows enable
 
   # popup
-	[app_id="firefox" title="^Picture-in-Picture$"] $popup
-	[app_id="firefox" title="^Extension:"] $popup
-	[app_id="org.pulseaudio.pavucontrol"] $popup; resize set 1150 600
+  [app_id="firefox" title="^Picture-in-Picture$"] $popup
+  [app_id="firefox" title="^Extension:"] $popup
+  [app_id="org.pulseaudio.pavucontrol"] $popup; resize set 1150 600
 
   # float
-	[window_role="pop-up,task_dialog,About"] $float
-	[window_type="dialog"] $float
-	[window_type="utility"] $float
-	[window_type="toolbar"] $float
-	[window_type="splash"] $float
-	[window_type="menu"] $float
-	[window_type="dropdown_menu"] $float
-	[window_type="popup_menu"] $float
-	[window_type="tooltip"] $float
-	[window_type="notification"] $float
+  [window_role="pop-up,task_dialog,About"] $float
+  [window_type="dialog"] $float
+  [window_type="utility"] $float
+  [window_type="toolbar"] $float
+  [window_type="splash"] $float
+  [window_type="menu"] $float
+  [window_type="dropdown_menu"] $float
+  [window_type="popup_menu"] $float
+  [window_type="tooltip"] $float
+  [window_type="notification"] $float
 }
 
 no_focus [app_id="at.yrlf.wl_mirror"]

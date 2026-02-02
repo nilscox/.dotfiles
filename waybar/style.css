@@ -42,13 +42,15 @@ tooltip {
 }
 
 #workspaces button {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: inherit;
+  color: @fg_bar;
+  border: none;
   margin-left: 2px;
   margin-right: 2px;
-  border: none;
-}
-
-#workspaces button {
   font-weight: 700;
+  transition: all 80ms ease-in-out;
 }
 
 #workspaces button.focused {
@@ -59,9 +61,7 @@ tooltip {
   color: @fg_dim;
 }
 
-#workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
+#workspaces button:not(.focused):hover {
   color: @fg_bar;
 }
 

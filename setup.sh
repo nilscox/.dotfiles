@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-set -eo pipefail
-
 dot=${dot:-$(dirname $(readlink -f "$0"))}
 config="${XDG_CONFIG_HOME:-$HOME/.config}"
 data="${XDG_DATA_HOME:-$HOME/.local/share}"
@@ -97,10 +95,12 @@ setup_waybar() {
   mkdir -p "$config/waybar"
   ln -s "$dot/waybar/config.jsonc" "$config/waybar/config.jsonc"
   ln -s "$dot/waybar/style.css" "$config/waybar/style.css"
+  ln -s "$dot/waybar/power-menu.xml" "$config/waybar/power-menu.xml"
 }
 
 setup_wallpapers() {
-  ln -s /usr/share/pixmaps/archlinux-logo.png $HOME/.wallpaper.png
+  mkdir -p $XDG_DATA_HOME/wallpapers
+  ln -s /usr/share/pixmaps/archlinux-logo.png $XDG_DATA_HOME/wallpapers/default.png
 }
 
 setup_alacritty() {
