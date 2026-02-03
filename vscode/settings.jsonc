@@ -1,7 +1,7 @@
 {
   "editor.tabSize": 2,
   "editor.fontSize": 12,
-  "editor.rulers": [110],
+  "editor.rulers": [120],
   "editor.cursorBlinking": "solid",
   "editor.fontFamily": "'JetBrainsMono Nerd Font Propo', 'Symbols Nerd Font Mono'",
   "editor.fontWeight": "400",

@@ -77,8 +77,8 @@ bindsym $mod+Shift+Alt+Right move workspace to right
 
 # screenshot
 
-bindsym Print exec 'grim -g "$(slurp)" -c - | wl-copy'
-bindsym Shift+Print exec 'grim -g "$(slurp; sleep 4)" -c - | wl-copy'
+bindsym Print exec 'grimshot save area - | satty -f -'
+bindsym Shift+Print exec 'grimshot --wait 3 save area - | satty -f -'
 
 # resize mode
 

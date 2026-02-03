@@ -24,20 +24,19 @@ setopt PROMPT_SUBST
 
 autoload -Uz compinit && compinit
 autoload -U colors && colors
-autoload -U zmv
+autoload -U up-line-or-beginning-search && zle -N up-line-or-beginning-search
+autoload -U down-line-or-beginning-search && zle -N down-line-or-beginning-search
+autoload -Uz edit-command-line && zle -N edit-command-line
+autoload -U select-word-style && select-word-style bash
 
-autoload -U select-word-style
-select-word-style bash
-
-bindkey -e
-
-bindkey "^[[1;3C" forward-word        # Alt+ArrowRight
-bindkey "^[[1;3D" backward-word       # Alt+ArrowLeft
-bindkey "^[[1;5C" forward-word        # Ctrl+ArrowRight
-bindkey "^[[1;5D" backward-word       # Ctrl+ArrowLeft
-bindkey '^[[A' up-line-or-search      # ArrowUp
-bindkey '^[[B' down-line-or-search    # ArrowDown
-bindkey '^[[Z' reverse-menu-complete  # Shift+Tab
+bindkey "^[[1;3C" forward-word                # Alt+ArrowRight
+bindkey "^[[1;3D" backward-word               # Alt+ArrowLeft
+bindkey "^[[1;5C" forward-word                # Ctrl+ArrowRight
+bindkey "^[[1;5D" backward-word               # Ctrl+ArrowLeft
+bindkey '^[[A' up-line-or-beginning-search    # ArrowUp
+bindkey '^[[B' down-line-or-beginning-search  # ArrowDown
+bindkey '^[[Z' reverse-menu-complete          # Shift+Tab
+bindkey '^X^E' edit-command-line              # C-X C-E
 
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' list-colors "$LS_COLORS"
