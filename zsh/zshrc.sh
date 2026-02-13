@@ -29,6 +29,8 @@ autoload -U down-line-or-beginning-search && zle -N down-line-or-beginning-searc
 autoload -Uz edit-command-line && zle -N edit-command-line
 autoload -U select-word-style && select-word-style bash
 
+bindkey -e
+
 bindkey "^[[1;3C" forward-word                # Alt+ArrowRight
 bindkey "^[[1;3D" backward-word               # Alt+ArrowLeft
 bindkey "^[[1;5C" forward-word                # Ctrl+ArrowRight

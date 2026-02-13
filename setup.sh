@@ -130,7 +130,7 @@ setup_vscode() {
 
   ln -sf "$dot/vscode/settings.jsonc" "$dest/settings.json"
   ln -sf "$dot/vscode/keybindings.jsonc" "$dest/keybindings.json"
-  ln -sf "$dot/vscode/snippets" "$dest/snippets"
+  ln -sf "$dot/vscode/snippets" "$dest"
 
   extensions=(
     anjali.clipboard-history
