@@ -69,6 +69,7 @@ alias tmp='cd $(mktemp -d)'
 alias uuid='uuidgen | tr -d "\n" | wl-copy'
 alias sc='systemctl'
 alias scu='systemctl --user'
+alias ipaddr='curl -s https://ifconfig.me'
 
 alias p='pnpm'
 alias pt='pnpm run test'
